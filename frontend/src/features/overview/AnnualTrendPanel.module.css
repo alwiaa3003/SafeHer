@@ -31,6 +31,17 @@
   margin-top: var(--space-4);
 }
 
+.state {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-5);
+  background: var(--color-page);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
 .mobileCaveat {
   display: none;
   margin-top: var(--space-3);

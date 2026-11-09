@@ -1,21 +1,35 @@
-import { delhiUtCoverage, delhiUtStatistics } from './ncrbDelhiUt';
 import { STATUS_KIND } from './status';
 
-const FIRST_YEAR = 2016;
-const LAST_YEAR = 2024;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
+const DELHI_UT_TREND_PATH = '/api/crimes/trends?reportingUnit=Delhi%20UT';
 
-// Pages ask this module for data, so moving to the real API later only
-// changes this folder.
-export function getDelhiUtAnnualSeries() {
-  const series = [];
-  for (let year = FIRST_YEAR; year <= LAST_YEAR; year += 1) {
-    series.push({
-      year,
-      statistic: delhiUtStatistics.find((s) => s.year === year) ?? null,
-      coverage: delhiUtCoverage.find((c) => c.year === year) ?? null,
-    });
-  }
-  return series;
+// Pages ask this module for data. There is deliberately no fallback: if the
+// request fails, the caller shows an error and no figures.
+export async function fetchDelhiUtAnnualSeries({ signal } = {}) {
+  const response = await fetch(`${API_BASE_URL}${DELHI_UT_TREND_PATH}`, {
+    signal,
+    headers: { Accept: 'application/json' },
+  });
+  if (!response.ok) throw new Error(`Trend request failed (${response.status})`);
+  const body = await response.json();
+  return body.data.series;
+}
+
+async function getJson(path, signal) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    signal,
+    headers: { Accept: 'application/json' },
+  });
+  if (!response.ok) throw new Error(`Request failed (${response.status})`);
+  return response.json();
+}
+
+// Returns null when no verified boundary has been loaded.
+export async function fetchDelhiBoundary({ signal } = {}) {
+  const list = await getJson('/api/geography?geographyType=state_ut&limit=1', signal);
+  if (list.data.length === 0) return null;
+  const detail = await getJson(`/api/geography/${list.data[0].id}`, signal);
+  return detail.data;
 }
 
 const { INCOMPLETE, UNAVAILABLE, VERIFIED_WITH_NOTE } = STATUS_KIND;

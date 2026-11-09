@@ -1,8 +1,27 @@
 import { StatusLabel } from '../../components/StatusLabel/StatusLabel';
-import { STATUS_KIND, TABLE_TOTALS_CHECKED_LABEL } from '../../data/status';
+import { seriesStatusDisplay, STATUS_KIND } from '../../data/status';
 import styles from './ContextStrip.module.css';
 
-export function ContextStrip() {
+const NOT_LOADED = '—';
+const STATUS_TEXT = {
+  loading: 'Loading status…',
+  empty: 'No figures loaded',
+  error: 'Unavailable while the data service cannot be reached',
+};
+
+function describePeriod(series) {
+  if (series.length === 0) return NOT_LOADED;
+  return `${series[0].year}–${series[series.length - 1].year}, annual`;
+}
+
+function latestEdition(series) {
+  const statistics = series.filter((row) => row.statistic).map((row) => row.statistic);
+  return statistics.length > 0 ? statistics[statistics.length - 1].edition : NOT_LOADED;
+}
+
+export function ContextStrip({ trend }) {
+  const seriesStatus = seriesStatusDisplay(trend.series);
+
   return (
     <dl className={styles.strip} aria-label="Scope of this page">
       <div className={styles.item}>
@@ -11,16 +30,20 @@ export function ContextStrip() {
       </div>
       <div className={styles.item}>
         <dt>Period</dt>
-        <dd>2016–2024, annual</dd>
+        <dd>{describePeriod(trend.series)}</dd>
       </div>
       <div className={styles.item}>
         <dt>Latest edition read</dt>
-        <dd>Crime in India 2024</dd>
+        <dd>{latestEdition(trend.series)}</dd>
       </div>
       <div className={styles.item}>
         <dt>Data status</dt>
         <dd>
-          <StatusLabel kind={STATUS_KIND.VERIFIED_WITH_NOTE}>{TABLE_TOTALS_CHECKED_LABEL}</StatusLabel>
+          {trend.status === 'ready' ? (
+            <StatusLabel kind={seriesStatus.kind}>{seriesStatus.label}</StatusLabel>
+          ) : (
+            <StatusLabel kind={STATUS_KIND.UNAVAILABLE}>{STATUS_TEXT[trend.status]}</StatusLabel>
+          )}
         </dd>
       </div>
     </dl>

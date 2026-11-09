@@ -3,26 +3,10 @@ import { GapAwareLineChart } from '../../charts/GapAwareLineChart/GapAwareLineCh
 import { DataTable } from '../../components/DataTable/DataTable';
 import { Panel } from '../../components/Panel/Panel';
 import { StatusLabel } from '../../components/StatusLabel/StatusLabel';
-import { getDelhiUtAnnualSeries } from '../../data';
-import { STATUS_KIND, statusKindFor, TABLE_TOTALS_CHECKED_LABEL } from '../../data/status';
+import { seriesStatusDisplay, STATUS_KIND, statusDisplayFor, statusKindFor } from '../../data/status';
 import styles from './AnnualTrendPanel.module.css';
 
-const series = getDelhiUtAnnualSeries();
 const format = (value) => value.toLocaleString('en-IN');
-
-const points = series.map(({ year, statistic }) => ({
-  label: String(year),
-  value: statistic ? statistic.numericValue : null,
-}));
-
-const notes = [
-  { index: series.findIndex((r) => r.year === 2020), text: 'COVID-19 year', align: 'center' },
-  { index: series.findIndex((r) => r.year === 2024), text: 'New criminal laws, Jul 2024', align: 'right' },
-];
-
-const ariaLabel = `Line chart of registered crimes against women in Delhi UT. ${series
-  .map(({ year, statistic }) => `${year}: ${statistic ? format(statistic.numericValue) : 'unavailable'}`)
-  .join('; ')}. Table 3A.1 totals have been checked. Further validation is pending.`;
 
 const displayedNotesFor = (statistic) =>
   statistic.validationNotes
@@ -33,17 +17,13 @@ const displayedNotesFor = (statistic) =>
 const MOBILE_2024_NOTE =
   'Delhi UT and Delhi City totals are identical in the source data. The reason is unexplained; these reporting units should not be assumed to be equivalent.';
 
-const has2024EqualityCaveat = series.some(({ statistic }) =>
-  statistic?.validationNotes.some((note) => note.code === 'UT_CITY_IDENTICAL_2024'),
-);
-
 const columns = [
   { key: 'year', header: 'Year', render: (row) => row.year },
   {
     key: 'value',
     header: 'Registered cases',
     numeric: true,
-    render: (row) => (row.statistic ? format(row.statistic.numericValue) : '—'),
+    render: (row) => (row.statistic ? format(row.statistic.registeredCases) : '—'),
   },
   {
     key: 'status',
@@ -51,7 +31,7 @@ const columns = [
     render: (row) =>
       row.statistic ? (
         <StatusLabel kind={statusKindFor(row.statistic.validationStatus)}>
-          {TABLE_TOTALS_CHECKED_LABEL}
+          {statusDisplayFor(row.statistic.validationStatus).label}
           {displayedNotesFor(row.statistic) && (
             <span className={styles.rowCaveat}>. {displayedNotesFor(row.statistic)}</span>
           )}
@@ -73,20 +53,37 @@ const columns = [
           . Checked against {row.statistic.evidence.fileName}, extract p.
           {row.statistic.evidence.extractPage}.
         </>
-      ) : (
+      ) : row.coverage?.expectedSource ? (
         `Expected: ${row.coverage.expectedSource}`
+      ) : (
+        'No source recorded'
       ),
   },
 ];
 
-export function AnnualTrendPanel() {
+function TrendContent({ series }) {
   const [showTable, setShowTable] = useState(false);
 
+  const points = series.map(({ year, statistic }) => ({
+    label: String(year),
+    value: statistic ? statistic.registeredCases : null,
+  }));
+  const notes = [
+    { year: 2020, text: 'COVID-19 year', align: 'center' },
+    { year: 2024, text: 'New criminal laws, Jul 2024', align: 'right' },
+  ]
+    .map(({ year, ...note }) => ({ ...note, index: series.findIndex((row) => row.year === year) }))
+    .filter((note) => note.index >= 0);
+  const ariaLabel = `Line chart of registered crimes against women in Delhi UT. ${series
+    .map(({ year, statistic }) => `${year}: ${statistic ? format(statistic.registeredCases) : 'unavailable'}`)
+    .join('; ')}. Data status: ${seriesStatusDisplay(series).label}.`;
+  const gapYears = series.filter((row) => !row.statistic).map((row) => row.year);
+  const has2024EqualityCaveat = series.some(({ statistic }) =>
+    statistic?.validationNotes.some((note) => note.code === 'UT_CITY_IDENTICAL_2024'),
+  );
+
   return (
-    <Panel
-      title="Annual registered cases"
-      description="Crimes against women registered in Delhi UT, by calendar year."
-    >
+    <>
       <GapAwareLineChart
         points={points}
         ariaLabel={ariaLabel}
@@ -95,13 +92,15 @@ export function AnnualTrendPanel() {
         yStep={5000}
         gapText={['Not', 'obtained']}
         notes={notes}
-        tooltipDetail={() => TABLE_TOTALS_CHECKED_LABEL}
+        tooltipDetail={(index) => statusDisplayFor(series[index]?.statistic?.validationStatus).label}
       />
 
       <div className={styles.footer}>
         <p className={styles.source}>
           Source: NCRB, <cite>Crime in India</cite>, Table 3A.1. Each year uses the latest table
-          extract checked. The line breaks at 2019, and nothing is estimated.
+          extract checked.{' '}
+          {gapYears.length > 0 && `The line breaks at ${gapYears.join(', ')}, and `}
+          {gapYears.length > 0 ? 'nothing is estimated.' : 'Nothing is estimated.'}
         </p>
         <button
           type="button"
@@ -126,6 +125,35 @@ export function AnnualTrendPanel() {
               <strong>2024 note:</strong> {MOBILE_2024_NOTE}
             </p>
           )}
+        </div>
+      )}
+    </>
+  );
+}
+
+export function AnnualTrendPanel({ trend }) {
+  return (
+    <Panel
+      title="Annual registered cases"
+      description="Crimes against women registered in Delhi UT, by calendar year."
+    >
+      {trend.status === 'ready' && <TrendContent series={trend.series} />}
+      {trend.status === 'loading' && (
+        <p className={styles.state} role="status">
+          Loading annual figures…
+        </p>
+      )}
+      {trend.status === 'empty' && (
+        <p className={styles.state} role="status">
+          No annual figures have been loaded into the data service yet.
+        </p>
+      )}
+      {trend.status === 'error' && (
+        <div className={styles.state} role="alert">
+          <p>The data service is unavailable, so no figures are shown. Nothing has been estimated.</p>
+          <button type="button" className={styles.toggle} onClick={trend.retry}>
+            Try again
+          </button>
         </div>
       )}
     </Panel>

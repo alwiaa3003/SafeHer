@@ -58,7 +58,7 @@ export const SOURCE_EXTRACTS = {
 
 const NOTE_TOT4_PENDING = {
   code: 'TOT4_PENDING_TABLE_3A2',
-  text: 'Not yet compared with the category table (Table 3A.2), which has not been obtained and checked.',
+  text: 'The comparison with the category table (Table 3A.2) is not complete for this production record. Table 3A.2 research extracts for 2018 and 2022-2024 are held but are not approved for production; sources for 2016, 2017, 2020 and 2021 have not been obtained.',
   display: false,
 };
 
@@ -111,7 +111,7 @@ function statistic({ year, originalValue, source, pdfPage, extract, alsoFoundIn 
       },
       'TOT-4': {
         status: 'pending',
-        scope: 'Requires Table 3A.2, which has not been obtained and checked.',
+        scope: 'Requires an approved comparison with Table 3A.2. Holding a report or research extract does not complete this check.',
       },
     },
     validationNotes: [NOTE_TOT4_PENDING, NOTE_FULL_REPORT_PAGE, ...extraNotes],
@@ -129,7 +129,7 @@ const SUPERSEDED_2021_SOURCE = {
   pdfPage: 259,
   tableTitle: 'Crime against Women (IPC+SLL) - 2021-2023',
   status: 'superseded',
-  reason: 'Previously recorded. No extract of this table is held, so it is not the supporting source.',
+  reason: 'Previously recorded. The full Crime in India 2023 volume is now held, but this record remains supported by the one-page 2020-2022 table extract, not by this table.',
 };
 
 export const delhiUtStatistics = [

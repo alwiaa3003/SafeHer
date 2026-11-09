@@ -1,0 +1,25 @@
+/* Keeps Leaflet's layers beneath the mobile navigation. */
+.frame {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.map {
+  height: 560px;
+  background: var(--color-page);
+  font-family: var(--font-body);
+}
+
+/* Muted basemap so that the boundary, not map colour, draws attention. */
+.map :global(.leaflet-tile-pane) {
+  filter: grayscale(1) sepia(0.12) contrast(0.9) brightness(1.04);
+}
+
+@media (max-width: 800px) {
+  .map {
+    height: 380px;
+  }
+}

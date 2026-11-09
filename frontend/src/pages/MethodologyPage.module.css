@@ -1,0 +1,30 @@
+.sections {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.body {
+  max-width: 72ch;
+}
+
+.body p {
+  margin: 0;
+}
+
+.body p + p,
+.statuses {
+  margin-top: var(--space-3);
+}
+
+.statuses {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.statuses li {
+  display: grid;
+  gap: var(--space-1);
+}

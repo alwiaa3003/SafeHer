@@ -12,9 +12,10 @@ const VARIANTS = {
 
 // Status is always carried by words and an icon, never by colour alone.
 export function StatusLabel({ kind, children }) {
-  const { icon: Icon, text, className } = VARIANTS[kind];
+  const resolvedKind = Object.hasOwn(VARIANTS, kind ?? '') ? kind : STATUS_KIND.UNAVAILABLE;
+  const { icon: Icon, text, className } = VARIANTS[resolvedKind];
   return (
-    <span className={`${styles.label} ${className}`} data-status={kind}>
+    <span className={`${styles.label} ${className}`} data-status={resolvedKind}>
       <Icon size={16} strokeWidth={2} aria-hidden="true" className={styles.icon} />
       <span>{children ?? text}</span>
     </span>

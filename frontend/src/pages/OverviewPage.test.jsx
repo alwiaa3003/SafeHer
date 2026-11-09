@@ -2,9 +2,9 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Line } from 'react-chartjs-2';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { routes } from '../app/routes';
-import { getDelhiUtAnnualSeries } from '../data';
+import { buildTrendSeries, jsonResponse, trendResponse } from '../test/trendFixture';
 import { delhiUtCoverage, delhiUtStatistics } from '../data/ncrbDelhiUt';
 import { StatusLabel } from '../components/StatusLabel/StatusLabel';
 import { statusKindFor, TABLE_TOTALS_CHECKED_LABEL } from '../data/status';
@@ -20,12 +20,138 @@ const EXPECTED = {
   2024: '13396',
 };
 
-function renderOverview() {
+function renderPage() {
   const router = createMemoryRouter(routes, { initialEntries: ['/'] });
   return render(<RouterProvider router={router} />);
 }
 
+async function renderOverview() {
+  const view = renderPage();
+  await screen.findByRole('img', { name: /Line chart/ });
+  return view;
+}
+
+describe('Overview API integration', () => {
+  const FIGURES = /\d{2},\d{3}/;
+
+  it('requests the Delhi UT series and shows the API values', async () => {
+    await renderOverview();
+    expect(fetch).toHaveBeenCalledWith(
+      '/api/crimes/trends?reportingUnit=Delhi%20UT',
+      expect.objectContaining({ headers: { Accept: 'application/json' } }),
+    );
+    expect(Line.mock.lastCall[0].data.datasets[0].data).toEqual([
+      15310, 13076, 13640, null, 10093, 14277, 14247, 13439, 13396,
+    ]);
+  });
+
+  it('shows a loading state with no figures', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})));
+    renderPage();
+    expect(await screen.findByText('Loading annual figures…')).toBeInTheDocument();
+    expect(screen.queryByRole('img', { name: /Line chart/ })).toBeNull();
+    expect(screen.getByLabelText('Scope of this page')).toHaveTextContent('Loading status…');
+  });
+
+  it('shows an error and no fallback figures when the backend is down', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('Failed to fetch'); }));
+    renderPage();
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('no figures are shown');
+    expect(screen.getByRole('main').textContent).not.toMatch(FIGURES);
+    expect(screen.queryByRole('img', { name: /Line chart/ })).toBeNull();
+    expect(screen.getByLabelText('Scope of this page')).not.toHaveTextContent('Verified with note');
+  });
+
+  it('treats a server error response as an error', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => jsonResponse({ error: { code: 'DATABASE_UNAVAILABLE' } }, 503)));
+    renderPage();
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+  });
+
+  it('recovers when retry succeeds', async () => {
+    const user = userEvent.setup();
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValueOnce(new TypeError('down')).mockResolvedValue(trendResponse()));
+    renderPage();
+    await user.click(await screen.findByRole('button', { name: 'Try again' }));
+    expect(await screen.findByRole('img', { name: /Line chart/ })).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).toBeNull();
+  });
+
+  it('shows an empty state with no invented figures', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => trendResponse([])));
+    renderPage();
+    expect(await screen.findByText(/No annual figures have been loaded/)).toBeInTheDocument();
+    expect(screen.getByRole('main').textContent).not.toMatch(FIGURES);
+  });
+});
+
+describe('Overview status rendering', () => {
+  const withStatus = (statusFor) =>
+    buildTrendSeries().map((row) =>
+      row.statistic
+        ? { ...row, statistic: { ...row.statistic, validationStatus: statusFor(row.year) } }
+        : row,
+    );
+
+  const renderWith = async (statusFor) => {
+    const user = userEvent.setup();
+    vi.stubGlobal('fetch', vi.fn(async () => trendResponse(withStatus(statusFor))));
+    const view = renderPage();
+    await screen.findByRole('img', { name: /Line chart/ });
+    await user.click(screen.getByRole('button', { name: 'View as table' }));
+    return view;
+  };
+
+  const tableRow = (year) =>
+    within(screen.getByRole('table', { name: /with source details/ }))
+      .getByRole('cell', { name: String(year) })
+      .closest('tr');
+
+  it.each([
+    ['pending', 'Pending – validation not complete'],
+    ['failed', 'Failed validation'],
+    ['conflict', 'Conflict – needs review'],
+  ])('shows %s from the API and no verified label', async (status, label) => {
+    await renderWith(() => status);
+    expect(screen.getByLabelText('Scope of this page')).toHaveTextContent(label);
+    expect(tableRow(2024)).toHaveTextContent(label);
+    expect(screen.getByRole('img', { name: /Line chart/ })).toHaveAccessibleName(expect.stringContaining(label));
+    expect(tableRow(2024)).not.toHaveTextContent('Verified');
+    expect(screen.getByLabelText('Scope of this page')).not.toHaveTextContent('Verified');
+  });
+
+  it.each([undefined, 'some_new_status'])('does not crash or confirm an unknown status: %s', async (status) => {
+    await renderWith(() => status);
+    expect(screen.getByLabelText('Scope of this page')).toHaveTextContent('Status unknown');
+    expect(tableRow(2018)).toHaveTextContent('Status unknown');
+    expect(tableRow(2018)).not.toHaveTextContent('Verified');
+  });
+
+  it('shows each year its own status and a mixed summary', async () => {
+    await renderWith((year) => (year === 2020 ? 'failed' : 'verified_with_note'));
+    expect(screen.getByLabelText('Scope of this page')).toHaveTextContent('Mixed validation status');
+    expect(tableRow(2020)).toHaveTextContent('Failed validation');
+    expect(tableRow(2021)).toHaveTextContent(TABLE_TOTALS_CHECKED_LABEL);
+  });
+
+  it('gives each chart tooltip the status of its own year', async () => {
+    await renderWith((year) => (year === 2020 ? 'failed' : 'verified_with_note'));
+    const { afterLabel } = Line.mock.lastCall[0].options.plugins.tooltip.callbacks;
+    expect(afterLabel({ dataIndex: 4 })).toBe('Failed validation');
+    expect(afterLabel({ dataIndex: 5 })).toBe(TABLE_TOTALS_CHECKED_LABEL);
+  });
+});
+
 describe('Delhi UT data module', () => {
+  it('no longer says Table 3A.2 or the 2023 volume is not held, and keeps TOT-4 pending', () => {
+    delhiUtStatistics.forEach((s) => {
+      const metadata = JSON.stringify([s.validationNotes, s.validationChecks, s.sourceHistory]);
+      expect(metadata).not.toMatch(/has not been obtained and checked|No extract of this table is held/);
+      expect(s.validationChecks['TOT-4'].status).toBe('pending');
+    });
+  });
+
   it('holds exactly the figures read from NCRB', () => {
     const actual = Object.fromEntries(
       delhiUtStatistics.map((s) => [s.year, s.originalValue]),
@@ -112,15 +238,15 @@ describe('Delhi UT data module', () => {
   it('records 2019 as coverage and never as a statistic', () => {
     expect(delhiUtStatistics.some((s) => s.year === 2019)).toBe(false);
     expect(delhiUtCoverage.map((c) => c.year)).toEqual([2019]);
-    const row = getDelhiUtAnnualSeries().find((r) => r.year === 2019);
+    const row = buildTrendSeries().find((r) => r.year === 2019);
     expect(row.statistic).toBeNull();
     expect(row.coverage.status).toBe('missing_pending_source');
   });
 });
 
 describe('Overview chart', () => {
-  it('plots a line with no area fill and a true 2019 break', () => {
-    renderOverview();
+  it('plots a line with no area fill and a true 2019 break', async () => {
+    await renderOverview();
     const { data } = Line.mock.lastCall[0];
     const dataset = data.datasets[0];
     expect(dataset.fill).toBe(false);
@@ -130,15 +256,15 @@ describe('Overview chart', () => {
     expect(dataset.data).toHaveLength(9);
   });
 
-  it('describes the gap to screen readers', () => {
-    renderOverview();
+  it('describes the gap to screen readers', async () => {
+    await renderOverview();
     expect(screen.getByRole('img', { name: /2019: unavailable/ })).toBeInTheDocument();
   });
 });
 
 describe('Overview content', () => {
-  it('shows Delhi UT as a fixed unit with no way to change it', () => {
-    renderOverview();
+  it('shows Delhi UT as a fixed unit with no way to change it', async () => {
+    await renderOverview();
     expect(screen.getByLabelText('Scope of this page')).toHaveTextContent('Delhi UT');
     expect(screen.queryByRole('combobox')).not.toBeInTheDocument();
     expect(screen.getByRole('main').textContent).not.toMatch(/Delhi City[^.]*\d{2},\d{3}/);
@@ -146,7 +272,7 @@ describe('Overview content', () => {
 
   it('says totals are checked, more validation is pending, and drops the old wording', async () => {
     const user = userEvent.setup();
-    renderOverview();
+    await renderOverview();
     expect(screen.getByLabelText('Scope of this page')).toHaveTextContent(
       TABLE_TOTALS_CHECKED_LABEL,
     );
@@ -160,7 +286,7 @@ describe('Overview content', () => {
 
   it('uses the partial treatment and never a check mark for verified_with_note', async () => {
     const user = userEvent.setup();
-    const { container } = renderOverview();
+    const { container } = await renderOverview();
     await user.click(screen.getByRole('button', { name: 'View as table' }));
 
     expect(container.querySelector('[data-status="verified"]')).toBeNull();
@@ -183,7 +309,7 @@ describe('Overview content', () => {
 
   it('adds the 2024 mobile note below the table only when the table is open', async () => {
     const user = userEvent.setup();
-    renderOverview();
+    await renderOverview();
     const note = /Delhi UT and Delhi City totals are identical in the source data\. The reason is unexplained; these reporting units should not be assumed to be equivalent\./;
     expect(screen.getByRole('main').textContent).not.toMatch(note);
 
@@ -193,7 +319,7 @@ describe('Overview content', () => {
 
   it('shows the 2024 caveat in the table row for 2024 only', async () => {
     const user = userEvent.setup();
-    renderOverview();
+    await renderOverview();
     await user.click(screen.getByRole('button', { name: 'View as table' }));
     const table = within(screen.getByRole('table', { name: /with source details/ }));
     const caveat = /identical for 2024, and this is unexplained/;
@@ -203,7 +329,7 @@ describe('Overview content', () => {
 
   it('table lists figures with sources and marks 2019 unavailable', async () => {
     const user = userEvent.setup();
-    renderOverview();
+    await renderOverview();
     const toggle = screen.getByRole('button', { name: 'View as table' });
     await user.click(toggle);
 
@@ -234,8 +360,8 @@ describe('Overview content', () => {
     );
   });
 
-  it('shows no category breakdown or unverified category labels', () => {
-    renderOverview();
+  it('shows no category breakdown or unverified category labels', async () => {
+    await renderOverview();
     const panel = screen.getByRole('region', { name: 'Crime categories' });
     expect(panel).toHaveTextContent('Not shown until source-verified');
     expect(within(panel).queryByRole('img')).toBeNull();
@@ -246,8 +372,8 @@ describe('Overview content', () => {
     expect(screen.getAllByRole('img')).toHaveLength(1);
   });
 
-  it('includes coverage, methodology link and no account controls', () => {
-    renderOverview();
+  it('includes coverage, methodology link and no account controls', async () => {
+    await renderOverview();
     const coverage = screen.getByRole('region', { name: 'Evidence coverage' });
     expect(within(coverage).getByText('2019')).toBeInTheDocument();
     const note = screen.getByRole('complementary', { name: 'Methodology note' });

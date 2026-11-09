@@ -114,6 +114,25 @@ describe('content safeguards', () => {
   });
 });
 
+describe('methodology page', () => {
+  it('explains the limits and is no longer a placeholder', () => {
+    renderAt('/methodology');
+    const main = screen.getByRole('main');
+    expect(main).not.toHaveTextContent('Not built yet');
+    for (const name of [
+      'Where the annual figures come from',
+      'What the reporting unit means',
+      'How evidence and validation status are handled',
+      'Why 2019 is missing',
+      'Why Table 3A.2 is not in production',
+      'Why the Geographic Explorer shows no crime values',
+      'Why district-level conclusions cannot be made',
+    ]) {
+      expect(within(main).getByRole('heading', { level: 2, name })).toBeInTheDocument();
+    }
+  });
+});
+
 describe('accessibility', () => {
   it.each(pages)('%s has no detectable axe violations', async (path) => {
     const { container } = renderAt(path);

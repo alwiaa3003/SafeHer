@@ -1,0 +1,66 @@
+import { isDatabaseReady } from '../config/database.js';
+
+export class ApiError extends Error {
+  constructor(status, code, message, details) {
+    super(message);
+    this.status = status;
+    this.code = code;
+    this.details = details;
+  }
+}
+
+export function validateQuery(schema) {
+  return (req, _res, next) => {
+    const parsed = schema.safeParse(req.query);
+    if (!parsed.success) {
+      const details = parsed.error.issues.map((issue) => ({
+        field: issue.path.join('.') || (issue.keys ? issue.keys.join(', ') : 'query'),
+        message: issue.message,
+      }));
+      next(new ApiError(400, 'INVALID_QUERY', 'One or more query parameters are invalid.', details));
+      return;
+    }
+    req.validatedQuery = parsed.data;
+    next();
+  };
+}
+
+export function validateParams(schema) {
+  return (req, _res, next) => {
+    const parsed = schema.safeParse(req.params);
+    if (!parsed.success) {
+      const details = parsed.error.issues.map((issue) => ({ field: issue.path.join('.'), message: issue.message }));
+      next(new ApiError(400, 'INVALID_PARAMETER', 'One or more path parameters are invalid.', details));
+      return;
+    }
+    req.validatedParams = parsed.data;
+    next();
+  };
+}
+
+export function requireDatabase(_req, _res, next) {
+  if (isDatabaseReady()) {
+    next();
+    return;
+  }
+  next(new ApiError(503, 'DATABASE_UNAVAILABLE', 'The data service is temporarily unavailable.'));
+}
+
+export function notFound(req, _res, next) {
+  next(new ApiError(404, 'NOT_FOUND', 'This API route does not exist.'));
+}
+
+// Unexpected errors return a generic message so internals are not exposed.
+// eslint-disable-next-line no-unused-vars
+export function errorHandler(error, _req, res, _next) {
+  if (error instanceof ApiError) {
+    res.status(error.status).json({
+      error: { code: error.code, message: error.message, details: error.details },
+    });
+    return;
+  }
+  console.error(`Unhandled error: ${error.message}`);
+  res.status(500).json({
+    error: { code: 'INTERNAL_ERROR', message: 'An unexpected error occurred.' },
+  });
+}
