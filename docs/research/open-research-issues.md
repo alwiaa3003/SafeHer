@@ -1,6 +1,6 @@
 # SafeHer Open Research Issues
 
-Unresolved limitations as of 10 November 2026. An item leaves this register only when its resolution evidence is recorded. Rules are in [safeher-data-specification.md](safeher-data-specification.md).
+Unresolved limitations as of 10 November 2026, with closed items kept as a record. An item closes only when its resolution evidence is recorded. Rules are in [safeher-data-specification.md](safeher-data-specification.md).
 
 ## OR-01. 2019 NCRB source not obtained
 
@@ -130,7 +130,9 @@ Unresolved limitations as of 10 November 2026. An item leaves this register only
 
 ## OR-19. Stored Atlas notes predate current holdings
 
-- **Status:** Awaiting decision. Source code has the updated wording. Atlas `crimeRecords` and `validationRecords` still say Table 3A.2 "has not been obtained and checked", and the 2021 record says no extract of the 2023 table is held.
-- **Evidence available:** A read-only Atlas inspection on 10 November 2026. `dataSources` does not contain this wording. Figures and statuses are unaffected.
-- **What would resolve it:** An approved metadata-only update of those note strings.
-- **Must not be claimed:** That Atlas notes match current source metadata until that update is applied.
+- **Status:** Closed on 10 November 2026. The project owner approved a metadata-only update, and Atlas notes now match the source metadata wording.
+- **Original issue:** Atlas `crimeRecords` and `validationRecords` said Table 3A.2 "has not been obtained and checked", and the 2021 record said no extract of the 2023 table was held. A read-only inspection found that `dataSources` did not contain this wording.
+- **What was changed:** 25 note fields across 16 documents: the TOT-4 note text and check scope on 8 `crimeRecords`, the superseded-source reason on the 2021 record, and the TOT-4 explanation on 8 `validationRecords`.
+- **Evidence available:** Full before-and-after comparison of all six collections showed only those 25 changes. A repeat preview found 0 pending changes, and the API returned the new wording.
+- **What resolved it:** The approved update above. No annual figure, validation status, validation result or evidence hash changed.
+- **Must not be claimed:** That this update completed TOT-4 or approved Table 3A.2. TOT-4 remains pending for all eight production records (OR-02), and Table 3A.2 remains research-only (OR-05).
