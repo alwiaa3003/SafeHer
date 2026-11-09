@@ -16,6 +16,10 @@
   color: var(--color-status-verified);
 }
 
+.partial {
+  color: var(--color-status-partial);
+}
+
 .incomplete {
   color: var(--color-status-incomplete);
 }

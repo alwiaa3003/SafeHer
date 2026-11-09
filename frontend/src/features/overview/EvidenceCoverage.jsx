@@ -26,11 +26,11 @@ export function EvidenceCoverage() {
                 {dataset} <span className={styles.tableRef}>{table}</span>
               </th>
             </tr>
-            {ranges.map(({ years, kind }) => (
+            {ranges.map(({ years, kind, label }) => (
               <tr key={years}>
                 <td className={styles.years}>{years}</td>
                 <td>
-                  <StatusLabel kind={kind} />
+                  <StatusLabel kind={kind}>{label}</StatusLabel>
                 </td>
               </tr>
             ))}
@@ -38,8 +38,10 @@ export function EvidenceCoverage() {
         ))}
       </table>
       <p className={styles.note}>
-        No figure is marked Verified yet. Incomplete means the source exists but checks are
-        unfinished. Unavailable means no value from an obtained source.
+        Annual totals have been checked against Table 3A.1 extracts. The comparison with the
+        category table (3A.2) is still pending, so validation is not complete. Incomplete means
+        the source exists but checks are unfinished. Unavailable means no value from an
+        obtained source.
       </p>
     </Panel>
   );

@@ -18,7 +18,8 @@ export function getDelhiUtAnnualSeries() {
   return series;
 }
 
-const { INCOMPLETE, UNAVAILABLE } = STATUS_KIND;
+const { INCOMPLETE, UNAVAILABLE, VERIFIED_WITH_NOTE } = STATUS_KIND;
+const TOTALS_CHECKED = 'Totals checked – validation pending';
 
 export function getEvidenceCoverage() {
   return [
@@ -26,9 +27,9 @@ export function getEvidenceCoverage() {
       dataset: 'Annual totals',
       table: 'Table 3A.1',
       ranges: [
-        { years: '2016–2018', kind: INCOMPLETE },
+        { years: '2016–2018', kind: VERIFIED_WITH_NOTE, label: TOTALS_CHECKED },
         { years: '2019', kind: UNAVAILABLE },
-        { years: '2020–2024', kind: INCOMPLETE },
+        { years: '2020–2024', kind: VERIFIED_WITH_NOTE, label: TOTALS_CHECKED },
       ],
     },
     {

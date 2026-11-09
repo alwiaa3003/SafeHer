@@ -11,6 +11,7 @@
   --color-accent-soft: #f3e7e0;
   --color-status-verified: #3f6b4f;
   --color-status-incomplete: #8a5a12;
+  --color-status-partial: #7a5c2e;
 
   /* Type */
   --font-heading: 'DM Sans Variable', 'DM Sans', sans-serif;

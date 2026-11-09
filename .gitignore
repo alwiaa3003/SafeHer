@@ -13,6 +13,9 @@ coverage/
 # Source data is tracked by URL and hash, not committed
 /data/
 
+# NCRB PDF extracts: redistribution permission has not been established
+docs/source-reports/
+
 # Logs and system files
 *.log
 .DS_Store

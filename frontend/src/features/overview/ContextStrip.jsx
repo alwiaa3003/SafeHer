@@ -1,5 +1,5 @@
 import { StatusLabel } from '../../components/StatusLabel/StatusLabel';
-import { PENDING_PDF_LABEL, STATUS_KIND } from '../../data/status';
+import { STATUS_KIND, TABLE_TOTALS_CHECKED_LABEL } from '../../data/status';
 import styles from './ContextStrip.module.css';
 
 export function ContextStrip() {
@@ -20,7 +20,7 @@ export function ContextStrip() {
       <div className={styles.item}>
         <dt>Data status</dt>
         <dd>
-          <StatusLabel kind={STATUS_KIND.INCOMPLETE}>{PENDING_PDF_LABEL}</StatusLabel>
+          <StatusLabel kind={STATUS_KIND.VERIFIED_WITH_NOTE}>{TABLE_TOTALS_CHECKED_LABEL}</StatusLabel>
         </dd>
       </div>
     </dl>

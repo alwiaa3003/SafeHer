@@ -31,6 +31,23 @@
   margin-top: var(--space-4);
 }
 
+.mobileCaveat {
+  display: none;
+  margin-top: var(--space-3);
+  font-size: 14px;
+}
+
+/* Below this width the table scrolls sideways and can cut off its status column. */
+@media (max-width: 660px) {
+  .rowCaveat {
+    display: none;
+  }
+
+  .mobileCaveat {
+    display: block;
+  }
+}
+
 @media (max-width: 520px) {
   .footer {
     flex-direction: column;

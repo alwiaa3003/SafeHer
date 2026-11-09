@@ -4,7 +4,7 @@ import { DataTable } from '../../components/DataTable/DataTable';
 import { Panel } from '../../components/Panel/Panel';
 import { StatusLabel } from '../../components/StatusLabel/StatusLabel';
 import { getDelhiUtAnnualSeries } from '../../data';
-import { PENDING_PDF_LABEL, STATUS_KIND, statusKindFor } from '../../data/status';
+import { STATUS_KIND, statusKindFor, TABLE_TOTALS_CHECKED_LABEL } from '../../data/status';
 import styles from './AnnualTrendPanel.module.css';
 
 const series = getDelhiUtAnnualSeries();
@@ -22,7 +22,20 @@ const notes = [
 
 const ariaLabel = `Line chart of registered crimes against women in Delhi UT. ${series
   .map(({ year, statistic }) => `${year}: ${statistic ? format(statistic.numericValue) : 'unavailable'}`)
-  .join('; ')}. All figures are incomplete, pending manual PDF verification.`;
+  .join('; ')}. Table 3A.1 totals have been checked. Further validation is pending.`;
+
+const displayedNotesFor = (statistic) =>
+  statistic.validationNotes
+    .filter((note) => note.display)
+    .map((note) => note.text)
+    .join(' ');
+
+const MOBILE_2024_NOTE =
+  'Delhi UT and Delhi City totals are identical in the source data. The reason is unexplained; these reporting units should not be assumed to be equivalent.';
+
+const has2024EqualityCaveat = series.some(({ statistic }) =>
+  statistic?.validationNotes.some((note) => note.code === 'UT_CITY_IDENTICAL_2024'),
+);
 
 const columns = [
   { key: 'year', header: 'Year', render: (row) => row.year },
@@ -38,7 +51,10 @@ const columns = [
     render: (row) =>
       row.statistic ? (
         <StatusLabel kind={statusKindFor(row.statistic.validationStatus)}>
-          {PENDING_PDF_LABEL}
+          {TABLE_TOTALS_CHECKED_LABEL}
+          {displayedNotesFor(row.statistic) && (
+            <span className={styles.rowCaveat}>. {displayedNotesFor(row.statistic)}</span>
+          )}
         </StatusLabel>
       ) : (
         <StatusLabel kind={STATUS_KIND.UNAVAILABLE} />
@@ -49,9 +65,14 @@ const columns = [
     header: 'Source',
     render: (row) =>
       row.statistic ? (
-        <a href={row.statistic.sourceUrl} target="_blank" rel="noreferrer">
-          {row.statistic.edition}, Table {row.statistic.tableNumber}, PDF p.{row.statistic.pdfPage}
-        </a>
+        <>
+          <a href={row.statistic.sourceUrl} target="_blank" rel="noreferrer">
+            {row.statistic.edition}, Table {row.statistic.tableNumber}, full-report PDF p.
+            {row.statistic.pdfPage} (not rechecked)
+          </a>
+          . Checked against {row.statistic.evidence.fileName}, extract p.
+          {row.statistic.evidence.extractPage}.
+        </>
       ) : (
         `Expected: ${row.coverage.expectedSource}`
       ),
@@ -74,13 +95,13 @@ export function AnnualTrendPanel() {
         yStep={5000}
         gapText={['Not', 'obtained']}
         notes={notes}
-        tooltipDetail={() => PENDING_PDF_LABEL}
+        tooltipDetail={() => TABLE_TOTALS_CHECKED_LABEL}
       />
 
       <div className={styles.footer}>
         <p className={styles.source}>
-          Source: NCRB, <cite>Crime in India</cite>, Table 3A.1. Each year uses the latest edition
-          read. The line breaks at 2019, and nothing is estimated.
+          Source: NCRB, <cite>Crime in India</cite>, Table 3A.1. Each year uses the latest table
+          extract checked. The line breaks at 2019, and nothing is estimated.
         </p>
         <button
           type="button"
@@ -100,6 +121,11 @@ export function AnnualTrendPanel() {
             rows={series}
             getRowKey={(row) => row.year}
           />
+          {has2024EqualityCaveat && (
+            <p className={styles.mobileCaveat}>
+              <strong>2024 note:</strong> {MOBILE_2024_NOTE}
+            </p>
+          )}
         </div>
       )}
     </Panel>
