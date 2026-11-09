@@ -1,0 +1,32 @@
+/* The single home for SafeHer's visual decisions.
+   Components use these names, so a change here updates the whole app. */
+:root {
+  /* Colour */
+  --color-page: #f7f3ec;
+  --color-surface: #ffffff;
+  --color-border: #e4ddd1;
+  --color-text: #26211c;
+  --color-text-muted: #6b625a;
+  --color-accent: #a8483a;
+  --color-accent-soft: #f3e7e0;
+
+  /* Type */
+  --font-heading: 'Manrope Variable', 'Segoe UI', sans-serif;
+  --font-body: 'Inter Variable', 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Layout */
+  --sidebar-width: 264px;
+  --topbar-height: 60px;
+  --content-max: 1176px;
+  --radius: 6px;
+}

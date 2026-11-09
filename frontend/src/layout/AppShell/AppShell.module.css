@@ -1,0 +1,95 @@
+.shell {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 40;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-text);
+  color: var(--color-surface);
+  border-radius: var(--radius);
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: none;
+}
+
+.topBar {
+  display: none;
+}
+
+.main {
+  min-width: 0;
+}
+
+.main:focus {
+  outline: none;
+}
+
+.content {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: var(--space-8) var(--space-8) var(--space-7);
+}
+
+@media (max-width: 1100px) {
+  .content {
+    padding: var(--space-7) var(--space-6);
+  }
+}
+
+@media (max-width: 800px) {
+  .shell {
+    display: block;
+  }
+
+  .topBar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--topbar-height);
+    padding-inline: var(--space-4);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .topBarBrand {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .backdrop {
+    position: fixed;
+    inset: var(--topbar-height) 0 0;
+    z-index: 10;
+    background: rgb(38 33 28 / 0.32);
+  }
+
+  .content {
+    padding: var(--space-6) var(--space-4);
+  }
+}
