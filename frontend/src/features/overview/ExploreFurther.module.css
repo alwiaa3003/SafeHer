@@ -1,0 +1,25 @@
+.list {
+  padding: 0;
+  list-style: none;
+}
+
+.list li + li {
+  border-top: 1px solid var(--color-border);
+}
+
+.link {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  min-height: 44px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.link:hover .label {
+  color: var(--color-accent);
+}
+
+.label {
+  flex: 1;
+}

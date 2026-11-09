@@ -9,10 +9,12 @@
   --color-text-muted: #6b625a;
   --color-accent: #a8483a;
   --color-accent-soft: #f3e7e0;
+  --color-status-verified: #3f6b4f;
+  --color-status-incomplete: #8a5a12;
 
   /* Type */
-  --font-heading: 'Manrope Variable', 'Segoe UI', sans-serif;
-  --font-body: 'Inter Variable', 'Segoe UI', sans-serif;
+  --font-heading: 'DM Sans Variable', 'DM Sans', sans-serif;
+  --font-body: 'Source Sans 3 Variable', 'Source Sans 3', sans-serif;
 
   /* Spacing */
   --space-1: 4px;

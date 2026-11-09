@@ -1,0 +1,23 @@
+.rows {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.primary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(280px, 1fr);
+  gap: var(--space-5);
+}
+
+.secondary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 1100px) {
+  .primary,
+  .secondary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

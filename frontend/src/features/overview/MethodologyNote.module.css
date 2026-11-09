@@ -1,0 +1,18 @@
+.note {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-accent-soft);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+.icon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--color-accent);
+}
+
+.note strong {
+  font-family: var(--font-heading);
+}

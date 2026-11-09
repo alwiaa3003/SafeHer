@@ -1,17 +1,35 @@
-import { PageShell } from '../layout/PageShell/PageShell';
+import { AnnualTrendPanel } from '../features/overview/AnnualTrendPanel';
+import { CategoryPanel } from '../features/overview/CategoryPanel';
+import { ContextStrip } from '../features/overview/ContextStrip';
+import { EvidenceCoverage } from '../features/overview/EvidenceCoverage';
+import { ExploreFurther } from '../features/overview/ExploreFurther';
+import { MethodologyNote } from '../features/overview/MethodologyNote';
+import { PageHeader } from '../layout/PageHeader/PageHeader';
+import styles from './OverviewPage.module.css';
+
+export const OVERVIEW_HEADING = "What Delhi's registered crime records can and cannot tell us";
 
 export function OverviewPage() {
   return (
-    <PageShell
-      eyebrow="Overview"
-      title="Overview"
-      description="A brief on what Delhi's registered crime records can and cannot tell us."
-      questions={[
-        'How have registered crimes against women in Delhi UT changed over time?',
-        'Which years and datasets are verified, incomplete or unavailable?',
-        'How should these records be read, and what are their limits?',
-      ]}
-      dataNote="The full Overview is the next build stage. No statistics are shown on this page yet."
-    />
+    <>
+      <PageHeader
+        eyebrow="Delhi · Registered crime records"
+        title={OVERVIEW_HEADING}
+        documentTitle="Overview"
+        description="Officially registered crimes against women, with the source and checking status of every figure in view."
+      />
+      <ContextStrip />
+      <div className={styles.rows}>
+        <div className={styles.primary}>
+          <AnnualTrendPanel />
+          <EvidenceCoverage />
+        </div>
+        <div className={styles.secondary}>
+          <CategoryPanel />
+          <ExploreFurther />
+        </div>
+        <MethodologyNote />
+      </div>
+    </>
   );
 }

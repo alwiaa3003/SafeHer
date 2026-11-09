@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import styles from './PageHeader.module.css';
 
-export function PageHeader({ eyebrow, title, description }) {
+export function PageHeader({ eyebrow, title, description, documentTitle }) {
+  const tabTitle = documentTitle ?? title;
+
   useEffect(() => {
-    document.title = `${title} · SafeHer`;
-  }, [title]);
+    document.title = `${tabTitle} · SafeHer`;
+  }, [tabTitle]);
 
   return (
     <header className={styles.header}>

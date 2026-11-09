@@ -1,0 +1,38 @@
+.footer {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+}
+
+.source {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.toggle {
+  flex: none;
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--color-page);
+}
+
+.table {
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 520px) {
+  .footer {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,16 @@
+.frame {
+  position: relative;
+  height: 300px;
+}
+
+@media (min-width: 1101px) {
+  .frame {
+    height: 392px;
+  }
+}
+
+@media (max-width: 800px) {
+  .frame {
+    height: 260px;
+  }
+}

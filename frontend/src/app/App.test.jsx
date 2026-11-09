@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import axe from 'axe-core';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import { OVERVIEW_HEADING } from '../pages/OverviewPage';
 import { routes } from './routes';
 
 const pages = [
@@ -27,7 +28,9 @@ const pageHeading = (name) =>
 describe('routing', () => {
   it.each(pages)('renders %s as %s and sets the tab title', (path, title) => {
     renderAt(path);
-    expect(pageHeading(title)).toBeInTheDocument();
+    expect(
+      pageHeading(path === '/' ? OVERVIEW_HEADING : title),
+    ).toBeInTheDocument();
     expect(document.title).toBe(`${title} · SafeHer`);
   });
 
@@ -102,7 +105,9 @@ describe('mobile menu', () => {
 });
 
 describe('content safeguards', () => {
-  it.each(pages)('%s page shell shows no digits-based statistics', (path) => {
+  const pageShells = pages.filter(([path]) => path !== '/');
+
+  it.each(pageShells)('%s page shell shows no statistics', (path) => {
     renderAt(path);
     const text = screen.getByRole('main').textContent;
     expect(text).not.toMatch(/\d{1,3},\d{3}/);

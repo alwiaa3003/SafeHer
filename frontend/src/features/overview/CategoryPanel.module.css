@@ -1,0 +1,13 @@
+.state {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 620px;
+  padding: var(--space-5);
+  background: var(--color-page);
+  border-radius: var(--radius);
+}
+
+.state p {
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
