@@ -21,8 +21,17 @@ export async function loadApprovedInputs() {
 const valueAt = (object, path) => path.split('.').reduce((current, key) => current?.[key], object);
 
 // Inserts when absent. An existing document is compared and is never changed.
-async function insertIfAbsent(Model, filter, doc, compareFields, report, label) {
+// With { dryRun: true } nothing is written: a missing document is validated against its schema
+// and counted as an insert it would make, so a dry run reports exactly what a real run would do.
+export async function insertIfAbsent(Model, filter, doc, compareFields, report, label, { dryRun = false } = {}) {
   const existing = await Model.findOne(filter).lean();
+  if (!existing && dryRun) {
+    const draft = new Model(doc);
+    const invalid = draft.validateSync();
+    if (invalid) throw invalid;
+    report.inserted[label] = (report.inserted[label] ?? 0) + 1;
+    return draft.toObject();
+  }
   if (!existing) {
     const created = await Model.create(doc);
     report.inserted[label] = (report.inserted[label] ?? 0) + 1;
@@ -45,7 +54,7 @@ function reportingPeriodFrom(title) {
 
 function dataSourceFrom(statistic) {
   return {
-    sourceKey: statistic.sourceReference.replace(/-p\d+$/, ''),
+    sourceKey: statistic.sourceKey ?? statistic.sourceReference.replace(/-p\d+$/, ''),
     sourceType: 'crime_statistics',
     sourceName: statistic.edition,
     publisher: 'National Crime Records Bureau',
@@ -56,6 +65,7 @@ function dataSourceFrom(statistic) {
     sourceUrl: statistic.sourceUrl,
     reportingPeriod: reportingPeriodFrom(statistic.categoryLabelOriginal),
     editionBasis: statistic.editionBasis,
+    notes: statistic.sourceNotes,
     extract: {
       fileName: statistic.evidence.fileName,
       sha256: statistic.evidence.sha256,
@@ -214,7 +224,14 @@ export async function importApprovedAnnualTotals(inputs) {
     await insertIfAbsent(
       CoverageRecord,
       filter,
-      { ...filter, status: gap.status, reason: gap.reason, expectedSource: gap.expectedSource },
+      {
+        ...filter,
+        status: gap.status,
+        reason: gap.reason,
+        expectedSource: gap.expectedSource,
+        resolvedBy: gap.resolvedBy,
+        resolvedAt: gap.resolvedAt ? new Date(gap.resolvedAt) : undefined,
+      },
       ['status'],
       report,
       'coverageRecords',

@@ -1,4 +1,6 @@
 import { ApiError } from '../middleware/index.js';
+import { GAP_STATUSES } from '../models/CoverageRecord.js';
+import { DELHI_WIDE_UNIT_TYPES, DISTRICT_UNIT_TYPES } from '../models/constants.js';
 import { CoverageRecord, CrimeCategory, CrimeRecord, DataSource } from '../models/index.js';
 import { pageMeta, paging, publicCategory, publicCoverage, publicStatistic } from './serializers.js';
 
@@ -21,7 +23,7 @@ export async function listCrimes(req, res) {
   if (query.year !== undefined) filter.year = query.year;
   else if (range) filter.year = range;
   if (query.reportingUnit) filter.reportingUnit = query.reportingUnit;
-  if (query.reportingUnitType) filter.reportingUnitType = query.reportingUnitType;
+  filter.reportingUnitType = query.reportingUnitType ?? { $in: DELHI_WIDE_UNIT_TYPES };
   if (query.validationStatus) filter.validationStatus = query.validationStatus;
 
   const pager = paging(query);
@@ -40,14 +42,19 @@ export async function listCrimes(req, res) {
 
 // One series covers one reporting unit, so unlike units are never joined.
 async function loadSeriesInputs(query) {
-  const filter = { reportingUnit: query.reportingUnit };
-  if (query.reportingUnitType) filter.reportingUnitType = query.reportingUnitType;
+  // A series is one annual total per year, so district units (several categories per year)
+  // are served by /api/police-districts/statistics instead.
+  if (DISTRICT_UNIT_TYPES.includes(query.reportingUnitType)) {
+    throw new ApiError(400, 'USE_DISTRICT_ENDPOINT', 'Police-district figures are served by /api/police-districts/statistics.');
+  }
+  const filter = { reportingUnit: query.reportingUnit, reportingUnitType: query.reportingUnitType ?? { $in: DELHI_WIDE_UNIT_TYPES } };
   const range = yearRange(query);
   if (range) filter.year = range;
 
   const [records, gaps] = await Promise.all([
     CrimeRecord.find({ ...filter, isCurrent: true }).sort({ year: 1 }).populate('source').lean(),
-    CoverageRecord.find(filter).sort({ year: 1 }).lean(),
+    // Resolved gaps are history, not missing years.
+    CoverageRecord.find({ ...filter, status: { $in: GAP_STATUSES } }).sort({ year: 1 }).lean(),
   ]);
 
   const unitTypes = new Set([...records, ...gaps].map((item) => item.reportingUnitType));
@@ -136,6 +143,12 @@ export async function categories(req, res) {
     filter.source = { $in: covering.map((source) => source._id) };
   }
   if (query.legalFramework) filter.legalFramework = query.legalFramework;
+  // District-file labels belong to the Crime Map, not to the Delhi-wide category list.
+  const districtSources = await DataSource.find({ reportingLevel: 'police_district' }).select('_id').lean();
+  if (districtSources.length > 0) {
+    const excluded = districtSources.map((source) => source._id);
+    filter.source = filter.source ? { $in: filter.source.$in, $nin: excluded } : { $nin: excluded };
+  }
 
   const pager = paging(query);
   const [rows, total] = await Promise.all([

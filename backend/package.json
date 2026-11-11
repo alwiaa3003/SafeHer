@@ -13,6 +13,10 @@
     "seed": "node src/seed/seed.js",
     "geo:fetch": "node scripts/fetch-delhi-boundary.js",
     "geo:import": "node src/seed/geography.js",
+    "import:police-districts": "node src/seed/policeDistricts.js",
+    "import:police-districts:check": "node src/seed/policeDistricts.js --check",
+    "import:police-districts:dry-run": "node src/seed/policeDistricts.js --dry-run",
+    "import:police-districts:verify": "node src/seed/policeDistricts.js --verify",
     "migrate:sources": "node scripts/migrate-source-metadata.js",
     "test": "vitest run",
     "lint": "eslint ."
@@ -21,6 +25,8 @@
     "cors": "^2.8.6",
     "dotenv": "^18.0.10",
     "express": "^5.3.0",
+    "express-rate-limit": "^8.7.4",
+    "helmet": "^8.3.0",
     "mongoose": "^9.12.0",
     "zod": "^4.6.7"
   },

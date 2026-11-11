@@ -7,7 +7,7 @@ export const STATUS_KIND = {
 };
 
 export const TABLE_TOTALS_CHECKED_LABEL =
-  'Verified with note – Table 3A.1 totals checked; further validation pending';
+  'Verified with note – annual total checked against its NCRB source; further validation pending';
 
 const DISPLAY_BY_VALIDATION_STATUS = {
   verified: { kind: STATUS_KIND.VERIFIED, label: 'Verified' },

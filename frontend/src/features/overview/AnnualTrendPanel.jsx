@@ -44,7 +44,7 @@ const columns = [
     key: 'source',
     header: 'Source',
     render: (row) =>
-      row.statistic ? (
+      row.statistic?.pdfPage ? (
         <>
           <a href={row.statistic.sourceUrl} target="_blank" rel="noreferrer">
             {row.statistic.edition}, Table {row.statistic.tableNumber}, full-report PDF p.
@@ -52,6 +52,13 @@ const columns = [
           </a>
           . Checked against {row.statistic.evidence.fileName}, extract p.
           {row.statistic.evidence.extractPage}.
+        </>
+      ) : row.statistic ? (
+        <>
+          <a href={row.statistic.sourceUrl} target="_blank" rel="noreferrer">
+            {row.statistic.edition}, {row.statistic.tableNumber}
+          </a>
+          . Official NCRB spreadsheet; no report page.
         </>
       ) : row.coverage?.expectedSource ? (
         `Expected: ${row.coverage.expectedSource}`
@@ -97,8 +104,8 @@ function TrendContent({ series }) {
 
       <div className={styles.footer}>
         <p className={styles.source}>
-          Source: NCRB, <cite>Crime in India</cite>, Table 3A.1. Each year uses the latest table
-          extract checked.{' '}
+          Source: NCRB, <cite>Crime in India</cite>, Table 3A.1, and for 2019 NCRB&apos;s official
+          2014–2019 spreadsheet. Each year uses the latest source checked.{' '}
           {gapYears.length > 0 && `The line breaks at ${gapYears.join(', ')}, and `}
           {gapYears.length > 0 ? 'nothing is estimated.' : 'Nothing is estimated.'}
         </p>

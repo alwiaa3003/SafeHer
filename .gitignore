@@ -22,3 +22,6 @@ docs/research/table-3a2-review/
 *.log
 .DS_Store
 Thumbs.db
+
+# Python bytecode from the research pipeline
+__pycache__/

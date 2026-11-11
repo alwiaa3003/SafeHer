@@ -10,8 +10,16 @@
   border-right: 1px solid var(--color-border);
 }
 
+.head {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 .brand {
   display: block;
+  min-width: 0;
   padding-inline: var(--space-3);
   text-decoration: none;
 }
@@ -116,5 +124,61 @@
   .open {
     visibility: visible;
     transform: none;
+  }
+}
+
+/* Crime Map: the auto-hiding variant. It slides in from the left edge over the map, or sits
+   docked beside it when pinned. Visibility switches only after the slide, so hidden links are
+   never reachable by keyboard while it is off-screen. */
+.sidebar.autoHide {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1300;
+  width: var(--sidebar-width);
+  height: auto;
+  visibility: hidden;
+  transform: translateX(-100%);
+  box-shadow: none;
+}
+
+.sidebar.autoHide.open {
+  visibility: visible;
+  transform: none;
+  box-shadow: 6px 0 28px rgb(38 33 28 / 0.14);
+}
+
+.sidebar.autoHide.docked {
+  box-shadow: none;
+}
+
+.autoHide .brand {
+  display: block;
+}
+
+.autoHide .nav {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 800px) {
+  .sidebar.autoHide {
+    width: min(var(--sidebar-width), 85vw);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sidebar.autoHide {
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 220ms ease,
+      visibility 0s linear 220ms;
+  }
+
+  .sidebar.autoHide.open {
+    transition:
+      transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 220ms ease,
+      visibility 0s;
   }
 }

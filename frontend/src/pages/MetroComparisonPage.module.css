@@ -1,0 +1,113 @@
+.empty {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-6) var(--space-5);
+  background: var(--color-page);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+.empty h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.field {
+  display: grid;
+  gap: 2px;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.field select {
+  min-width: 200px;
+  min-height: 36px;
+  padding: 0 var(--space-2);
+  background: var(--color-page);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: 14px;
+}
+
+.chartArea {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: var(--space-5);
+  background: var(--color-page);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+.requirements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+.requirements li {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.requirements strong {
+  font-family: var(--font-heading);
+}
+
+.icon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--color-text-muted);
+}
+
+.units {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.unit {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.unit h3 {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .requirements,
+  .units {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .field select {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .field {
+    flex: 1 1 100%;
+  }
+}

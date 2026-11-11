@@ -38,7 +38,8 @@ export function EvidenceCoverage() {
         ))}
       </table>
       <p className={styles.note}>
-        Annual totals have been checked against Table 3A.1 extracts. The comparison with the
+        Annual totals have been checked against Table 3A.1 extracts, and 2019 against NCRB&apos;s
+        official 2014–2019 spreadsheet. The comparison with the
         category table (3A.2) is still pending, so validation is not complete. Incomplete means
         the source exists but checks are unfinished. Unavailable means no value from an
         obtained source.

@@ -1,0 +1,258 @@
+year,column_number,printed_label,delhi_sum_all_units,delhi_sum_geographic
+2014,4,Rape,2096,2093
+2014,5,Custodial Rape,0,0
+2014,6,Custodial_Gang Rape,0,0
+2014,7,Custodial_Other Rape,0,0
+2014,8,Rape other than Custodial,2096,2093
+2014,9,Rape_Gang Rape,147,146
+2014,10,Rape_Others,1949,1947
+2014,11,Attempt to commit Rape,70,70
+2014,12,Kidnapping & Abduction_Total,4034,4023
+2014,13,Kidnaping & Abduction,3731,3724
+2014,14,Kidnaping & Abduction in order to Murder,0,0
+2014,15,Kidnapping for Ransom,7,7
+2014,16,Kidnapping & Abduction of Women to compel her for marriage,2,2
+2014,17,Kidnaping & Abduction_Others,294,290
+2014,18,Dowry Deaths,153,153
+2014,19,Assault on Women with intent to outrage her Modesty_Total,4322,4272
+2014,20,Sexual Harassment,1186,1166
+2014,21,Assault on women with intent to Disrobe,379,377
+2014,22,Voyeurism,34,32
+2014,23,Stalking,541,534
+2014,24,Others,2182,2163
+2014,25,Insult to the Modesty of Women_Total,1361,1357
+2014,26,At Office premises,11,11
+2014,27,In places related to work,25,25
+2014,28,In Public Transport system,8,7
+2014,29,In other Places,1317,1314
+2014,30,Cruelty by Husband or his Relatives,3173,3013
+2014,31,Importation of Girls from Foreign Country,0,0
+2014,32,Abetment of Suicides of Women,28,28
+2014,33,"Dowry Prohibition Act, 1961",13,12
+2014,34,"Indecent Representation of Women (P) Act, 1986",0,0
+2014,35,"Commission of Sati Prevention Act, 1987",0,0
+2014,36,"Protection of Women from Domestic Violence Act, 2005",7,7
+2014,37,Immoral Traffic Prevention Act,8,8
+2014,38,ITP Under Section 5,6,6
+2014,39,ITP Under Section 6,0,0
+2014,40,ITP Under Section 7,0,0
+2014,41,ITP Under Section 8,1,1
+2014,42,ITP Under Other Sections,1,1
+2014,43,Total Crimes against Women,15265,15036
+2015,4,Rape,2199,2178
+2015,5,Custodial Rape,0,0
+2015,6,Custodial_Gang Rape,0,0
+2015,7,Custodial_Other Rape,0,0
+2015,8,Rape other than Custodial,2199,2178
+2015,9,Rape_Gang Rape,92,90
+2015,10,Rape_Others,2107,2088
+2015,11,Attempt to commit Rape,46,44
+2015,12,Kidnapping & Abduction_Total,4301,4290
+2015,13,Kidnaping & Abduction,3736,3732
+2015,14,Kidnaping & Abduction in order to Murder,0,0
+2015,15,Kidnapping for Ransom,5,5
+2015,16,Kidnapping & Abduction of Women to compel her for marriage,3,3
+2015,17,Kidnaping & Abduction_Others,557,550
+2015,18,Dowry Deaths,122,122
+2015,19,Assault on Women with intent to outrage her Modesty_Total,5367,5332
+2015,20,Sexual Harassment,1150,1139
+2015,21,Assault on women with intent to Disrobe,547,546
+2015,22,Voyeurism,65,63
+2015,23,Stalking,1124,1117
+2015,24,Others,2481,2467
+2015,25,Insult to the Modesty of Women_Total,1492,1487
+2015,26,At Office premises,36,36
+2015,27,In places related to work,228,228
+2015,28,In Public Transport system,19,15
+2015,29,In other Places,1209,1208
+2015,30,Cruelty by Husband or his Relatives,3521,3363
+2015,31,Importation of Girls from Foreign Country,0,0
+2015,32,Abetment of Suicides of Women,29,29
+2015,33,"Dowry Prohibition Act, 1961",20,20
+2015,34,"Indecent Representation of Women (P) Act, 1986",0,0
+2015,35,"Commission of Sati Prevention Act, 1987",0,0
+2015,36,"Protection of Women from Domestic Violence Act, 2005",4,4
+2015,37,Immoral Traffic Prevention Act,3,3
+2015,38,ITP Under Section 5,3,3
+2015,39,ITP Under Section 6,0,0
+2015,40,ITP Under Section 7,0,0
+2015,41,ITP Under Section 8,0,0
+2015,42,ITP Under Other Sections,0,0
+2015,43,Total Crimes against Women,17104,16872
+2016,4,Rape,2155,2146
+2016,5,Attempt to commit Rape,29,29
+2016,6,Kidnapping & Abduction_Total,3891,3859
+2016,7,Dowry Deaths,162,162
+2016,8,Assault on Women with intent to outrage her Modesty_Total,4165,4143
+2016,9,Insult to the Modesty of Women_Total,918,917
+2016,10,Cruelty by Husband or his Relatives,3877,3643
+2016,11,Importation of Girls from Foreign Country,0,0
+2016,12,Abetment of Suicides of Women,20,20
+2016,13,"Dowry Prohibition Act, 1961",18,18
+2016,14,"Indecent Representation of Women (P) Act, 1986",0,0
+2016,15,"Protection of Women from Domestic Violence Act, 2005",1,1
+2016,16,Immoral Traffic Prevention Act,4,3
+2016,17,Acid attack,10,10
+2016,18,Attempt to Acid Attack,9,9
+2016,19,Deaths caused with intent to cause miscarriage,1,1
+2016,20,Causing miscarriage without consent of women,0,0
+2016,21,HumanTrafficking,9,9
+2016,22,UnNatural Offences,26,26
+2016,23,Cyber Crimes against Women (Section 67A IT Act),0,0
+2016,24,Total Crimes against Women,15295,14996
+2020,3,Murder with Rape/Gang Rape,1,1
+2020,4,Dowry Deaths (Sec. 304B IPC),110,109
+2020,5,Abetment to Suicide of Women (Sec. 305/306 IPC),44,43
+2020,6,Miscarriage (Sec. 313 & 314 IPC),2,2
+2020,7,Acid Attack (Sec. 326A IPC),2,2
+2020,8,Attempt to Acid Attack (Sec. 326B IPC),3,3
+2020,9,Cruelty by Husband or his relatives (Sec. 498 A IPC),2557,2531
+2020,10,"Kidnapping & Abduction of Women > Kidnapping & Abduction of Women (Total) (Col.11 to Col.14,Col.17 to Col.19) Col.25=Col. 28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52)",2938,2936
+2020,11,Kidnapping & Abduction of Women > Kidnapping & Abduction (Sec. 336 IPC),2760,2758
+2020,12,Kidnapping & Abduction of Women > Kidnapping & Abduction in order to Murder (Sec. 364 IPC),0,0
+2020,13,Kidnapping & Abduction of Women > Kidnapping for Ransom (Sec. 364A IPC),0,0
+2020,14,Kidnapping & Abduction of Women > Kidnapping & Abduction of Women to compel her for marriage (Sec. 366 IPC) > K&A of Women to compel her for marriage (Total) (Col.15+Col.16),2,2
+2020,15,Kidnapping & Abduction of Women > Women (Above 18 yrs),1,1
+2020,16,Kidnapping & Abduction of Women > Girls (Below 18 yrs),1,1
+2020,17,Kidnapping & Abduction of Women > Procuration of Minor Girls (Sec. 366A IPC),0,0
+2020,18,Kidnapping & Abduction of Women > Importation of Girls from Foreign Country (Sec. 366B IPC),0,0
+2020,19,"Kidnapping & Abduction of Women > Kidnapping and Abduction of Women – Others (Secs.363A, 365, 367, 368, 369 IPC)",176,176
+2020,20,Human Trafficking (Sec. 370 & 370A IPC),12,12
+2020,21,Selling of Minor Girls (Sec. 372 IPC),0,0
+2020,22,Buying of Minor Girls (Sec. 373 IPC),0,0
+2020,23,Rape (Sec. 376 IPC) > Rape (Col.24+Col.25),997,994
+2020,24,Rape (Sec. 376 IPC) > Women (18 Yrs. And above),997,994
+2020,25,Rape (Sec. 376 IPC) > Girls (Below 18 yrs),0,0
+2020,26,Attempt to Commit Rape (Sec. 376/511 IPC) > Attempt to Commit Rape (Col.27+Col.28),9,9
+2020,27,Attempt to Commit Rape (Sec. 376/511 IPC) > Women (18 Yrs. And above),7,7
+2020,28,Attempt to Commit Rape (Sec. 376/511 IPC) > Girls (Below 18 yrs),2,2
+2020,29,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Assault on Women with Intent to Outrage her Modesty (Col.30+Col.31),1840,1823
+2020,30,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Women (18 Yrs. And above),1840,1823
+2020,31,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Girls (Below 18 yrs),0,0
+2020,32,Insult to the Modesty of Women (Sec. 509 IPC) > Insult to the Modesty of Women (Col.33+Col.34),416,409
+2020,33,Insult to the Modesty of Women (Sec. 509 IPC) > Women (18 Yrs. And above),416,409
+2020,34,Insult to the Modesty of Women (Sec. 509 IPC) > Girls (Below 18 yrs),0,0
+2020,35,"Dowry Prohibition Act, 1961",14,14
+2020,36,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Immoral Traffic (Prevention) Act, 1956 (Total) (Col. 37 to Col.41)",3,3
+2020,37,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Procuring, inducing Children for the sake of prostitution (Section 5)",0,0
+2020,38,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Detaining a person in premises where prostitution is carried on (Section 6),0,0
+2020,39,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Prostitution in or in the vicinity of public places (Section 7),0,0
+2020,40,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Seducing or soliciting for purpose of prostitution (Section 8),0,0
+2020,41,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Other Sections under ITP Act,3,3
+2020,42,Protection of Women from Domestic Violence Act,2,2
+2020,43,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Cyber Crimes/Information Technology Act (Women Centric Crimes only) (Col.44+Col.45),13,13
+2020,44,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Publishing or Transmitting of Sexually Explicit Material (Sec. 67A/67B (Girls) IT Act),8,8
+2020,45,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Other Women Centric Cyber Crimes (Ex. Blackmailing/ Defamation/Morphing/ Fake Profile),5,5
+2020,46,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Protection of Children from Sexual Violence Act (Girl Child Victims only) (Total) (Col.47 to Col.52),1130,1130
+2020,47,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Child Rape (Sec. 4 & 6 of POCSO Act) / Sec. 376 IPC),721,721
+2020,48,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Assault of Children (Sec. 8 & 10 of POCSO Act) / Sec. 354 IPC),373,373
+2020,49,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Harassment (Sec. 12 of POCSO Act) / Sec. 509 IPC),31,31
+2020,50,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Use of Child for Pornography/Storing Child Pornography Material (Sec. 14 & 15 of POCSO Act),1,1
+2020,51,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act (Sections 17 to 22) / Other offences of POCSO Act,0,0
+2020,52,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act r/w Section 377 IPC / Unnatural Offences,4,4
+2020,53,"Indecent Representation of Women (Prohibition) Act, 1986",0,0
+2020,54,Total Crime against Women (IPC+SLL),10093,10036
+2021,3,Murder with Rape/Gang Rape,2,2
+2021,4,Dowry Deaths (Sec. 304B IPC),141,141
+2021,5,Abetment to Suicide of Women (Sec. 305/306 IPC),40,40
+2021,6,Miscarriage (Sec. 313 & 314 IPC),3,3
+2021,7,Acid Attack (Sec. 326A IPC),8,8
+2021,8,Attempt to Acid Attack (Sec. 326B IPC),2,2
+2021,9,Cruelty by Husband or his relatives (Sec. 498 A IPC),4731,4668
+2021,10,"Kidnapping & Abduction of Women > Kidnapping & Abduction of Women (Total) (Col.11 to Col.14,Col.17 to Col.19) Col.25=Col. 28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52)",4083,4079
+2021,11,Kidnapping & Abduction of Women > Kidnapping & Abduction (Sec. 336 IPC),3755,3751
+2021,12,Kidnapping & Abduction of Women > Kidnapping & Abduction in order to Murder (Sec. 364 IPC),1,1
+2021,13,Kidnapping & Abduction of Women > Kidnapping for Ransom (Sec. 364A IPC),0,0
+2021,14,Kidnapping & Abduction of Women > Kidnapping & Abduction of Women to compel her for marriage (Sec. 366 IPC) > K&A of Women to compel her for marriage (Total) (Col.15+Col.16),1,1
+2021,15,Kidnapping & Abduction of Women > Women (Above 18 yrs),0,0
+2021,16,Kidnapping & Abduction of Women > Girls (Below 18 yrs),1,1
+2021,17,Kidnapping & Abduction of Women > Procuration of Minor Girls (Sec. 366A IPC),1,1
+2021,18,Kidnapping & Abduction of Women > Importation of Girls from Foreign Country (Sec. 366B IPC),0,0
+2021,19,"Kidnapping & Abduction of Women > Kidnapping and Abduction of Women – Others (Secs.363A, 365, 367, 368, 369 IPC)",325,325
+2021,20,Human Trafficking (Sec. 370 & 370A IPC),24,23
+2021,21,Selling of Minor Girls (Sec. 372 IPC),0,0
+2021,22,Buying of Minor Girls (Sec. 373 IPC),0,0
+2021,23,Rape (Sec. 376 IPC) > Rape (Col.24+Col.25),1250,1250
+2021,24,Rape (Sec. 376 IPC) > Women (18 Yrs. And above),1250,1250
+2021,25,Rape (Sec. 376 IPC) > Girls (Below 18 yrs),0,0
+2021,26,Attempt to Commit Rape (Sec. 376/511 IPC) > Attempt to Commit Rape (Col.27+Col.28),6,6
+2021,27,Attempt to Commit Rape (Sec. 376/511 IPC) > Women (18 Yrs. And above),4,4
+2021,28,Attempt to Commit Rape (Sec. 376/511 IPC) > Girls (Below 18 yrs),2,2
+2021,29,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Assault on Women with Intent to Outrage her Modesty (Col.30+Col.31),2068,2049
+2021,30,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Women (18 Yrs. And above),2068,2049
+2021,31,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Girls (Below 18 yrs),0,0
+2021,32,Insult to the Modesty of Women (Sec. 509 IPC) > Insult to the Modesty of Women (Col.33+Col.34),417,415
+2021,33,Insult to the Modesty of Women (Sec. 509 IPC) > Women (18 Yrs. And above),417,415
+2021,34,Insult to the Modesty of Women (Sec. 509 IPC) > Girls (Below 18 yrs),0,0
+2021,35,"Dowry Prohibition Act, 1961",16,16
+2021,36,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Immoral Traffic (Prevention) Act, 1956 (Total) (Col. 37 to Col.41)",4,4
+2021,37,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Procuring, inducing Children for the sake of prostitution (Section 5)",1,1
+2021,38,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Detaining a person in premises where prostitution is carried on (Section 6),1,1
+2021,39,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Prostitution in or in the vicinity of public places (Section 7),0,0
+2021,40,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Seducing or soliciting for purpose of prostitution (Section 8),0,0
+2021,41,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Other Sections under ITP Act,2,2
+2021,42,Protection of Women from Domestic Violence Act,4,4
+2021,43,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Cyber Crimes/Information Technology Act (Women Centric Crimes only) (Col.44+Col.45),104,104
+2021,44,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Publishing or Transmitting of Sexually Explicit Material (Sec. 67A/67B (Girls) IT Act),101,101
+2021,45,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Other Women Centric Cyber Crimes (Ex. Blackmailing/ Defamation/Morphing/ Fake Profile),3,3
+2021,46,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Protection of Children from Sexual Violence Act (Girl Child Victims only) (Total) (Col.47 to Col.52),1374,1369
+2021,47,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Child Rape (Sec. 4 & 6 of POCSO Act) / Sec. 376 IPC),841,839
+2021,48,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Assault of Children (Sec. 8 & 10 of POCSO Act) / Sec. 354 IPC),497,496
+2021,49,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Harassment (Sec. 12 of POCSO Act) / Sec. 509 IPC),31,30
+2021,50,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Use of Child for Pornography/Storing Child Pornography Material (Sec. 14 & 15 of POCSO Act),1,1
+2021,51,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act (Sections 17 to 22) / Other offences of POCSO Act,1,0
+2021,52,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act r/w Section 377 IPC / Unnatural Offences,3,3
+2021,53,"Indecent Representation of Women (Prohibition) Act, 1986",0,0
+2021,54,Total Crime against Women (IPC+SLL),14277,14183
+2022,3,Murder with Rape/Gang Rape,0,0
+2022,4,Dowry Deaths (Sec. 304B IPC),131,130
+2022,5,Abetment to Suicide of Women (Sec. 305/306 IPC),43,42
+2022,6,Miscarriage (Sec. 313 & 314 IPC),1,1
+2022,7,Acid Attack (Sec. 326A IPC),5,5
+2022,8,Attempt to Acid Attack (Sec. 326B IPC),3,3
+2022,9,Cruelty by Husband or his relatives (Sec. 498 A IPC),4901,4852
+2022,10,"Kidnapping & Abduction of Women > Kidnapping & Abduction of Women (Total) (Col.11 to Col.14,Col.17 to Col.19) Col.25=Col. 28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52)",3917,3902
+2022,11,Kidnapping & Abduction of Women > Kidnapping & Abduction (Sec. 336 IPC),3773,3759
+2022,12,Kidnapping & Abduction of Women > Kidnapping & Abduction in order to Murder (Sec. 364 IPC),0,0
+2022,13,Kidnapping & Abduction of Women > Kidnapping for Ransom (Sec. 364A IPC),0,0
+2022,14,Kidnapping & Abduction of Women > Kidnapping & Abduction of Women to compel her for marriage (Sec. 366 IPC) > K&A of Women to compel her for marriage (Total) (Col.15+Col.16),7,7
+2022,15,Kidnapping & Abduction of Women > Women (Above 18 yrs),1,1
+2022,16,Kidnapping & Abduction of Women > Girls (Below 18 yrs),6,6
+2022,17,Kidnapping & Abduction of Women > Procuration of Minor Girls (Sec. 366A IPC),0,0
+2022,18,Kidnapping & Abduction of Women > Importation of Girls from Foreign Country (Sec. 366B IPC),0,0
+2022,19,"Kidnapping & Abduction of Women > Kidnapping and Abduction of Women – Others (Secs.363A, 365, 367, 368, 369 IPC)",137,136
+2022,20,Human Trafficking (Sec. 370 & 370A IPC),20,19
+2022,21,Selling of Minor Girls (Sec. 372 IPC),0,0
+2022,22,Buying of Minor Girls (Sec. 373 IPC),0,0
+2022,23,Rape (Sec. 376 IPC) > Rape (Col.24+Col.25),1212,1210
+2022,24,Rape (Sec. 376 IPC) > Women (18 Yrs. And above),1212,1210
+2022,25,Rape (Sec. 376 IPC) > Girls (Below 18 yrs),0,0
+2022,26,Attempt to Commit Rape (Sec. 376/511 IPC) > Attempt to Commit Rape (Col.27+Col.28),4,4
+2022,27,Attempt to Commit Rape (Sec. 376/511 IPC) > Women (18 Yrs. And above),3,3
+2022,28,Attempt to Commit Rape (Sec. 376/511 IPC) > Girls (Below 18 yrs),1,1
+2022,29,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Assault on Women with Intent to Outrage her Modesty (Col.30+Col.31),2017,1989
+2022,30,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Women (18 Yrs. And above),2017,1989
+2022,31,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Girls (Below 18 yrs),0,0
+2022,32,Insult to the Modesty of Women (Sec. 509 IPC) > Insult to the Modesty of Women (Col.33+Col.34),387,377
+2022,33,Insult to the Modesty of Women (Sec. 509 IPC) > Women (18 Yrs. And above),387,377
+2022,34,Insult to the Modesty of Women (Sec. 509 IPC) > Girls (Below 18 yrs),0,0
+2022,35,"Dowry Prohibition Act, 1961",18,18
+2022,36,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Immoral Traffic (Prevention) Act, 1956 (Total) (Col. 37 to Col.41)",26,26
+2022,37,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Procuring, inducing Children for the sake of prostitution (Section 5)",7,7
+2022,38,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Detaining a person in premises where prostitution is carried on (Section 6),0,0
+2022,39,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Prostitution in or in the vicinity of public places (Section 7),4,4
+2022,40,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Seducing or soliciting for purpose of prostitution (Section 8),3,3
+2022,41,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Other Sections under ITP Act,12,12
+2022,42,Protection of Women from Domestic Violence Act,3,3
+2022,43,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Cyber Crimes/Information Technology Act (Women Centric Crimes only) (Col.44+Col.45),125,125
+2022,44,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Publishing or Transmitting of Sexually Explicit Material (Sec. 67A/67B (Girls) IT Act),118,118
+2022,45,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Other Women Centric Cyber Crimes (Ex. Blackmailing/ Defamation/Morphing/ Fake Profile),7,7
+2022,46,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Protection of Children from Sexual Violence Act (Girl Child Victims only) (Total) (Col.47 to Col.52),1434,1429
+2022,47,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Child Rape (Sec. 4 & 6 of POCSO Act) / Sec. 376 IPC),890,886
+2022,48,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Assault of Children (Sec. 8 & 10 of POCSO Act) / Sec. 354 IPC),511,510
+2022,49,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Harassment (Sec. 12 of POCSO Act) / Sec. 509 IPC),25,25
+2022,50,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Use of Child for Pornography/Storing Child Pornography Material (Sec. 14 & 15 of POCSO Act),1,1
+2022,51,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act (Sections 17 to 22) / Other offences of POCSO Act,0,0
+2022,52,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act r/w Section 377 IPC / Unnatural Offences,7,7
+2022,53,"Indecent Representation of Women (Prohibition) Act, 1986",0,0
+2022,54,Total Crime against Women (IPC+SLL),14247,14135

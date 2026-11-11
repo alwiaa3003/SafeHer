@@ -18,9 +18,13 @@ async function connectWithRetry() {
 }
 
 // The API starts even if MongoDB is down, so clients get a clear 503.
-const server = createApp({ corsOrigins: config.corsOrigins }).listen(config.port, () => {
-  console.log(`SafeHer API listening on port ${config.port}`);
+const app = createApp({ corsOrigins: config.corsOrigins, geocoderOptions: config.geocoder, rateLimits: config.rateLimits, trustProxy: config.trustProxy });
+const server = app.listen(config.port, () => {
+  console.log(`SafeHer API listening on port ${config.port} (${config.nodeEnv})`);
 });
+// Slow or idle clients cannot hold connections open indefinitely.
+server.requestTimeout = 30_000;
+server.headersTimeout = 20_000;
 connectWithRetry();
 
 async function shutdown() {

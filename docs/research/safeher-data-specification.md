@@ -26,7 +26,7 @@ Unresolved items are in [open-research-issues.md](open-research-issues.md). The 
 
 | ID | Dataset | Table (2022–2024 numbering) | Unit | Current state |
 |---|---|---|---|---|
-| P1 | Annual totals | 3A.1 | Delhi UT | In production: 8 years |
+| P1 | Annual totals | 3A.1 (2019: NCRB spreadsheet) | Delhi UT | In production: 9 years |
 | P2 | Categories | 3A.2 | Delhi UT | Research only |
 | P3 | Rape detail | 3A.3, 3A.4, 3A.11 | Delhi UT | Not started |
 | P4 | Outcomes | 3A.5–3A.10 | Delhi UT | Not started |
@@ -41,7 +41,7 @@ Older editions must be mapped individually because their layouts differ.
 | Years | Edition | Printed unit label |
 |---|---|---|
 | 2016–2018 | Crime in India 2018 | Delhi UT |
-| 2019 | Not obtained (expected: English Crime in India 2021) | None |
+| 2019 | NCRB official State/UT spreadsheet, 2014–2019 (additional tables) | Delhi |
 | 2020–2021 | Crime in India 2022 | Delhi |
 | 2022–2024 | Crime in India 2024 | Delhi |
 
@@ -91,7 +91,7 @@ The evidence is in [geospatial-data-assessment.md](geospatial-data-assessment.md
 | `conflict` | Editions or tables disagree | Not until reviewed |
 | `failed` | A blocking rule failed | No |
 
-All eight production annual records are `verified_with_note`. Green and the check mark are reserved for fully validated records.
+All nine production annual records are `verified_with_note`. Green and the check mark are reserved for fully validated records.
 
 ## 6. Validation rules
 

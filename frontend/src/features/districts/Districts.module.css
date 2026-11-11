@@ -1,0 +1,310 @@
+/* Police-district map pieces: the key, the year control, figures and the table.
+   Surfaces match the other floating map controls. */
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.figure {
+  display: grid;
+  gap: 2px;
+}
+
+.figureValue {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.figureMissing {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.figureUnit {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.notice {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-page);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Year control: three compact buttons in the toolbar. */
+.years {
+  display: inline-flex;
+  height: 44px;
+  padding: 3px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(38 33 28 / 0.08), 0 6px 18px rgb(38 33 28 / 0.1);
+}
+
+.yearButton {
+  min-width: 52px;
+  padding: 0 var(--space-2);
+  background: none;
+  border: 0;
+  border-radius: 7px;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.yearButton:hover {
+  color: var(--color-accent);
+}
+
+.yearButton[aria-pressed='true'] {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.yearButton:focus-visible,
+.legendToggle:focus-visible,
+.tableButton:focus-visible,
+.textButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Map key: bottom right beside the zoom control on wide screens, clear of the details panel. */
+.legend {
+  position: absolute;
+  z-index: 1;
+  right: calc(var(--map-gutter) + 52px);
+  bottom: 24px;
+  width: 268px;
+  max-width: calc(100% - var(--map-left) - var(--map-gutter));
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(38 33 28 / 0.08), 0 6px 18px rgb(38 33 28 / 0.1);
+  font-size: 13px;
+}
+
+.legendHead {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.legendHeading {
+  min-width: 0;
+}
+
+.legendTitle {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.legendCategory {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.legendToggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.legendBody {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.legendBody[hidden] {
+  display: none;
+}
+
+.swatches {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.swatches li,
+.missingKey {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.swatch {
+  flex: none;
+  width: 22px;
+  height: 14px;
+  border: 1px solid rgb(38 33 28 / 0.18);
+  border-radius: 3px;
+}
+
+.swatchMissing {
+  border: 1px dashed #8e857c;
+}
+
+.legendNote {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.legendWarning {
+  padding: var(--space-2);
+  background: #fbf3e4;
+  border-radius: var(--radius);
+  color: var(--color-status-incomplete);
+  font-size: 12px;
+}
+
+.reviewBadge {
+  padding: var(--space-2);
+  background: #fbf3e4;
+  border: 1px solid #e3cfa9;
+  border-radius: var(--radius);
+  color: var(--color-status-incomplete);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tableButton {
+  display: inline-flex;
+  gap: var(--space-1);
+  align-items: center;
+  justify-self: start;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--color-accent);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.textButton {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--color-accent);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Shown in place of polygons when no publishable boundary exists. */
+.boundaryNotice {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: var(--map-left);
+  display: grid;
+  gap: var(--space-2);
+  width: var(--panel-width);
+  max-width: calc(100% - var(--map-left) - var(--map-gutter));
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgb(38 33 28 / 0.08), 0 6px 18px rgb(38 33 28 / 0.1);
+  font-size: 13px;
+}
+
+.boundaryNotice h2 {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th,
+.table td {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 400;
+  text-align: left;
+}
+
+.table thead th {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 800px) {
+  .legend {
+    right: auto;
+    bottom: calc(var(--map-sheet-offset) + 36px);
+    left: var(--map-gutter);
+    width: min(268px, calc(100% - 2 * var(--map-gutter) - 56px));
+  }
+
+  /* A selected district's sheet covers the bottom of the map; the key steps aside. */
+  :global([data-selected='true'][data-sheet='expanded']) .legend {
+    display: none;
+  }
+
+  .boundaryNotice {
+    left: var(--map-gutter);
+    width: auto;
+    right: var(--map-gutter);
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .yearButton {
+    min-width: 44px;
+    padding: 0 var(--space-1);
+  }
+}

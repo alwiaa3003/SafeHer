@@ -1,4 +1,9 @@
-export const REPORTING_UNIT_TYPES = ['state_ut', 'metro_city'];
+export const REPORTING_UNIT_TYPES = ['state_ut', 'metro_city', 'police_district', 'police_unit_non_geographic'];
+// District-file units. They are kept out of the Delhi-wide endpoints unless asked for.
+export const DISTRICT_UNIT_TYPES = ['police_district', 'police_unit_non_geographic'];
+export const DELHI_WIDE_UNIT_TYPES = ['state_ut', 'metro_city'];
+// The geographic level a crime-statistics publication reports at.
+export const REPORTING_LEVELS = ['state_ut', 'police_district'];
 export const SOURCE_TYPES = ['crime_statistics', 'geographic_boundary'];
 export const LEGAL_REGIMES =['ALL', 'IPC', 'BNS', 'IPC_BNS_TOTAL', 'SLL'];
 export const AGE_GROUPS = ['all', 'women_18_plus', 'girls_under_18'];

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { SOURCE_TYPES, yearField } from './constants.js';
+import { REPORTING_LEVELS, SOURCE_TYPES, yearField } from './constants.js';
 
 function isCrimeSource() {
   return this.sourceType === 'crime_statistics';
@@ -7,6 +7,12 @@ function isCrimeSource() {
 
 function isBoundarySource() {
   return this.sourceType === 'geographic_boundary';
+}
+
+// OSM boundaries are identified by element id and version; a layer published by another
+// provider (for example an ArcGIS map service) is identified by its layer URL instead.
+function isOsmBoundary() {
+  return isBoundarySource.call(this) && !this.boundaryReference?.layerUrl;
 }
 
 const dataSourceSchema = new mongoose.Schema(
@@ -30,12 +36,15 @@ const dataSourceSchema = new mongoose.Schema(
       },
     },
     tableTitle: { type: String, trim: true },
+    // Set for district-level publications, so Delhi-wide pages can leave them out.
+    reportingLevel: { type: String, enum: REPORTING_LEVELS },
     // Identifies a boundary version. Kept apart from NCRB table references.
     boundaryReference: {
       provider: { type: String, trim: true, required: isBoundarySource },
       elementType: { type: String, trim: true, required: isBoundarySource },
-      elementId: { type: Number, required: isBoundarySource },
-      version: { type: Number, required: isBoundarySource },
+      elementId: { type: Number, required: isOsmBoundary },
+      version: { type: Number, required: isOsmBoundary },
+      layerUrl: { type: String, trim: true, match: /^https?:\/\// },
       lastEditedYear: { ...yearField, required: false },
     },
     sourceUrl: { type: String, required: true, trim: true, match: /^https?:\/\// },

@@ -17,6 +17,8 @@ const crimeRecordSchema = new Schema(
     reportingUnit: { type: String, required: true, trim: true },
     reportingUnitLabelOriginal: { type: String, required: true, trim: true },
     reportingUnitType: { type: String, required: true, enum: REPORTING_UNIT_TYPES },
+    // Stable identifier used to join district records to boundaries. Never a runtime name match.
+    reportingUnitCode: { type: String, trim: true, match: /^[a-z0-9-]+$/ },
     crimeCategory: { type: String, required: true, trim: true },
     category: { type: Schema.Types.ObjectId, ref: 'CrimeCategory', required: true },
     categoryLabelOriginal: { type: String, required: true, trim: true },

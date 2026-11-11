@@ -54,7 +54,9 @@ const provenanceSchema = new mongoose.Schema(
       tags: mongoose.Schema.Types.Mixed,
     },
     retrievedAt: Date,
-    licence: { name: String, url: String, copyrightUrl: String, attribution: String },
+    // permissionReference records written permission from a rights holder that publishes no
+    // open licence (for example a GSDL letter reference and date). Never set it speculatively.
+    licence: { name: String, url: String, copyrightUrl: String, attribution: String, permissionReference: String },
     crs: { type: String, trim: true },
     geometrySha256: { type: String, match: /^[0-9a-f]{64}$/ },
   },
@@ -81,6 +83,8 @@ const geographicalUnitSchema = new mongoose.Schema(
     geographyName: { type: String, required: true, trim: true },
     geographyType: { type: String, required: true, enum: GEOGRAPHY_TYPES },
     adminLevel: { type: String, trim: true },
+    // Stable identifier shared with district crime records (for example "north-east").
+    unitCode: { type: String, trim: true, match: /^[a-z0-9-]+$/ },
     source: { type: mongoose.Schema.Types.ObjectId, ref: 'DataSource', required: true },
     boundaryVersion: { type: String, required: true, trim: true },
     validityPeriod: { from: Date, to: Date },

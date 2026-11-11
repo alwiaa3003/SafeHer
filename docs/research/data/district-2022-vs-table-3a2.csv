@@ -1,0 +1,53 @@
+district_column,district_label,table_3a2_code,table_3a2_label,label_check,district_sum,table_3a2_incidence,result
+3,Murder with Rape/Gang Rape,MWR,Murder with Rape/Gang Rape,consistent,0,0,MATCH
+4,Dowry Deaths (Sec. 304B IPC),DOWRY_DEATH,Dowry Deaths (Sec. 304B IPC),consistent,131,131,MATCH
+5,Abetment to Suicide of Women (Sec. 305/306 IPC),ABET,Abetment to Suicide of Women (Sec. 305/306 IPC),consistent,43,43,MATCH
+6,Miscarriage (Sec. 313 & 314 IPC),MISC,Miscarriage (Sec. 313 & 314 IPC),consistent,1,1,MATCH
+7,Acid Attack (Sec. 326A IPC),ACID,Acid Attack (Sec. 326A IPC),consistent,5,5,MATCH
+8,Attempt to Acid Attack (Sec. 326B IPC),ATT_ACID,Attempt to Acid Attack (Sec. 326B IPC),consistent,3,3,MATCH
+9,Cruelty by Husband or his relatives (Sec. 498 A IPC),CRUELTY,Cruelty by Husband or his relatives (Sec. 498 A IPC),consistent,4901,4901,MATCH
+10,"Kidnapping & Abduction of Women > Kidnapping & Abduction of Women (Total) (Col.11 to Col.14,Col.17 t",KA,Kidnapping & Abduction of Women (Total),consistent,3917,3917,MATCH
+11,Kidnapping & Abduction of Women > Kidnapping & Abduction (Sec. 336 IPC),KA_363,Kidnapping and Abduction (Sec. 363 IPC),section_label_differs (336 vs 363),3773,3773,MATCH
+12,Kidnapping & Abduction of Women > Kidnapping & Abduction in order to Murder (Sec. 364 IPC),KA_364,Kidnapping and Abduction in order to Murder (Sec.364 IPC),consistent,0,0,MATCH
+13,Kidnapping & Abduction of Women > Kidnapping for Ransom (Sec. 364A IPC),KA_RANSOM,Kidnapping for Ransom (Sec. 364A IPC),consistent,0,0,MATCH
+14,Kidnapping & Abduction of Women > Kidnapping & Abduction of Women to compel her for marriage (Sec. 3,KA_COMPEL,K&A of Women to compel her for marriage (Total),consistent,7,7,MATCH
+15,Kidnapping & Abduction of Women > Women (Above 18 yrs),KA_COMPEL_W,a) Women (Above 18 yrs),consistent,1,1,MATCH
+16,Kidnapping & Abduction of Women > Girls (Below 18 yrs),KA_COMPEL_G,b) Girls (Below 18 yrs),consistent,6,6,MATCH
+17,Kidnapping & Abduction of Women > Procuration of Minor Girls (Sec. 366A IPC),KA_PROCUR,Procuration of Minor Girls (Sec. 366A IPC),consistent,0,0,MATCH
+18,Kidnapping & Abduction of Women > Importation of Girls from Foreign Country (Sec. 366B IPC),KA_IMPORT,Importation of Girls from Foreign Country (Sec. 366B IPC),consistent,0,0,MATCH
+19,"Kidnapping & Abduction of Women > Kidnapping and Abduction of Women – Others (Secs.363A, 365, 367, 3",KA_OTHERS,"Kidnapping and Abduction of Women – Others (Secs.363A, 365, 367, 368, 369 IPC)",consistent,137,137,MATCH
+20,Human Trafficking (Sec. 370 & 370A IPC),HT,Human Trafficking (Sec. 370 & 370A IPC),consistent,20,20,MATCH
+21,Selling of Minor Girls (Sec. 372 IPC),SELL,Selling of Minor Girls (Sec. 372 IPC),consistent,0,0,MATCH
+22,Buying of Minor Girls (Sec. 373 IPC),BUY,Buying of Minor Girls (Sec. 373 IPC),consistent,0,0,MATCH
+23,Rape (Sec. 376 IPC) > Rape (Col.24+Col.25),RAPE,Rape (Total),consistent,1212,1212,MATCH
+24,Rape (Sec. 376 IPC) > Women (18 Yrs. And above),RAPE_W,A) Women (18 Yrs. And above),consistent,1212,1212,MATCH
+25,Rape (Sec. 376 IPC) > Girls (Below 18 yrs),RAPE_G,B) Girls (Below 18 yrs),consistent,0,0,MATCH
+26,Attempt to Commit Rape (Sec. 376/511 IPC) > Attempt to Commit Rape (Col.27+Col.28),ATT_RAPE,Attempt to Commit Rape (Total),consistent,4,4,MATCH
+27,Attempt to Commit Rape (Sec. 376/511 IPC) > Women (18 Yrs. And above),ATT_RAPE_W,A) Women (18 Yrs. And above),consistent,3,3,MATCH
+28,Attempt to Commit Rape (Sec. 376/511 IPC) > Girls (Below 18 yrs),ATT_RAPE_G,B) Girls (Below 18 yrs),consistent,1,1,MATCH
+29,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Assault on Women with Intent to,ASSAULT,Assault on Women with Intent to Outrage her Modesty (Total),consistent,2017,2017,MATCH
+30,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Women (18 Yrs. And above),ASSAULT_W,A) Women (18 Yrs. And above),consistent,2017,2017,MATCH
+31,Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Girls (Below 18 yrs),ASSAULT_G,B) Girls (Below 18 yrs),consistent,0,0,MATCH
+32,Insult to the Modesty of Women (Sec. 509 IPC) > Insult to the Modesty of Women (Col.33+Col.34),INSULT,Insult to the Modesty of Women (Total),consistent,387,387,MATCH
+33,Insult to the Modesty of Women (Sec. 509 IPC) > Women (18 Yrs. And above),INSULT_W,A) Women (18 Yrs. And above),consistent,387,387,MATCH
+34,Insult to the Modesty of Women (Sec. 509 IPC) > Girls (Below 18 yrs),INSULT_G,B) Girls (Below 18 yrs),consistent,0,0,MATCH
+35,"Dowry Prohibition Act, 1961",DPA,"Dowry Prohibition Act, 1961",consistent,18,18,MATCH
+36,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Immoral Traffic (Prevention) Act,",ITP,"Immoral Traffic (Prevention) Act, 1956 (Total)",consistent,26,26,MATCH
+37,"Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Procuring, inducing Children for ",ITP_A,"A) Procuring, inducing Children for the sake of prostitution (Sec. 5)",consistent,7,7,MATCH
+38,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Detaining a person in premises wh,ITP_B,B) Detaining a person in premises where prostitution is carried on (Sec. 6),consistent,0,0,MATCH
+39,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Prostitution in or in the vicinit,ITP_C,C) Prostitution in or in the vicinity of public places (Section 7),consistent,4,4,MATCH
+40,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Seducing or soliciting for purpos,ITP_D,D) Seducing or soliciting for purpose of prostitution (Section 8),consistent,3,3,MATCH
+41,Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Other Sections under ITP Act,ITP_E,E) Other Sections under ITP Act,consistent,12,12,MATCH
+42,Protection of Women from Domestic Violence Act,DV,Protection of Women from Domestic Violence Act,consistent,3,3,MATCH
+43,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Cyber Crimes/Information Techn,CYBER,Cyber Crimes/Information Technology Act (Women Centric Crimes only) (Total),consistent,125,125,MATCH
+44,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Publishing or Transmitting of ,CYBER_A,A) Publishing or Transmitting of Sexually Explicit Material (Sec. 67A/67B (Girls) IT Act),consistent,118,118,MATCH
+45,Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Other Women Centric Cyber Crim,CYBER_B,B) Other Women Centric Cyber Crimes (Ex. Blackmailing/Defamation/Morphing/Fake Profile),consistent,7,7,MATCH
+46,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Protection of Children f,POCSO,Protection of Children from Sexual Offences Act (Total),consistent,1434,1434,MATCH
+47,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Child Rape (Sec. 4 & 6 o,POCSO_A,A) Child Rape (Sec 4 & 6 of POCSO Act/ Sec 376 IPC),consistent,890,890,MATCH
+48,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Assault of Childr,POCSO_B,B) Sexual Assault of Children (Sec.8 & 10 of POCSO Act) / Sec.354 IPC),consistent,511,511,MATCH
+49,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Sexual Harassment (Sec. ,POCSO_C,C) Sexual Harassment (Sec. 12 of POCSO Act) / Sec. 509 IPC),consistent,25,25,MATCH
+50,Protection of Children from Sexual Violence Act (Girl Child Victims only) > Use of Child for Pornogr,POCSO_D,D) Use of Child for Pornography/ Storing Child Pornography Material (Sec 14 & 15 of POCSO ,consistent,1,1,MATCH
+51,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act (Sections 17 t,POCSO_E,E) POCSO Act (Sections 17 to 22) / Other offences of POCSO Act,consistent,0,0,MATCH
+52,Protection of Children from Sexual Violence Act (Girl Child Victims only) > POCSO Act r/w Section 37,POCSO_F,F) POCSO Act r/w Section 377 IPC / Unnatural Offences,consistent,7,7,MATCH
+53,"Indecent Representation of Women (Prohibition) Act, 1986",IRW,"Indecent Representation of Women (Prohibition) Act, 1986",consistent,0,0,MATCH
+54,Total Crime against Women (IPC+SLL),T_ALL,Total Crime against Women (IPC+SLL),consistent,14247,14247,MATCH

@@ -1,0 +1,77 @@
+year,rule,research_result,production_status,evidence
+2018,EXT-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Independent layout-text reread confirmed 151 of 162 cells across 16 pages with 0 contradicting pages. The remaining cells were not readable by this method.
+2018,EXT-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Subtotals and overall total confirmed by reread: True. A reviewer's independent visual sign-off is not recorded (OR-11).
+2018,SUB-1,PASS,NOT_IN_PRODUCTION,8 of 8 women/girls split checks pass.
+2018,SUB-2,FAIL,NOT_IN_PRODUCTION,8 of 10 explicit sub-row checks pass.
+2018,TOT-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the IPC/BNS subtotal without listing its members. Membership is not inferred.
+2018,TOT-2,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the SLL subtotal without listing its members. Membership is not inferred.
+2018,TOT-3,PASS,NOT_IN_PRODUCTION,Cases 11868+1772=13640; victims 12201+1784=13985.
+2018,TOT-4,PASS,PENDING,Table 3A.2 total 13640 against Table 3A.1 total 13640. Equal totals do not validate individual categories.
+2018,RATE-1,PASS,NOT_IN_PRODUCTION,54 printed rates recomputed with Table 3A.1 women's population 91.2 lakh; outside 0.1: [].
+2018,LEGAL-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,The table has no separate IPC and BNS columns.
+2018,LEGAL-5,NOT_APPLICABLE,NOT_IN_PRODUCTION,Rule applies to 2024 trend charts.
+2018,LEGAL-2,PASS,NOT_IN_PRODUCTION,0 rows carry BNS values.
+2018,LEGAL-3,PENDING,NOT_IN_PRODUCTION,Every category is not_assessed. Formal IPC/BNS mapping statuses have not been reviewed.
+2018,LEGAL-4,NOT_APPLICABLE,NOT_IN_PRODUCTION,No back-casting is performed.
+2018,PROV-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,"Edition, table, page, label and printed value are present. Research rows are not production records."
+2018,PROV-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Local PDF SHA-256 recorded: 07d9b0b12281729a284639d900d942550082965a97de4366c90f38e5327ed8c8. No earlier registered hash exists to compare with.
+2018,PROV-3,PASS,NOT_IN_PRODUCTION,Every row cites its PDF page and printed folio (242-257).
+2018,MISS-2,PASS,NOT_IN_PRODUCTION,All research values are printed values. None is estimated or derived.
+2018,UNIT-1,PASS,NOT_IN_PRODUCTION,Only the Delhi rows of State/UT tables are used. No metropolitan rows are mixed in.
+2022,EXT-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Independent layout-text reread confirmed 161 of 162 cells across 16 pages with 0 contradicting pages. The remaining cells were not readable by this method.
+2022,EXT-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Subtotals and overall total confirmed by reread: True. A reviewer's independent visual sign-off is not recorded (OR-11).
+2022,SUB-1,PASS,NOT_IN_PRODUCTION,8 of 8 women/girls split checks pass.
+2022,SUB-2,FAIL,NOT_IN_PRODUCTION,8 of 10 explicit sub-row checks pass.
+2022,TOT-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the IPC/BNS subtotal without listing its members. Membership is not inferred.
+2022,TOT-2,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the SLL subtotal without listing its members. Membership is not inferred.
+2022,TOT-3,PASS,NOT_IN_PRODUCTION,Cases 12641+1606=14247; victims 12823+1643=14466.
+2022,TOT-4,PASS,PENDING,Table 3A.2 total 14247 against Table 3A.1 total 14247. Equal totals do not validate individual categories.
+2022,RATE-1,PASS,NOT_IN_PRODUCTION,54 printed rates recomputed with Table 3A.1 women's population 98.7 lakh; outside 0.1: [].
+2022,LEGAL-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,The table has no separate IPC and BNS columns.
+2022,LEGAL-5,NOT_APPLICABLE,NOT_IN_PRODUCTION,Rule applies to 2024 trend charts.
+2022,LEGAL-2,PASS,NOT_IN_PRODUCTION,0 rows carry BNS values.
+2022,LEGAL-3,PENDING,NOT_IN_PRODUCTION,Every category is not_assessed. Formal IPC/BNS mapping statuses have not been reviewed.
+2022,LEGAL-4,NOT_APPLICABLE,NOT_IN_PRODUCTION,No back-casting is performed.
+2022,PROV-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,"Edition, table, page, label and printed value are present. Research rows are not production records."
+2022,PROV-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Local PDF SHA-256 recorded: 7c5ee3128b0b6bc7c068f986961eaf40bb383d9f241ff75ad3a38e4ab3c23e8d. No earlier registered hash exists to compare with.
+2022,PROV-3,PASS,NOT_IN_PRODUCTION,Every row cites its PDF page and printed folio (260-275).
+2022,MISS-2,PASS,NOT_IN_PRODUCTION,All research values are printed values. None is estimated or derived.
+2022,UNIT-1,PASS,NOT_IN_PRODUCTION,Only the Delhi rows of State/UT tables are used. No metropolitan rows are mixed in.
+2023,EXT-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Independent layout-text reread confirmed 137 of 162 cells across 16 pages with 0 contradicting pages. The remaining cells were not readable by this method.
+2023,EXT-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Subtotals and overall total confirmed by reread: True. A reviewer's independent visual sign-off is not recorded (OR-11).
+2023,SUB-1,PASS,NOT_IN_PRODUCTION,8 of 8 women/girls split checks pass.
+2023,SUB-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,"10 of 10 explicit sub-row checks pass. The kidnapping sum reconciles, but the printed formula still includes a parent and its children."
+2023,TOT-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the IPC/BNS subtotal without listing its members. Membership is not inferred.
+2023,TOT-2,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the SLL subtotal without listing its members. Membership is not inferred.
+2023,TOT-3,PASS,NOT_IN_PRODUCTION,Cases 11688+1751=13439; victims 11931+1763=13694.
+2023,TOT-4,PASS,PENDING,Table 3A.2 total 13439 against Table 3A.1 total 13439. Equal totals do not validate individual categories.
+2023,RATE-1,PENDING,NOT_IN_PRODUCTION,Population denominator could not be read from the Table 3A.1 page by this method.
+2023,LEGAL-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,The table has no separate IPC and BNS columns.
+2023,LEGAL-5,NOT_APPLICABLE,NOT_IN_PRODUCTION,Rule applies to 2024 trend charts.
+2023,LEGAL-2,PASS,NOT_IN_PRODUCTION,0 rows carry BNS values.
+2023,LEGAL-3,PENDING,NOT_IN_PRODUCTION,Every category is not_assessed. Formal IPC/BNS mapping statuses have not been reviewed.
+2023,LEGAL-4,NOT_APPLICABLE,NOT_IN_PRODUCTION,No back-casting is performed.
+2023,PROV-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,"Edition, table, page, label and printed value are present. Research rows are not production records."
+2023,PROV-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Local PDF SHA-256 recorded: 553ac8b2eadfe9e2f3e3b80688fb3ced884dde4c1ddb5ba18077ca7432289661. No earlier registered hash exists to compare with.
+2023,PROV-3,PASS,NOT_IN_PRODUCTION,Every row cites its PDF page and printed folio (260-275).
+2023,MISS-2,PASS,NOT_IN_PRODUCTION,All research values are printed values. None is estimated or derived.
+2023,UNIT-1,PASS,NOT_IN_PRODUCTION,Only the Delhi rows of State/UT tables are used. No metropolitan rows are mixed in.
+2024,EXT-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Independent layout-text reread confirmed 220 of 285 cells across 28 pages with 0 contradicting pages. The remaining cells were not readable by this method.
+2024,EXT-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Subtotals and overall total confirmed by reread: True. A reviewer's independent visual sign-off is not recorded (OR-11).
+2024,SUB-1,PASS,NOT_IN_PRODUCTION,16 of 16 women/girls split checks pass.
+2024,SUB-2,PASS,NOT_IN_PRODUCTION,27 of 27 explicit sub-row checks pass.
+2024,TOT-1,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the IPC/BNS subtotal without listing its members. Membership is not inferred.
+2024,TOT-2,NOT_APPLICABLE,NOT_IN_PRODUCTION,NCRB prints the SLL subtotal without listing its members. Membership is not inferred.
+2024,TOT-3,PASS,NOT_IN_PRODUCTION,Cases 11795+1601=13396; victims 11973+1611=13584.
+2024,TOT-4,PASS,PENDING,Table 3A.2 total 13396 against Table 3A.1 total 13396. Equal totals do not validate individual categories.
+2024,RATE-1,PASS,NOT_IN_PRODUCTION,65 printed rates recomputed with Table 3A.1 women's population 102.5 lakh; outside 0.1: [].
+2024,LEGAL-1,PASS,NOT_IN_PRODUCTION,IPC + BNS = Total on 45 of 45 rows. Neither column alone is a full-year measure.
+2024,LEGAL-5,PASS,NOT_IN_PRODUCTION,"The production Overview chart marks 'New criminal laws, Jul 2024'."
+2024,LEGAL-2,PASS,NOT_IN_PRODUCTION,45 rows carry BNS values.
+2024,LEGAL-3,PENDING,NOT_IN_PRODUCTION,Every category is not_assessed. Formal IPC/BNS mapping statuses have not been reviewed.
+2024,LEGAL-4,NOT_APPLICABLE,NOT_IN_PRODUCTION,No back-casting is performed.
+2024,PROV-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,"Edition, table, page, label and printed value are present. Research rows are not production records."
+2024,PROV-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Local PDF SHA-256 recorded: 5c119c907c8b194e0bcde8cf6ef63392ff9923dfb159a8780607f54719a79cb8. No earlier registered hash exists to compare with.
+2024,PROV-3,PASS,NOT_IN_PRODUCTION,Every row cites its PDF page and printed folio (330-357).
+2024,MISS-2,PASS,NOT_IN_PRODUCTION,All research values are printed values. None is estimated or derived.
+2024,UNIT-1,PASS,NOT_IN_PRODUCTION,Only the Delhi rows of State/UT tables are used. No metropolitan rows are mixed in.

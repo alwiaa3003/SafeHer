@@ -1,0 +1,98 @@
+edition,basis,printed_formula,parent_code,metric,printed_parent,printed_sum,difference,result,children
+2018,printed_column_formula,Col.24=Col.27+Col.30+Col.33+Col.36+Col.39+Col.42+Col.51,KA,I,3715,3724,9,FAIL,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2018,printed_column_formula,Col.25=Col.28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52,KA,V,3926,3935,9,FAIL,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2018,printed_column_formula,Col.36=Col.39+Col.42,KA_COMPEL,I,10,10,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2018,printed_column_formula,Col.37=Col.40+Col.43,KA_COMPEL,V,10,10,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2018,printed_column_formula,Col.63=Col.66+Col.69,RAPE,I,1215,1215,0,PASS,RAPE_W+RAPE_G
+2018,printed_column_formula,Col.64=Col.67+Col.70,RAPE,V,1217,1217,0,PASS,RAPE_W+RAPE_G
+2018,printed_column_formula,Col.72=Col.75+Col.78,ATT_RAPE,I,11,11,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2018,printed_column_formula,Col.73=Col.76+Col.79,ATT_RAPE,V,11,11,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2018,printed_column_formula,Col.81=Col.84+Col.87,ASSAULT,I,2705,2705,0,PASS,ASSAULT_W+ASSAULT_G
+2018,printed_column_formula,Col.82=Col.85+Col.88,ASSAULT,V,2721,2721,0,PASS,ASSAULT_W+ASSAULT_G
+2018,printed_column_formula,Col.90=Col.93+Col.96,INSULT,I,552,552,0,PASS,INSULT_W+INSULT_G
+2018,printed_column_formula,Col.91=Col.94+Col.97,INSULT,V,555,555,0,PASS,INSULT_W+INSULT_G
+2018,printed_column_formula,Col.105=Col.108+Col.111+Col.114+Col.117+Col.120,ITP,I,1,1,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2018,printed_column_formula,Col.106=Col.109+Col.112+Col.115+Col.118+Col.121,ITP,V,1,1,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2018,printed_column_formula,Col.126=Col.129+Col.132,CYBER,I,18,18,0,PASS,CYBER_A+CYBER_B
+2018,printed_column_formula,Col.127=Col.130+Col.133,CYBER,V,20,20,0,PASS,CYBER_A+CYBER_B
+2018,printed_column_formula,Col.135=Col.138+Col.141+Col.144+Col.147+Col.150+Col.153,POCSO,I,1736,1736,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2018,printed_column_formula,Col.136=Col.139+Col.142+Col.145+Col.148+Col.151+Col.154,POCSO,V,1746,1746,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2022,printed_column_formula,Col.24=Col.27+Col.30+Col.33+Col.36+Col.39+Col.42+Col.51,KA,I,3917,3924,7,FAIL,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2022,printed_column_formula,Col.25=Col.28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52,KA,V,4032,4039,7,FAIL,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2022,printed_column_formula,Col.36=Col.39+Col.42,KA_COMPEL,I,7,7,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2022,printed_column_formula,Col.37=Col.40+Col.43,KA_COMPEL,V,7,7,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2022,printed_column_formula,Col.63=Col.66+Col.69,RAPE,I,1212,1212,0,PASS,RAPE_W+RAPE_G
+2022,printed_column_formula,Col.64=Col.67+Col.70,RAPE,V,1212,1212,0,PASS,RAPE_W+RAPE_G
+2022,printed_column_formula,Col.72=Col.75+Col.78,ATT_RAPE,I,4,4,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2022,printed_column_formula,Col.73=Col.76+Col.79,ATT_RAPE,V,4,4,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2022,printed_column_formula,Col.81=Col.84+Col.87,ASSAULT,I,2017,2017,0,PASS,ASSAULT_W+ASSAULT_G
+2022,printed_column_formula,Col.82=Col.85+Col.88,ASSAULT,V,2029,2029,0,PASS,ASSAULT_W+ASSAULT_G
+2022,printed_column_formula,Col.90=Col.93+Col.96,INSULT,I,387,387,0,PASS,INSULT_W+INSULT_G
+2022,printed_column_formula,Col.91=Col.94+Col.97,INSULT,V,400,400,0,PASS,INSULT_W+INSULT_G
+2022,printed_column_formula,Col.105=Col.108+Col.111+Col.114+Col.117+Col.120,ITP,I,26,26,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2022,printed_column_formula,Col.106=Col.109+Col.112+Col.115+Col.118+Col.121,ITP,V,42,42,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2022,printed_column_formula,Col.126=Col.129+Col.132,CYBER,I,125,125,0,PASS,CYBER_A+CYBER_B
+2022,printed_column_formula,Col.127=Col.130+Col.133,CYBER,V,128,128,0,PASS,CYBER_A+CYBER_B
+2022,printed_column_formula,Col.135=Col.138+Col.141+Col.144+Col.147+Col.150+Col.153,POCSO,I,1434,1434,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2022,printed_column_formula,Col.136=Col.139+Col.142+Col.145+Col.148+Col.151+Col.154,POCSO,V,1452,1452,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2023,printed_column_formula,Col.24=Col.27+Col.30+Col.33+Col.36+Col.39+Col.42+Col.51,KA,I,3970,3970,0,PASS,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2023,printed_column_formula,Col.25=Col.28+Col.31+Col.34+Col.37+Col.40+Col.43+Col.52,KA,V,4089,4089,0,PASS,KA_363+KA_364+KA_RANSOM+KA_COMPEL+KA_COMPEL_W+KA_COMPEL_G+KA_OTHERS
+2023,printed_column_formula,Col.36=Col.39+Col.42,KA_COMPEL,I,0,0,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2023,printed_column_formula,Col.37=Col.40+Col.43,KA_COMPEL,V,0,0,0,PASS,KA_COMPEL_W+KA_COMPEL_G
+2023,printed_column_formula,Col.63=Col.66+Col.69,RAPE,I,1094,1094,0,PASS,RAPE_W+RAPE_G
+2023,printed_column_formula,Col.64=Col.67+Col.70,RAPE,V,1094,1094,0,PASS,RAPE_W+RAPE_G
+2023,printed_column_formula,Col.72=Col.75+Col.78,ATT_RAPE,I,0,0,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2023,printed_column_formula,Col.73=Col.76+Col.79,ATT_RAPE,V,0,0,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2023,printed_column_formula,Col.81=Col.84+Col.87,ASSAULT,I,1814,1814,0,PASS,ASSAULT_W+ASSAULT_G
+2023,printed_column_formula,Col.82=Col.85+Col.88,ASSAULT,V,1828,1828,0,PASS,ASSAULT_W+ASSAULT_G
+2023,printed_column_formula,Col.90=Col.93+Col.96,INSULT,I,352,352,0,PASS,INSULT_W+INSULT_G
+2023,printed_column_formula,Col.91=Col.94+Col.97,INSULT,V,352,352,0,PASS,INSULT_W+INSULT_G
+2023,printed_column_formula,Col.105=Col.108+Col.111+Col.114+Col.117+Col.120,ITP,I,59,59,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2023,printed_column_formula,Col.106=Col.109+Col.112+Col.115+Col.118+Col.121,ITP,V,68,68,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2023,printed_column_formula,Col.126=Col.129+Col.132,CYBER,I,36,36,0,PASS,CYBER_A+CYBER_B
+2023,printed_column_formula,Col.127=Col.130+Col.133,CYBER,V,36,36,0,PASS,CYBER_A+CYBER_B
+2023,printed_column_formula,Col.135=Col.138+Col.141+Col.144+Col.147+Col.150+Col.153,POCSO,I,1636,1636,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2023,printed_column_formula,Col.136=Col.139+Col.142+Col.145+Col.148+Col.151+Col.154,POCSO,V,1639,1639,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E+POCSO_F
+2024,printed_row_structure,Rape (Total a+b),RAPE,IPC,860,860,0,PASS,RAPE_W+RAPE_G
+2024,printed_row_structure,Rape (Total a+b),RAPE,BNS,198,198,0,PASS,RAPE_W+RAPE_G
+2024,printed_row_structure,Rape (Total a+b),RAPE,Total,1058,1058,0,PASS,RAPE_W+RAPE_G
+2024,printed_row_structure,Rape (Total a+b),RAPE,V,1089,1089,0,PASS,RAPE_W+RAPE_G
+2024,printed_row_structure,Attempt to commit Rape (Total a+b),ATT_RAPE,IPC,1,1,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2024,printed_row_structure,Attempt to commit Rape (Total a+b),ATT_RAPE,BNS,0,0,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2024,printed_row_structure,Attempt to commit Rape (Total a+b),ATT_RAPE,Total,1,1,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2024,printed_row_structure,Attempt to commit Rape (Total a+b),ATT_RAPE,V,1,1,0,PASS,ATT_RAPE_W+ATT_RAPE_G
+2024,printed_row_structure,Assault on Women with intent to outrage her Modesty (Total a+b),ASSAULT,IPC,426,426,0,PASS,ASSAULT_W+ASSAULT_G
+2024,printed_row_structure,Assault on Women with intent to outrage her Modesty (Total a+b),ASSAULT,BNS,329,329,0,PASS,ASSAULT_W+ASSAULT_G
+2024,printed_row_structure,Assault on Women with intent to outrage her Modesty (Total a+b),ASSAULT,Total,755,755,0,PASS,ASSAULT_W+ASSAULT_G
+2024,printed_row_structure,Assault on Women with intent to outrage her Modesty (Total a+b),ASSAULT,V,765,765,0,PASS,ASSAULT_W+ASSAULT_G
+2024,printed_row_structure,Sexual Harassment (Total a+b),SH,IPC,179,179,0,PASS,SH_W+SH_G
+2024,printed_row_structure,Sexual Harassment (Total a+b),SH,BNS,137,137,0,PASS,SH_W+SH_G
+2024,printed_row_structure,Sexual Harassment (Total a+b),SH,Total,316,316,0,PASS,SH_W+SH_G
+2024,printed_row_structure,Sexual Harassment (Total a+b),SH,V,324,324,0,PASS,SH_W+SH_G
+2024,printed_row_structure,Assault or Use of Criminal Force with intent to disrobe (Total a+b),DISROBE,IPC,152,152,0,PASS,DISROBE_W+DISROBE_G
+2024,printed_row_structure,Assault or Use of Criminal Force with intent to disrobe (Total a+b),DISROBE,BNS,127,127,0,PASS,DISROBE_W+DISROBE_G
+2024,printed_row_structure,Assault or Use of Criminal Force with intent to disrobe (Total a+b),DISROBE,Total,279,279,0,PASS,DISROBE_W+DISROBE_G
+2024,printed_row_structure,Assault or Use of Criminal Force with intent to disrobe (Total a+b),DISROBE,V,285,285,0,PASS,DISROBE_W+DISROBE_G
+2024,printed_row_structure,Voyeurism (Total a+b),VOY,IPC,16,16,0,PASS,VOY_W+VOY_G
+2024,printed_row_structure,Voyeurism (Total a+b),VOY,BNS,22,22,0,PASS,VOY_W+VOY_G
+2024,printed_row_structure,Voyeurism (Total a+b),VOY,Total,38,38,0,PASS,VOY_W+VOY_G
+2024,printed_row_structure,Voyeurism (Total a+b),VOY,V,38,38,0,PASS,VOY_W+VOY_G
+2024,printed_row_structure,Stalking (Total a+b),STALK,IPC,117,117,0,PASS,STALK_W+STALK_G
+2024,printed_row_structure,Stalking (Total a+b),STALK,BNS,61,61,0,PASS,STALK_W+STALK_G
+2024,printed_row_structure,Stalking (Total a+b),STALK,Total,178,178,0,PASS,STALK_W+STALK_G
+2024,printed_row_structure,Stalking (Total a+b),STALK,V,185,185,0,PASS,STALK_W+STALK_G
+2024,printed_row_structure,Insult to the Modesty of Women (Total a+b),INSULT,IPC,203,203,0,PASS,INSULT_W+INSULT_G
+2024,printed_row_structure,Insult to the Modesty of Women (Total a+b),INSULT,BNS,147,147,0,PASS,INSULT_W+INSULT_G
+2024,printed_row_structure,Insult to the Modesty of Women (Total a+b),INSULT,Total,350,350,0,PASS,INSULT_W+INSULT_G
+2024,printed_row_structure,Insult to the Modesty of Women (Total a+b),INSULT,V,357,357,0,PASS,INSULT_W+INSULT_G
+2024,printed_row_structure,Kidnapping or abducting or inducing Women to compel her for marriage (Total a+b),COMPEL,IPC,4,4,0,PASS,COMPEL_W+COMPEL_G
+2024,printed_row_structure,Kidnapping or abducting or inducing Women to compel her for marriage (Total a+b),COMPEL,BNS,1,1,0,PASS,COMPEL_W+COMPEL_G
+2024,printed_row_structure,Kidnapping or abducting or inducing Women to compel her for marriage (Total a+b),COMPEL,Total,5,5,0,PASS,COMPEL_W+COMPEL_G
+2024,printed_row_structure,Kidnapping or abducting or inducing Women to compel her for marriage (Total a+b),COMPEL,V,5,5,0,PASS,COMPEL_W+COMPEL_G
+2024,printed_row_structure,Kidnapping & Abduction of Women (Total a+b+c+d+e),KA,IPC,2030,2030,0,PASS,KA_A+KA_B+KA_C+KA_D+KA_E
+2024,printed_row_structure,Kidnapping & Abduction of Women (Total a+b+c+d+e),KA,BNS,1944,1944,0,PASS,KA_A+KA_B+KA_C+KA_D+KA_E
+2024,printed_row_structure,Kidnapping & Abduction of Women (Total a+b+c+d+e),KA,Total,3974,3974,0,PASS,KA_A+KA_B+KA_C+KA_D+KA_E
+2024,printed_row_structure,Kidnapping & Abduction of Women (Total a+b+c+d+e),KA,V,4073,4073,0,PASS,KA_A+KA_B+KA_C+KA_D+KA_E
+2024,printed_row_structure,Immoral Traffic (Prevention) Act (Total a+b+c+d+e),ITP,V,24,24,0,PASS,ITP_A+ITP_B+ITP_C+ITP_D+ITP_E
+2024,printed_row_structure,Cyber Crimes/Information Technology Act (Total a+b),CYBER,V,78,78,0,PASS,CYBER_A+CYBER_B
+2024,printed_row_structure,POCSO Act (Total a+b+c+d+e),POCSO,V,1492,1492,0,PASS,POCSO_A+POCSO_B+POCSO_C+POCSO_D+POCSO_E

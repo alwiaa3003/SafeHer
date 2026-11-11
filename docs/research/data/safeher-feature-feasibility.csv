@@ -1,0 +1,13 @@
+feature,classification,evidence_needed,explanation
+Delhi annual crime trends,FEASIBLE_NOW,Verified Table 3A.1 figures,Eight validated figures are in production. 2019 can be added if the proposal is approved.
+Year-over-year changes,FEASIBLE_NOW,Comparable annual definitions,"Descriptive only. Same measure and table family; must break at missing years, flag 2020 and July 2024, and not be read as prevalence."
+Crime-category comparisons (single edition),FEASIBLE_WITH_ADDITIONAL_DATA,Validated Table 3A.2 categories,"Rows extracted and largely checked, but approval and reviewer sign-off are outstanding."
+Crime-category trends across editions,NOT_FEASIBLE_WITH_CURRENT_DATA,Evidence of comparability,"All comparability is not_assessed, 2019-2021 and 2016-2017 lack sources, and the 2024 structure changed."
+Delhi versus other metros,FEASIBLE_WITH_ADDITIONAL_DATA,Validated Table 3B.1 for all metros,"Counts only. Table 3B.1 has not been validated, and Delhi City must not be combined with Delhi UT."
+District choropleth,FEASIBLE_WITH_ADDITIONAL_DATA,Compatible boundaries with permission and date,Official police-unit totals reconcile exactly for 2020-2022. GSDL permission and boundary date are missing; 7 units have no geography.
+Police-station analysis,NOT_FEASIBLE_WITH_CURRENT_DATA,Station-level crime figures,No public official station-level source found.
+Ward analysis,NOT_FEASIBLE_WITH_CURRENT_DATA,Ward-level crime figures,No ward-level crime source found. Allocation from districts would be fabrication.
+Hotspot analysis,NOT_FEASIBLE_WITH_CURRENT_DATA,Genuine incident coordinates,No open incident-level data on crimes against women. Would also raise serious privacy risks.
+Night/day analysis,NOT_FEASIBLE_WITH_CURRENT_DATA,Genuine incident timestamps,NCRB data is annual.
+Crime-density analysis,NOT_FEASIBLE_WITH_CURRENT_DATA,Suitable geocoded dataset,No suitable geocoded dataset exists for crimes against women.
+Predictive modelling,NOT_FEASIBLE_WITH_CURRENT_DATA,Representative granular data,"A short annual aggregate series cannot support credible prediction, and SafeHer should not add ML for appearance."

@@ -1,0 +1,127 @@
+year,printed_unit,unit_kind,total_crime_against_women
+2014,Central,geographic_police_district,615
+2014,Crime Branch,non_geographic,3
+2014,East,geographic_police_district,1646
+2014,EOW,non_geographic,2
+2014,IGI Airport,geographic_police_district,16
+2014,Metro,non_geographic,34
+2014,New Delhi,geographic_police_district,136
+2014,North,geographic_police_district,537
+2014,North-East,geographic_police_district,1749
+2014,North-West,geographic_police_district,1246
+2014,Outer,geographic_police_district,2079
+2014,RAILWAY,non_geographic,29
+2014,South,geographic_police_district,2075
+2014,South-East,geographic_police_district,1612
+2014,South-West,geographic_police_district,1549
+2014,Spl Cell,non_geographic,0
+2014,SPUWAC,non_geographic,161
+2014,Vigilance,non_geographic,0
+2014,West,geographic_police_district,1776
+2015,Central,geographic_police_district,715
+2015,Crime Branch,non_geographic,3
+2015,East,geographic_police_district,1926
+2015,EOW,non_geographic,6
+2015,IGI Airport,geographic_police_district,20
+2015,Metro,non_geographic,24
+2015,New Delhi,geographic_police_district,114
+2015,North,geographic_police_district,517
+2015,North-East,geographic_police_district,1796
+2015,North-West,geographic_police_district,1329
+2015,Outer,geographic_police_district,2284
+2015,RAILWAY,non_geographic,41
+2015,South,geographic_police_district,2712
+2015,South-East,geographic_police_district,1741
+2015,South-West,geographic_police_district,1766
+2015,Spl Cell,non_geographic,1
+2015,SPUWAC,non_geographic,157
+2015,Vigilance,non_geographic,0
+2015,West,geographic_police_district,1952
+2016,Central,geographic_police_district,628
+2016,Crime Branch,non_geographic,6
+2016,East,geographic_police_district,1555
+2016,EOW,non_geographic,0
+2016,IGI Airport,geographic_police_district,14
+2016,Metro,non_geographic,19
+2016,New Delhi,geographic_police_district,119
+2016,North,geographic_police_district,527
+2016,North-East,geographic_police_district,1746
+2016,North-West,geographic_police_district,1363
+2016,Outer,geographic_police_district,2279
+2016,RAILWAY,non_geographic,39
+2016,South,geographic_police_district,1773
+2016,South-East,geographic_police_district,1732
+2016,South-West,geographic_police_district,1430
+2016,Spl Cell,non_geographic,1
+2016,SPUWAC,non_geographic,234
+2016,Vigilance,non_geographic,0
+2016,West,geographic_police_district,1830
+2020,Central,geographic_police_district,480
+2020,Crime Branch,non_geographic,3
+2020,East,geographic_police_district,640
+2020,EOW,non_geographic,0
+2020,IGI Airport,geographic_police_district,10
+2020,Metro,non_geographic,12
+2020,New Delhi,geographic_police_district,88
+2020,North,geographic_police_district,459
+2020,North-East,geographic_police_district,988
+2020,North-West,geographic_police_district,718
+2020,Outer,geographic_police_district,774
+2020,RAILWAY,non_geographic,7
+2020,South,geographic_police_district,639
+2020,South-East,geographic_police_district,898
+2020,South-West,geographic_police_district,549
+2020,Spl Cell,non_geographic,9
+2020,SPUWAC,non_geographic,26
+2020,Vigilance,non_geographic,0
+2020,West,geographic_police_district,761
+2020,Rohini,geographic_police_district,736
+2020,Shahdara,geographic_police_district,626
+2020,Dwarka,geographic_police_district,1048
+2020,Outer North,geographic_police_district,622
+2021,Central,geographic_police_district,645
+2021,Crime Branch,non_geographic,3
+2021,East,geographic_police_district,801
+2021,EOW,non_geographic,0
+2021,IGI Airport,geographic_police_district,11
+2021,Metro,non_geographic,10
+2021,New Delhi,geographic_police_district,89
+2021,North,geographic_police_district,742
+2021,North-East,geographic_police_district,1195
+2021,North-West,geographic_police_district,895
+2021,Outer,geographic_police_district,984
+2021,RAILWAY,non_geographic,9
+2021,South,geographic_police_district,982
+2021,South-East,geographic_police_district,1238
+2021,South-West,geographic_police_district,766
+2021,Spl Cell,non_geographic,10
+2021,SPUWAC,non_geographic,62
+2021,Vigilance,non_geographic,0
+2021,West,geographic_police_district,1113
+2021,Rohini,geographic_police_district,1042
+2021,Shahdara,geographic_police_district,857
+2021,Dwarka,geographic_police_district,1785
+2021,Outer North,geographic_police_district,1038
+2022,Central,geographic_police_district,625
+2022,Crime Branch,non_geographic,0
+2022,East,geographic_police_district,840
+2022,EOW,non_geographic,0
+2022,IGI Airport,geographic_police_district,16
+2022,Metro,non_geographic,27
+2022,New Delhi,geographic_police_district,103
+2022,North,geographic_police_district,734
+2022,North-East,geographic_police_district,1156
+2022,North-West,geographic_police_district,786
+2022,Outer,geographic_police_district,1054
+2022,RAILWAY,non_geographic,26
+2022,South,geographic_police_district,1253
+2022,South-East,geographic_police_district,1284
+2022,South-West,geographic_police_district,790
+2022,Spl Cell,non_geographic,11
+2022,SPUWAC,non_geographic,48
+2022,Vigilance,non_geographic,0
+2022,West,geographic_police_district,957
+2022,Rohini,geographic_police_district,1109
+2022,Shahdara,geographic_police_district,850
+2022,Dwarka,geographic_police_district,1411
+2022,Outer North,geographic_police_district,1167

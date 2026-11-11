@@ -62,9 +62,9 @@ describe('source classification', () => {
   it.each([['new shape', async () => {}], ['legacy shape', makeLegacy]])('makes the type clear in the API for the %s', async (_label, prepare) => {
     await prepare();
     const crime = await get('/api/data-sources?sourceType=crime_statistics');
-    expect(crime.body.data).toHaveLength(3);
+    expect(crime.body.data).toHaveLength(4);
     crime.body.data.forEach((s) => {
-      expect(s).toMatchObject({ sourceType: 'crime_statistics', boundaryReference: null, tableReference: '3A.1' });
+      expect(s).toMatchObject({ sourceType: 'crime_statistics', boundaryReference: null, tableReference: expect.stringMatching(/^(3A\.1|Additional table 003 \(State\/UT\))$/) });
       expect(s.extract.sha256).toMatch(/^[0-9a-f]{64}$/);
     });
 
@@ -95,14 +95,14 @@ describe('source metadata migration', () => {
     const before = await raw().find({}).sort({ sourceKey: 1 }).toArray();
     const report = await migrateSourceMetadata();
     expect(report).toMatchObject({ applied: false, updated: 0 });
-    expect(report.plan.filter((p) => p.action === 'update')).toHaveLength(4);
+    expect(report.plan.filter((p) => p.action === 'update')).toHaveLength(5);
     expect(await raw().find({}).sort({ sourceKey: 1 }).toArray()).toEqual(before);
   });
 
   it('adds classification, preserves NCRB provenance and moves the OSM identity', async () => {
     await makeLegacy();
     const before = await raw().findOne({ sourceKey: 'CII2018-V1-T3A.1' });
-    expect((await migrateSourceMetadata({ apply: true })).updated).toBe(4);
+    expect((await migrateSourceMetadata({ apply: true })).updated).toBe(5);
 
     expect(await raw().findOne({ sourceKey: 'CII2018-V1-T3A.1' })).toEqual({ ...before, sourceType: 'crime_statistics' });
     const osm = await raw().findOne({ sourceKey: OSM_KEY });
@@ -130,7 +130,7 @@ describe('source metadata migration', () => {
     await migrateSourceMetadata({ apply: true });
     expect(await snapshot()).toEqual(before);
     expect(before.records.map((r) => [r.year, r.registeredCases])).toEqual([
-      [2016, 15310], [2017, 13076], [2018, 13640], [2020, 10093], [2021, 14277], [2022, 14247], [2023, 13439], [2024, 13396],
+      [2016, 15310], [2017, 13076], [2018, 13640], [2019, 13395], [2020, 10093], [2021, 14277], [2022, 14247], [2023, 13439], [2024, 13396],
     ]);
     expect(before.categories.every((c) => c.comparabilityStatus === 'not_assessed')).toBe(true);
     expect(before.units.every((u) => u.contextOnly === true && !('registeredCases' in u))).toBe(true);
@@ -141,6 +141,6 @@ describe('source metadata migration', () => {
     await migrateSourceMetadata({ apply: true });
     expect((await importApprovedAnnualTotals()).conflicts).toEqual([]);
     expect((await importDelhiBoundary()).action).toBe('unchanged');
-    expect(await DataSource.countDocuments()).toBe(4);
+    expect(await DataSource.countDocuments()).toBe(5);
   });
 });

@@ -1,0 +1,247 @@
+{
+  "editions": {
+    "2018": {
+      "rows": 54,
+      "duplicate_codes": [],
+      "blank_cells_in_data_rows": 0,
+      "zero_count_rows": 15,
+      "unit_labels": [
+        "Delhi"
+      ],
+      "non_numeric_cells": [],
+      "pdf_sha256": "07d9b0b12281729a284639d900d942550082965a97de4366c90f38e5327ed8c8"
+    },
+    "2022": {
+      "rows": 54,
+      "duplicate_codes": [],
+      "blank_cells_in_data_rows": 0,
+      "zero_count_rows": 13,
+      "unit_labels": [
+        "Delhi"
+      ],
+      "non_numeric_cells": [],
+      "pdf_sha256": "7c5ee3128b0b6bc7c068f986961eaf40bb383d9f241ff75ad3a38e4ab3c23e8d"
+    },
+    "2023": {
+      "rows": 54,
+      "duplicate_codes": [],
+      "blank_cells_in_data_rows": 0,
+      "zero_count_rows": 15,
+      "unit_labels": [
+        "Delhi"
+      ],
+      "non_numeric_cells": [],
+      "pdf_sha256": "553ac8b2eadfe9e2f3e3b80688fb3ced884dde4c1ddb5ba18077ca7432289661"
+    },
+    "2024": {
+      "rows": 65,
+      "duplicate_codes": [],
+      "blank_cells_in_data_rows": 0,
+      "zero_count_rows": 17,
+      "unit_labels": [
+        "Delhi"
+      ],
+      "non_numeric_cells": [],
+      "pdf_sha256": "5c119c907c8b194e0bcde8cf6ef63392ff9923dfb159a8780607f54719a79cb8"
+    }
+  },
+  "rate_check": {
+    "2018": {
+      "population_lakh": 91.2,
+      "checked": 54,
+      "outside_tolerance": []
+    },
+    "2022": {
+      "population_lakh": 98.7,
+      "checked": 54,
+      "outside_tolerance": []
+    },
+    "2024": {
+      "population_lakh": 102.5,
+      "checked": 65,
+      "outside_tolerance": []
+    }
+  },
+  "page_recheck": {
+    "2018": {
+      "exact": 15,
+      "partial_no_contradiction": 1
+    },
+    "2022": {
+      "partial_no_contradiction": 1,
+      "exact": 15
+    },
+    "2023": {
+      "partial_no_contradiction": 10,
+      "exact": 6
+    },
+    "2024": {
+      "partial_with_split_fragments": 3,
+      "partial_no_contradiction": 22,
+      "exact": 3
+    }
+  },
+  "cells": {
+    "2018": [
+      151,
+      162
+    ],
+    "2022": [
+      161,
+      162
+    ],
+    "2023": [
+      137,
+      162
+    ],
+    "2024": [
+      220,
+      285
+    ]
+  },
+  "formula_results": {
+    "2018": {
+      "FAIL": 2,
+      "PASS": 16
+    },
+    "2022": {
+      "FAIL": 2,
+      "PASS": 16
+    },
+    "2023": {
+      "PASS": 18
+    },
+    "2024": {
+      "PASS": 43
+    }
+  },
+  "previous_summary_sub2": {
+    "2018": "FAIL",
+    "2022": "FAIL",
+    "2023": "PASS_WITH_NOTE",
+    "2024": "PASS"
+  },
+  "printed_code_presence": {
+    "KA_363": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_364": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_RANSOM": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_COMPEL": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_COMPEL_W": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_COMPEL_G": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_PROCUR": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_IMPORT": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "KA_OTHERS": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "HT": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "POCSO_F": [
+      "2018",
+      "2022",
+      "2023"
+    ],
+    "S69": [
+      "2024"
+    ],
+    "SH": [
+      "2024"
+    ],
+    "SH_W": [
+      "2024"
+    ],
+    "SH_G": [
+      "2024"
+    ],
+    "DISROBE": [
+      "2024"
+    ],
+    "DISROBE_W": [
+      "2024"
+    ],
+    "DISROBE_G": [
+      "2024"
+    ],
+    "VOY": [
+      "2024"
+    ],
+    "VOY_W": [
+      "2024"
+    ],
+    "VOY_G": [
+      "2024"
+    ],
+    "STALK": [
+      "2024"
+    ],
+    "STALK_W": [
+      "2024"
+    ],
+    "STALK_G": [
+      "2024"
+    ],
+    "COMPEL": [
+      "2024"
+    ],
+    "COMPEL_W": [
+      "2024"
+    ],
+    "COMPEL_G": [
+      "2024"
+    ],
+    "PROCUR": [
+      "2024"
+    ],
+    "KA_A": [
+      "2024"
+    ],
+    "KA_B": [
+      "2024"
+    ],
+    "KA_C": [
+      "2024"
+    ],
+    "KA_D": [
+      "2024"
+    ],
+    "KA_E": [
+      "2024"
+    ]
+  }
+}

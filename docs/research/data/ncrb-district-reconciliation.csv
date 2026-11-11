@@ -1,0 +1,7 @@
+year,total_column_header,units,geographic_units,non_geographic_units,sum_of_units,printed_total_districts,state_ut_total,sum_equals_printed,printed_equals_state_ut,non_geographic_share_pct,names_missing_from_gsdl,gsdl_names_missing_here,sha256
+2014,Total Crimes against Women,19,12,7,15265,15265,15319,True,False,1.5,,dwarka;outer north;rohini;shahdara,3d71c50238161adab4ec4aa88f4a3eb943362e409c485629ddb81bf75122f75f
+2015,Total Crimes against Women,19,12,7,17104,17104,17222,True,False,1.4,,dwarka;outer north;rohini;shahdara,f0c049c0c0521888a8f387e7eba85376f0e0cd8ce6d1b462ae31c67c85cc001f
+2016,Total Crimes against Women,19,12,7,15295,15310,15310,False,True,2.0,,dwarka;outer north;rohini;shahdara,15ac23feaa891c86486c5d4423796079c2e8ef93e4bd5d970f26e619ea887c00
+2020,Total Crime against Women (IPC+SLL),23,16,7,10093,10093,10093,True,True,0.6,,,234cc32eab38cda6a30a1a2bde0411f3e06771d84c75339c15f87ed50db7165b
+2021,Total Crime against Women (IPC+SLL),23,16,7,14277,14277,14277,True,True,0.7,,,6e92ac42251503951dee27730e49692e86d9ec77a16238afd4a2360c0f29c0cd
+2022,Total Crime against Women (IPC+SLL),23,16,7,14247,14247,14247,True,True,0.8,,,12fc30d6247ac8a6a1740100effb711bb8a982e63b756cde2dda14d7c3911fd7

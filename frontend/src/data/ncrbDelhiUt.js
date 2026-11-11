@@ -1,7 +1,7 @@
-// Delhi UT annual totals from NCRB Table 3A.1. Each value and geography label was
-// checked against a one-page table extract held in docs/source-reports/.
-// Those extracts stay out of Git, so their names and hashes are recorded here.
-// 2019 is absent on purpose: see delhiUtCoverage.
+// Delhi UT annual totals. 2016-2018 and 2020-2024 come from NCRB Table 3A.1 and were
+// checked against one-page table extracts held in docs/source-reports/. 2019 comes from
+// NCRB's official 2014-2019 additional-table spreadsheet (see DELHI_UT_2019).
+// Source files stay out of Git, so their names and hashes are recorded here.
 
 const BASE = 'https://www.ncrb.mha.gov.in/uploads';
 
@@ -132,10 +132,94 @@ const SUPERSEDED_2021_SOURCE = {
   reason: 'Previously recorded. The full Crime in India 2023 volume is now held, but this record remains supported by the one-page 2020-2022 table extract, not by this table.',
 };
 
+// Official NCRB spreadsheet, listed under year 2019 on NCRB's additional-tables page.
+// Retrieved 2026-11-10; a fresh download was byte-identical. Not a Crime in India page.
+export const SOURCE_SPREADSHEET_2014_19 = {
+  fileName: '1679740555003StateUT-wiseCasesRegistered1563underCrimesagainstWomenduring2014-2019.xlsx',
+  path: 'docs/source-reports/retrieved-2026-11-10/state-caw-2014-2019/1679740555003StateUT-wiseCasesRegistered1563underCrimesagainstWomenduring2014-2019.xlsx',
+  sha256: '655033a80b12d020cc9065a067525c2a2fc5e641112ff9cb5f7a47715e8259c3',
+  sizeBytes: 15800,
+  url: 'https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/1679740555003StateUT-wiseCasesRegistered1563underCrimesagainstWomenduring2014-2019.xlsx',
+  worksheet: 'Total Cognizable SLL Crimes',
+  title: 'Statement on Cases Registered In Police Stations and Cr.PC (156_3) under Crimes against Women During 2014-2019',
+  geographyLabel: 'Delhi',
+};
+
+const DELHI_UT_2019 = {
+  year: 2019,
+  reportingUnit: 'Delhi UT',
+  reportingUnitType: 'state_ut',
+  reportingUnitLabelOriginal: SOURCE_SPREADSHEET_2014_19.geographyLabel,
+  crimeCategory: 'Total crime against women',
+  categoryLabelOriginal: SOURCE_SPREADSHEET_2014_19.title,
+  legalRegime: 'ALL',
+  ageGroup: 'all',
+  metric: 'cases',
+  originalValue: '13395',
+  numericValue: 13395,
+  edition: 'Crime in India 2019 Additional Tables',
+  editionBasis: 'Listed under year 2019 on the NCRB additional-tables page; the spreadsheet prints no edition.',
+  volume: 'Additional tables',
+  tableNumber: 'Additional table 003 (State/UT)',
+  sourceKey: 'NCRB-AT2019-003-STATEUT-CAW-2014-2019',
+  sourceReference: 'NCRB-AT2019-003-STATEUT-CAW-2014-2019-SL34',
+  sourceUrl: SOURCE_SPREADSHEET_2014_19.url,
+  sourceNotes:
+    'Official NCRB download, retrieved 2026-11-10 from ncrb.gov.in (redirected to ncrb.mha.gov.in; server Last-Modified 2023-03-25; 15,800 bytes). Worksheet "Total Cognizable SLL Crimes", row SL 34 "Delhi". Source line printed: "Source: Crime in India".',
+  evidence: {
+    fileName: SOURCE_SPREADSHEET_2014_19.fileName,
+    path: SOURCE_SPREADSHEET_2014_19.path,
+    sha256: SOURCE_SPREADSHEET_2014_19.sha256,
+  },
+  sourceHistory: [],
+  validationStatus: 'verified_with_note',
+  validationChecks: {
+    'EXT-2': {
+      status: 'passed',
+      scope: 'Row SL 34 "Delhi" read from the official spreadsheet: 51 under Cr.PC 156(3) + 13,344 in police stations = 13,395. The same file reproduces the 2016-2018 production figures.',
+    },
+    'TOT-4': {
+      status: 'pending',
+      scope: 'Requires an approved comparison with Table 3A.2. No 2019 Table 3A.2 source has been obtained, so this comparison is outstanding.',
+    },
+  },
+  validationNotes: [
+    {
+      code: 'TOT4_PENDING_TABLE_3A2',
+      text: 'The comparison with the category table (Table 3A.2) is not complete for this production record. No 2019 Table 3A.2 source has been obtained.',
+      display: false,
+    },
+    {
+      code: 'SOURCE_OFFICIAL_SPREADSHEET',
+      text: 'Taken from NCRB\'s official 2014-2019 spreadsheet, not from a Crime in India report page',
+      display: true,
+    },
+    {
+      code: 'CII2021_COPY_THIRD_PARTY',
+      text: 'Crime in India 2021 Table 3A.1 also prints 13,395, but only a third-party-hosted copy of that report was available, not an NCRB-hosted copy.',
+      display: false,
+    },
+    {
+      code: 'ALL_INDIA_2019_DIFFERS',
+      text: 'The all-India 2019 total is 405,861 in the official spreadsheet and 405,326 in the third-party-hosted Crime in India 2021 copy. The reason is unresolved. The Delhi value is identical in both.',
+      display: false,
+    },
+    {
+      code: 'DELHI_CITY_SEPARATE',
+      text: 'Delhi City is a separate reporting row in a separate NCRB table and is not part of this record.',
+      display: false,
+    },
+  ],
+  extractionMethod: 'xlsx cell read (Python standard library)',
+  extractedAt: '2026-11-10',
+  checkedAgainstExtractAt: '2026-11-10',
+};
+
 export const delhiUtStatistics = [
   statistic({ year: 2016, originalValue: '15310', source: SOURCES.CII2018, pdfPage: 241, extract: WOMEN_2016_18 }),
   statistic({ year: 2017, originalValue: '13076', source: SOURCES.CII2018, pdfPage: 241, extract: WOMEN_2016_18 }),
   statistic({ year: 2018, originalValue: '13640', source: SOURCES.CII2018, pdfPage: 241, extract: WOMEN_2016_18 }),
+  DELHI_UT_2019,
   statistic({ year: 2020, originalValue: '10093', source: SOURCES.CII2022, pdfPage: 259, extract: WOMEN_2020_22 }),
   statistic({ year: 2021, originalValue: '14277', source: SOURCES.CII2022, pdfPage: 259, extract: WOMEN_2020_22, sourceHistory: [SUPERSEDED_2021_SOURCE] }),
   statistic({ year: 2022, originalValue: '14247', source: SOURCES.CII2024, pdfPage: 329, extract: WOMEN_2022_24, alsoFoundIn: [WOMEN_2020_22.fileName] }),
@@ -145,9 +229,12 @@ export const delhiUtStatistics = [
 
 export const delhiUtCoverage = [
   {
+    // Kept as history. A resolved gap is not reported as missing.
     year: 2019,
-    status: 'missing_pending_source',
+    status: 'resolved',
     reason: 'The English Crime in India 2021 edition has not been obtained yet.',
     expectedSource: 'Crime in India 2021, Table 3A.1',
+    resolvedBy: 'NCRB-AT2019-003-STATEUT-CAW-2014-2019 (official NCRB spreadsheet, row SL 34)',
+    resolvedAt: '2026-11-10',
   },
 ];

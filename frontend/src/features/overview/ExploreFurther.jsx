@@ -7,7 +7,7 @@ const LINKS = [
   { to: '/crime-trends', label: 'View crime trends', icon: TrendingUp },
   { to: '/crime-categories', label: 'Explore categories and definitions', icon: Layers },
   { to: '/metro-comparison', label: 'Compare Delhi City with other metros', icon: Building2 },
-  { to: '/geographic-explorer', label: 'Explore geographic context', icon: Map },
+  { to: '/', label: 'Open the Crime Map', icon: Map },
 ];
 
 export function ExploreFurther() {

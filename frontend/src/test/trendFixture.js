@@ -1,5 +1,18 @@
 import { delhiUtCoverage, delhiUtStatistics } from '../data/ncrbDelhiUt';
 
+const RESULT = { passed: 'PASS', pending: 'PENDING', failed: 'FAIL' };
+
+// Converts a source-of-truth statistic to the shape the API serves, as the seed and serializer do.
+export function toApiStatistic(source) {
+  return {
+    ...source,
+    registeredCases: source.numericValue,
+    victims: null,
+    pdfPage: source.pdfPage ?? null,
+    validationChecks: Object.entries(source.validationChecks).map(([rule, check]) => ({ rule, result: RESULT[check.status], scope: check.scope })),
+  };
+}
+
 // The API's response shape, built from the same verified figures it serves.
 export function buildTrendSeries() {
   const series = [];
@@ -9,7 +22,7 @@ export function buildTrendSeries() {
     series.push({
       year,
       availability: source ? 'available' : 'missing',
-      statistic: source ? { ...source, registeredCases: source.numericValue, victims: null } : null,
+      statistic: source ? toApiStatistic(source) : null,
       coverage,
     });
   }

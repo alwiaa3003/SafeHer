@@ -1,33 +1,19 @@
-import {
-  Building2,
-  Compass,
-  Database,
-  Layers,
-  Map,
-  ScrollText,
-  TrendingUp,
-} from 'lucide-react';
+import { Database, Map, ScrollText, TrendingUp } from 'lucide-react';
 
+// Main navigation. Crime Categories, Metro Comparison and the former Overview keep their
+// routes but are not listed until they have verified data of their own.
 export const navigationGroups = [
   {
-    label: 'Analysis',
+    label: 'Explore',
     links: [
-      { to: '/', label: 'Overview', icon: Compass, end: true },
+      { to: '/', label: 'Crime Map', icon: Map, end: true },
       { to: '/crime-trends', label: 'Crime Trends', icon: TrendingUp },
-      { to: '/crime-categories', label: 'Crime Categories', icon: Layers },
-      { to: '/metro-comparison', label: 'Metro Comparison', icon: Building2 },
     ],
   },
   {
-    label: 'Geography',
+    label: 'Information',
     links: [
-      { to: '/geographic-explorer', label: 'Geographic Explorer', icon: Map },
-    ],
-  },
-  {
-    label: 'Evidence',
-    links: [
-      { to: '/data-sources', label: 'Data Sources', icon: Database },
+      { to: '/data-sources', label: 'Data & Sources', icon: Database },
       { to: '/methodology', label: 'Methodology', icon: ScrollText },
     ],
   },

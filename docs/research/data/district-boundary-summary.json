@@ -1,0 +1,66 @@
+{
+  "service": {
+    "serviceDescription": "",
+    "description": "",
+    "copyrightText": "",
+    "currentVersion": 10.91,
+    "spatialReference": {
+      "wkid": 32643,
+      "latestWkid": 32643
+    }
+  },
+  "document_info": {
+    "Title": "",
+    "Author": "",
+    "Comments": "",
+    "Subject": "",
+    "Category": "",
+    "AntialiasingMode": "None",
+    "TextAntialiasingMode": "Force",
+    "Keywords": ""
+  },
+  "layer": {
+    "name": "DP_DISTRICT_BOUNDARY",
+    "type": "Feature Layer",
+    "geometryType": "esriGeometryPolygon",
+    "copyrightText": "",
+    "description": "",
+    "editFieldsInfo": null,
+    "editingInfo": null
+  },
+  "layer_fields": [
+    "FID",
+    "Shape",
+    "DISTRICT",
+    "RANGE",
+    "AREA__SQKM"
+  ],
+  "date_fields": [],
+  "feature_count": 16,
+  "ncrb_units_matched_by_name": 16,
+  "ncrb_units_unmatched": [],
+  "sum_computed_area_km2": 1487.9,
+  "osm_outline_area_km2_recorded": 1487.3,
+  "grid_coverage_0.01deg": {
+    "inside_osm": 1372,
+    "covered_once": 1368,
+    "uncovered": 4,
+    "overlapping": 0,
+    "outside_osm_but_covered": 11
+  },
+  "files": {
+    "districts.geojson": {
+      "bytes": 2146132,
+      "sha256": "e3208e1c86ec9aa43da7d47a07a89fa9ab17de2c7f40002578014b8f97cfc025"
+    },
+    "layer.json": {
+      "bytes": 2905,
+      "sha256": "a57145c14ab8c8c06ed1df933180b221fcfea230847c22a810af16ea7329ec4d"
+    },
+    "service.json": {
+      "bytes": 2433,
+      "sha256": "bea512e8074d8187a3a25771ab89a54f0f52d9154a9c01e4a57586c4b614e402"
+    }
+  },
+  "retrieved": "2026-11-10"
+}

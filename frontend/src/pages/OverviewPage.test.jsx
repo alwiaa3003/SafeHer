@@ -5,7 +5,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import { routes } from '../app/routes';
 import { buildTrendSeries, jsonResponse, trendResponse } from '../test/trendFixture';
-import { delhiUtCoverage, delhiUtStatistics } from '../data/ncrbDelhiUt';
+import { delhiUtCoverage, delhiUtStatistics, SOURCE_SPREADSHEET_2014_19 } from '../data/ncrbDelhiUt';
 import { StatusLabel } from '../components/StatusLabel/StatusLabel';
 import { statusKindFor, TABLE_TOTALS_CHECKED_LABEL } from '../data/status';
 
@@ -13,6 +13,7 @@ const EXPECTED = {
   2016: '15310',
   2017: '13076',
   2018: '13640',
+  2019: '13395',
   2020: '10093',
   2021: '14277',
   2022: '14247',
@@ -21,7 +22,7 @@ const EXPECTED = {
 };
 
 function renderPage() {
-  const router = createMemoryRouter(routes, { initialEntries: ['/'] });
+  const router = createMemoryRouter(routes, { initialEntries: ['/overview'] });
   return render(<RouterProvider router={router} />);
 }
 
@@ -41,7 +42,7 @@ describe('Overview API integration', () => {
       expect.objectContaining({ headers: { Accept: 'application/json' } }),
     );
     expect(Line.mock.lastCall[0].data.datasets[0].data).toEqual([
-      15310, 13076, 13640, null, 10093, 14277, 14247, 13439, 13396,
+      15310, 13076, 13640, 13395, 10093, 14277, 14247, 13439, 13396,
     ]);
   });
 
@@ -159,8 +160,11 @@ describe('Delhi UT data module', () => {
     expect(actual).toEqual(EXPECTED);
   });
 
-  it('keeps full provenance on every statistic', () => {
-    delhiUtStatistics.forEach((s) => {
+  const FROM_REPORT_EXTRACTS = delhiUtStatistics.filter((s) => s.year !== 2019);
+
+  it('keeps full provenance on every statistic from a report extract', () => {
+    expect(FROM_REPORT_EXTRACTS).toHaveLength(8);
+    FROM_REPORT_EXTRACTS.forEach((s) => {
       expect(s.reportingUnit).toBe('Delhi UT');
       expect(s.crimeCategory).toBeTruthy();
       expect(s.categoryLabelOriginal).toMatch(/Crime against Women/);
@@ -175,8 +179,8 @@ describe('Delhi UT data module', () => {
     });
   });
 
-  it('marks all eight totals verified_with_note, with TOT-4 still pending', () => {
-    expect(delhiUtStatistics).toHaveLength(8);
+  it('marks all nine totals verified_with_note, with TOT-4 still pending', () => {
+    expect(delhiUtStatistics).toHaveLength(9);
     delhiUtStatistics.forEach((s) => {
       expect(s.validationStatus).toBe('verified_with_note');
       expect(s.validationChecks['EXT-2'].status).toBe('passed');
@@ -186,7 +190,7 @@ describe('Delhi UT data module', () => {
   });
 
   it('records the extract evidence with its hash and extract page', () => {
-    delhiUtStatistics.forEach((s) => {
+    FROM_REPORT_EXTRACTS.forEach((s) => {
       expect(s.evidence.path).toBe(`docs/source-reports/${s.evidence.fileName}`);
       expect(s.evidence.sha256).toMatch(/^[0-9a-f]{64}$/);
       expect(s.evidence.extractPage).toBe(1);
@@ -194,7 +198,7 @@ describe('Delhi UT data module', () => {
   });
 
   it('marks full-report pages as not independently rechecked', () => {
-    delhiUtStatistics.forEach((s) => {
+    FROM_REPORT_EXTRACTS.forEach((s) => {
       expect(s.pdfPageStatus).toBe('not_independently_rechecked');
       expect(s.validationNotes.map((n) => n.code)).toContain('FULL_REPORT_PAGE_NOT_RECHECKED');
     });
@@ -208,6 +212,7 @@ describe('Delhi UT data module', () => {
       2016: 'Delhi UT',
       2017: 'Delhi UT',
       2018: 'Delhi UT',
+      2019: 'Delhi',
       2020: 'Delhi',
       2021: 'Delhi',
       2022: 'Delhi',
@@ -235,30 +240,80 @@ describe('Delhi UT data module', () => {
     expect(withCaveat.map((s) => s.year)).toEqual([2024]);
   });
 
-  it('records 2019 as coverage and never as a statistic', () => {
-    expect(delhiUtStatistics.some((s) => s.year === 2019)).toBe(false);
-    expect(delhiUtCoverage.map((c) => c.year)).toEqual([2019]);
-    const row = buildTrendSeries().find((r) => r.year === 2019);
-    expect(row.statistic).toBeNull();
-    expect(row.coverage.status).toBe('missing_pending_source');
+  describe('2019 record', () => {
+    const s2019 = delhiUtStatistics.find((s) => s.year === 2019);
+
+    it('holds the official spreadsheet figure for Delhi UT with no victims value', () => {
+      expect(s2019).toMatchObject({
+        reportingUnit: 'Delhi UT',
+        reportingUnitType: 'state_ut',
+        reportingUnitLabelOriginal: 'Delhi',
+        originalValue: '13395',
+        numericValue: 13395,
+        validationStatus: 'verified_with_note',
+      });
+      expect(s2019.victims).toBeUndefined();
+      expect(s2019.pdfPage).toBeUndefined();
+    });
+
+    it('records the official NCRB spreadsheet as its evidence', () => {
+      expect(s2019.sourceUrl).toMatch(/^https:\/\/www\.ncrb\.gov\.in\/uploads\//);
+      expect(s2019.evidence).toEqual({
+        fileName: SOURCE_SPREADSHEET_2014_19.fileName,
+        path: SOURCE_SPREADSHEET_2014_19.path,
+        sha256: '655033a80b12d020cc9065a067525c2a2fc5e641112ff9cb5f7a47715e8259c3',
+      });
+      expect(s2019.sourceReference).toBe('NCRB-AT2019-003-STATEUT-CAW-2014-2019-SL34');
+      expect(s2019.validationChecks['EXT-2'].scope).toMatch(/51 under Cr\.PC 156\(3\) \+ 13,344 in police stations = 13,395/);
+    });
+
+    it('keeps TOT-4 pending and every required qualification', () => {
+      expect(s2019.validationChecks['TOT-4']).toEqual({
+        status: 'pending',
+        scope: expect.stringMatching(/No 2019 Table 3A\.2 source has been obtained, so this comparison is outstanding/),
+      });
+      const notes = Object.fromEntries(s2019.validationNotes.map((n) => [n.code, n.text]));
+      expect(notes.CII2021_COPY_THIRD_PARTY).toMatch(/third-party-hosted copy/);
+      expect(notes.ALL_INDIA_2019_DIFFERS).toMatch(/405,861.*405,326.*unresolved/);
+      expect(notes.DELHI_CITY_SEPARATE).toMatch(/separate reporting row/);
+      expect(notes.TOT4_PENDING_TABLE_3A2).toBeDefined();
+    });
+
+    it('keeps the old gap as resolved history, not as a missing year', () => {
+      expect(delhiUtCoverage).toEqual([
+        expect.objectContaining({ year: 2019, status: 'resolved', resolvedBy: expect.stringMatching(/official NCRB spreadsheet/) }),
+      ]);
+    });
   });
 });
 
 describe('Overview chart', () => {
-  it('plots a line with no area fill and a true 2019 break', async () => {
+  it('plots a line with no area fill and no gaps bridged', async () => {
     await renderOverview();
     const { data } = Line.mock.lastCall[0];
     const dataset = data.datasets[0];
     expect(dataset.fill).toBe(false);
     expect(dataset.spanGaps).toBe(false);
     expect(data.labels[3]).toBe('2019');
-    expect(dataset.data[3]).toBeNull();
+    expect(dataset.data[3]).toBe(13395);
     expect(dataset.data).toHaveLength(9);
+    expect(dataset.data).not.toContain(null);
   });
 
-  it('describes the gap to screen readers', async () => {
+  it('describes 2019 to screen readers as a value, not a gap', async () => {
     await renderOverview();
-    expect(screen.getByRole('img', { name: /2019: unavailable/ })).toBeInTheDocument();
+    const chart = screen.getByRole('img', { name: /2019: 13,395/ });
+    expect(chart.getAttribute('aria-label')).not.toMatch(/unavailable/);
+  });
+
+  it('still breaks the line if the API reports a missing year', async () => {
+    const series = buildTrendSeries().map((row) =>
+      row.year === 2019 ? { ...row, availability: 'missing', statistic: null } : row,
+    );
+    vi.stubGlobal('fetch', vi.fn(async () => trendResponse(series)));
+    renderPage();
+    await screen.findByRole('img', { name: /2019: unavailable/ });
+    expect(Line.mock.lastCall[0].data.datasets[0].data[3]).toBeNull();
   });
 });
 
@@ -291,11 +346,11 @@ describe('Overview content', () => {
 
     expect(container.querySelector('[data-status="verified"]')).toBeNull();
     expect(container.querySelector('.lucide-circle-check')).toBeNull();
-    // Strip (1) + table rows (8) + coverage ranges (2).
+    // Strip (1) + table rows (9) + annual coverage range (1).
     expect(container.querySelectorAll('[data-status="verified_with_note"]')).toHaveLength(11);
 
     const coverage = within(screen.getByRole('region', { name: 'Evidence coverage' }));
-    expect(coverage.getAllByText('Totals checked – validation pending')).toHaveLength(2);
+    expect(coverage.getAllByText('Totals checked – validation pending')).toHaveLength(1);
     expect(coverage.queryByText('Verified with note')).toBeNull();
   });
 
@@ -327,7 +382,7 @@ describe('Overview content', () => {
     expect(table.getByRole('cell', { name: '2023' }).closest('tr').textContent).not.toMatch(caveat);
   });
 
-  it('table lists figures with sources and marks 2019 unavailable', async () => {
+  it('table lists figures with sources, including the 2019 spreadsheet source', async () => {
     const user = userEvent.setup();
     await renderOverview();
     const toggle = screen.getByRole('button', { name: 'View as table' });
@@ -350,9 +405,14 @@ describe('Overview content', () => {
     );
 
     const row2019 = table.getByRole('cell', { name: '2019' }).closest('tr');
-    expect(row2019).toHaveTextContent('Unavailable');
-    expect(row2019).toHaveTextContent('Expected: Crime in India 2021');
-    expect(row2019.querySelector('a')).toBeNull();
+    expect(row2019).toHaveTextContent('13,395');
+    expect(row2019).toHaveTextContent(TABLE_TOTALS_CHECKED_LABEL);
+    expect(row2019).toHaveTextContent("Taken from NCRB's official 2014-2019 spreadsheet");
+    expect(row2019).toHaveTextContent('Official NCRB spreadsheet; no report page.');
+    expect(row2019).not.toHaveTextContent('Unavailable');
+    expect(row2019).not.toHaveTextContent('12,902');
+    expect(row2019.querySelector('a')).toHaveAttribute('href', SOURCE_SPREADSHEET_2014_19.url);
+    expect(row2019.querySelector('a').textContent).not.toMatch(/PDF p\./);
 
     expect(screen.getByRole('button', { name: 'Hide table' })).toHaveAttribute(
       'aria-expanded',
@@ -375,7 +435,8 @@ describe('Overview content', () => {
   it('includes coverage, methodology link and no account controls', async () => {
     await renderOverview();
     const coverage = screen.getByRole('region', { name: 'Evidence coverage' });
-    expect(within(coverage).getByText('2019')).toBeInTheDocument();
+    expect(within(coverage).getByText('2016–2024')).toBeInTheDocument();
+    expect(within(coverage).queryByText('2019')).toBeNull();
     const note = screen.getByRole('complementary', { name: 'Methodology note' });
     expect(within(note).getByRole('link', { name: 'Methodology' })).toHaveAttribute(
       'href',

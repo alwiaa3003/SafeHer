@@ -70,3 +70,26 @@ export const objectIdParams = z.strictObject({
 });
 
 export const noQuery = z.strictObject({});
+
+// District categories are short slugs such as "total" or "rape".
+export const districtStatisticsQuery = z.strictObject({
+  category: z.string().regex(/^[a-z0-9-]{1,60}$/, 'Must be a category key from /api/police-districts/meta'),
+  year: year.optional(),
+});
+
+// Place search accepts free text only; reverse lookup is limited to the Delhi region.
+const coordinate = (min, max, name) =>
+  z
+    .string()
+    .regex(/^-?\d{1,3}(\.\d{1,8})?$/, `${name} must be a decimal number`)
+    .transform(Number)
+    .refine((value) => value >= min && value <= max, `${name} must be within the Delhi region`);
+
+export const placeSearchQuery = z.strictObject({
+  q: z.string().trim().min(2, 'Enter at least two characters').max(120),
+});
+
+export const placeReverseQuery = z.strictObject({
+  lat: coordinate(28.2, 29.1, 'lat'),
+  lon: coordinate(76.6, 77.6, 'lon'),
+});

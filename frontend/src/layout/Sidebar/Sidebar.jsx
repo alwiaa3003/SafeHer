@@ -2,17 +2,29 @@ import { Link, NavLink } from 'react-router-dom';
 import { navigationGroups } from '../../app/navigation';
 import styles from './Sidebar.module.css';
 
-export function Sidebar({ id, open, onNavigate }) {
-  const sidebarClass = open
-    ? `${styles.sidebar} ${styles.open}`
-    : styles.sidebar;
+// One navigation for every page. On the Crime Map it is used in the auto-hiding variant:
+// fixed at the left edge, slid out of view while hidden, and inert so hidden links cannot be focused.
+export function Sidebar({ id, open, onNavigate, variant = 'standard', docked = false, headerAction = null }) {
+  const autoHide = variant === 'autoHide';
+  const classes = [styles.sidebar];
+  if (open) classes.push(styles.open);
+  if (autoHide) classes.push(styles.autoHide);
+  if (autoHide && docked) classes.push(styles.docked);
 
   return (
-    <aside id={id} className={sidebarClass}>
-      <Link className={styles.brand} to="/" onClick={onNavigate}>
-        <span className={styles.wordmark}>SafeHer</span>
-        <span className={styles.tagline}>Delhi crime records, examined</span>
-      </Link>
+    <aside
+      id={id}
+      className={classes.join(' ')}
+      inert={autoHide && !open ? true : undefined}
+      aria-label={autoHide ? 'Site navigation' : undefined}
+    >
+      <div className={styles.head}>
+        <Link className={styles.brand} to="/" onClick={onNavigate}>
+          <span className={styles.wordmark}>SafeHer</span>
+          <span className={styles.tagline}>Delhi crime records, examined</span>
+        </Link>
+        {headerAction}
+      </div>
 
       <nav className={styles.nav} aria-label="Main">
         {navigationGroups.map((group) => (

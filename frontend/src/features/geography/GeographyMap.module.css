@@ -1,25 +1,72 @@
-/* Keeps Leaflet's layers beneath the mobile navigation. */
+/* The map fills its parent. Leaflet stays beneath the app's mobile navigation. */
 .frame {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   isolation: isolate;
-  overflow: hidden;
-  border-radius: var(--radius);
 }
 
 .map {
-  height: 560px;
-  background: var(--color-page);
+  width: 100%;
+  height: 100%;
+  background: #f2ede4;
   font-family: var(--font-body);
 }
 
-/* Muted basemap so that the boundary, not map colour, draws attention. */
-.map :global(.leaflet-tile-pane) {
-  filter: grayscale(1) sepia(0.12) contrast(0.9) brightness(1.04);
+/* "Muted" base map: the same OSM tiles, softened so overlays read clearly. */
+.muted .map :global(.leaflet-tile-pane) {
+  filter: saturate(0.45) sepia(0.12) contrast(0.95) brightness(1.03);
 }
 
-@media (max-width: 800px) {
-  .map {
-    height: 380px;
+.map :global(.leaflet-control-zoom) {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--map-shadow);
+}
+
+.map :global(.leaflet-control-zoom a) {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  color: var(--color-text);
+}
+
+/* Bottom controls (zoom, scale, attribution) rise above the mobile location sheet. */
+.map :global(.leaflet-bottom) {
+  bottom: var(--map-sheet-offset, 0px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .map :global(.leaflet-bottom) {
+    transition: bottom 200ms ease;
   }
+}
+
+.map :global(.leaflet-control-attribution) {
+  font-size: 11px;
+}
+
+.map :global(.leaflet-container:focus-visible),
+.map:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+}
+
+/* District hover tooltip: name and the selected view's registered-case count. */
+.map :global(.district-tooltip) {
+  padding: 6px 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgb(38 33 28 / 0.14);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* Browsers draw a rectangular focus ring round a clicked SVG path. The selected district is
+   already outlined, and keyboard users reach districts through the table view. */
+.map :global(path.leaflet-interactive:focus) {
+  outline: none;
 }

@@ -1,0 +1,90 @@
+{
+  "district_2014_total_like_columns": [
+    "Kidnapping & Abduction_Total",
+    "Assault on Women with intent to outrage her Modesty_Total",
+    "Insult to the Modesty of Women_Total",
+    "Total Crimes against Women",
+    "Dacoity_Total",
+    "Total Crimes in which Women was Victim"
+  ],
+  "copy_of_cii2021": {
+    "sha256": "4188fb268983d12ad1a197353278f71f5fea7df47631496399b007b0fde90001",
+    "table_3a1_pdf_page": 259,
+    "delhi_line": [
+      "13395",
+      "10093",
+      "14277",
+      "96.7",
+      "147.6",
+      "71.2"
+    ]
+  },
+  "state_2019_vs_copy": {
+    "states_compared": 36,
+    "differences": {
+      "only_in_official_file": [
+        33,
+        49,
+        515,
+        1070,
+        3069,
+        17746,
+        30394
+      ],
+      "only_in_copy": [
+        82,
+        387997,
+        405326
+      ]
+    },
+    "official_rows": 36,
+    "copy_rows": 32
+  },
+  "cii2021_3a2_delhi_lines_last_pages": [
+    [
+      273,
+      [
+        "1374",
+        "1377",
+        "14.2",
+        "841",
+        "841",
+        "8.7",
+        "497",
+        "498",
+        "5.1",
+        "31",
+        "33",
+        "0.3"
+      ]
+    ],
+    [
+      274,
+      [
+        "1",
+        "1",
+        "0.0",
+        "1",
+        "3",
+        "3",
+        "0.0"
+      ]
+    ],
+    [
+      275,
+      [
+        "0",
+        "0",
+        "0.0",
+        "1502",
+        "14277",
+        "14508",
+        "147.6"
+      ]
+    ]
+  ],
+  "state_file_totals_2019": {
+    "all_india": 405861,
+    "note": "Printed in the official xlsx."
+  }
+}

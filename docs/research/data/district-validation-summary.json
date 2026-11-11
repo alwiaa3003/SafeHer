@@ -1,0 +1,122 @@
+{
+  "reconciliation": [
+    {
+      "year": 2014,
+      "units": 19,
+      "geographic_units": 12,
+      "non_geographic_units": 7,
+      "sum_all_units": 15265,
+      "sum_geographic": 15036,
+      "sum_non_geographic": 229,
+      "non_geographic_share_pct": 1.5,
+      "printed_total_districts": 15265,
+      "delhi_ut_total": 15319,
+      "units_minus_printed_total": 0,
+      "units_minus_delhi_ut": -54,
+      "printed_total_minus_delhi_ut": -54,
+      "sheet1_delhi_value": "",
+      "reconciles": false
+    },
+    {
+      "year": 2015,
+      "units": 19,
+      "geographic_units": 12,
+      "non_geographic_units": 7,
+      "sum_all_units": 17104,
+      "sum_geographic": 16872,
+      "sum_non_geographic": 232,
+      "non_geographic_share_pct": 1.36,
+      "printed_total_districts": 17104,
+      "delhi_ut_total": 17222,
+      "units_minus_printed_total": 0,
+      "units_minus_delhi_ut": -118,
+      "printed_total_minus_delhi_ut": -118,
+      "sheet1_delhi_value": "",
+      "reconciles": false
+    },
+    {
+      "year": 2016,
+      "units": 19,
+      "geographic_units": 12,
+      "non_geographic_units": 7,
+      "sum_all_units": 15295,
+      "sum_geographic": 14996,
+      "sum_non_geographic": 299,
+      "non_geographic_share_pct": 1.95,
+      "printed_total_districts": 15310,
+      "delhi_ut_total": 15310,
+      "units_minus_printed_total": -15,
+      "units_minus_delhi_ut": -15,
+      "printed_total_minus_delhi_ut": 0,
+      "sheet1_delhi_value": 15,
+      "reconciles": false
+    },
+    {
+      "year": 2020,
+      "units": 23,
+      "geographic_units": 16,
+      "non_geographic_units": 7,
+      "sum_all_units": 10093,
+      "sum_geographic": 10036,
+      "sum_non_geographic": 57,
+      "non_geographic_share_pct": 0.56,
+      "printed_total_districts": 10093,
+      "delhi_ut_total": 10093,
+      "units_minus_printed_total": 0,
+      "units_minus_delhi_ut": 0,
+      "printed_total_minus_delhi_ut": 0,
+      "sheet1_delhi_value": "",
+      "reconciles": true
+    },
+    {
+      "year": 2021,
+      "units": 23,
+      "geographic_units": 16,
+      "non_geographic_units": 7,
+      "sum_all_units": 14277,
+      "sum_geographic": 14183,
+      "sum_non_geographic": 94,
+      "non_geographic_share_pct": 0.66,
+      "printed_total_districts": 14277,
+      "delhi_ut_total": 14277,
+      "units_minus_printed_total": 0,
+      "units_minus_delhi_ut": 0,
+      "printed_total_minus_delhi_ut": 0,
+      "sheet1_delhi_value": "",
+      "reconciles": true
+    },
+    {
+      "year": 2022,
+      "units": 23,
+      "geographic_units": 16,
+      "non_geographic_units": 7,
+      "sum_all_units": 14247,
+      "sum_geographic": 14135,
+      "sum_non_geographic": 112,
+      "non_geographic_share_pct": 0.79,
+      "printed_total_districts": 14247,
+      "delhi_ut_total": 14247,
+      "units_minus_printed_total": 0,
+      "units_minus_delhi_ut": 0,
+      "printed_total_minus_delhi_ut": 0,
+      "sheet1_delhi_value": "",
+      "reconciles": true
+    }
+  ],
+  "formula_failures": 0,
+  "formula_checks": 30,
+  "cross_check_2022": {
+    "MATCH": 52,
+    "DIFFERENT": 0,
+    "NOT_ALIGNED": 0
+  },
+  "cross_check_label_checks": {
+    "consistent": 51,
+    "section_label_differs (336 vs 363)": 1
+  },
+  "sheet1_2016_equals_unallocated": {
+    "states_compared": 36,
+    "states_agreeing": 36,
+    "disagreeing": {}
+  }
+}

@@ -26,6 +26,7 @@ export function GapAwareLineChart({
   gapText,
   notes = [],
   tooltipDetail,
+  yTitle,
 }) {
   const data = {
     labels: points.map((point) => point.label),
@@ -68,6 +69,7 @@ export function GapAwareLineChart({
         max: yMax,
         grid: { color: CHART_COLORS.grid, lineWidth: 1 },
         border: { display: false },
+        title: yTitle ? { display: true, text: yTitle, color: CHART_COLORS.muted, font: CHART_FONT } : { display: false },
         ticks: {
           color: CHART_COLORS.muted,
           font: CHART_FONT,

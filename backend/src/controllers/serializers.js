@@ -16,6 +16,7 @@ export function publicSource(source) {
     tableReference: isBoundary ? null : (source.tableReference ?? null),
     boundaryReference: isBoundary ? (source.boundaryReference ?? legacyBoundaryReference(source)) : null,
     tableTitle: source.tableTitle ?? null,
+    reportingLevel: source.reportingLevel ?? null,
     sourceUrl: source.sourceUrl,
     reportingPeriod: source.reportingPeriod ?? null,
     editionBasis: source.editionBasis ?? null,

@@ -1,0 +1,4144 @@
+{
+ "datasetKey": "ncrb_delhi_police_district_crime_against_women",
+ "description": "Registered cases of crime against women by Delhi police district, as printed in NCRB's district-wise tables.",
+ "measure": "registered_cases",
+ "measureNote": "The files do not print an incidence or victims label. Their totals equal the Delhi registered-case totals in Table 3A.1, so the values are treated as registered cases.",
+ "builtBy": "docs/research/ncrb-research-pipeline/build_district_map_dataset.py",
+ "lastVerified": "2026-11-10",
+ "licence": "No explicit NCRB reuse licence has been found (OR-12). Figures are reproduced with attribution; the source files are not redistributed.",
+ "excluded": [
+  "Age sub-columns (parts of a head) and the Kidnapping & Abduction group (OR-06 open) are not exported.",
+  "2020-2021 category columns were not checked against a state table and are not exported.",
+  "2014-2016 use a 12-district system and are not exported."
+ ],
+ "units": [
+  {
+   "key": "central",
+   "labelOriginal": "Central",
+   "label": "Central",
+   "kind": "police_district"
+  },
+  {
+   "key": "dwarka",
+   "labelOriginal": "Dwarka",
+   "label": "Dwarka",
+   "kind": "police_district"
+  },
+  {
+   "key": "east",
+   "labelOriginal": "East",
+   "label": "East",
+   "kind": "police_district"
+  },
+  {
+   "key": "igi-airport",
+   "labelOriginal": "IGI Airport",
+   "label": "IGI Airport",
+   "kind": "police_district"
+  },
+  {
+   "key": "new-delhi",
+   "labelOriginal": "New Delhi",
+   "label": "New Delhi",
+   "kind": "police_district"
+  },
+  {
+   "key": "north",
+   "labelOriginal": "North",
+   "label": "North",
+   "kind": "police_district"
+  },
+  {
+   "key": "north-east",
+   "labelOriginal": "North-East",
+   "label": "North-East",
+   "kind": "police_district"
+  },
+  {
+   "key": "north-west",
+   "labelOriginal": "North-West",
+   "label": "North-West",
+   "kind": "police_district"
+  },
+  {
+   "key": "outer",
+   "labelOriginal": "Outer",
+   "label": "Outer",
+   "kind": "police_district"
+  },
+  {
+   "key": "outer-north",
+   "labelOriginal": "Outer North",
+   "label": "Outer North",
+   "kind": "police_district"
+  },
+  {
+   "key": "rohini",
+   "labelOriginal": "Rohini",
+   "label": "Rohini",
+   "kind": "police_district"
+  },
+  {
+   "key": "shahdara",
+   "labelOriginal": "Shahdara",
+   "label": "Shahdara",
+   "kind": "police_district"
+  },
+  {
+   "key": "south",
+   "labelOriginal": "South",
+   "label": "South",
+   "kind": "police_district"
+  },
+  {
+   "key": "south-east",
+   "labelOriginal": "South-East",
+   "label": "South-East",
+   "kind": "police_district"
+  },
+  {
+   "key": "south-west",
+   "labelOriginal": "South-West",
+   "label": "South-West",
+   "kind": "police_district"
+  },
+  {
+   "key": "west",
+   "labelOriginal": "West",
+   "label": "West",
+   "kind": "police_district"
+  },
+  {
+   "key": "crime-branch",
+   "labelOriginal": "Crime Branch",
+   "label": "Crime Branch",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "eow",
+   "labelOriginal": "EOW",
+   "label": "EOW",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "metro",
+   "labelOriginal": "Metro",
+   "label": "Metro",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "railway",
+   "labelOriginal": "RAILWAY",
+   "label": "RAILWAY",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "spuwac",
+   "labelOriginal": "SPUWAC",
+   "label": "SPUWAC",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "spl-cell",
+   "labelOriginal": "Spl Cell",
+   "label": "Spl Cell",
+   "kind": "non_geographic"
+  },
+  {
+   "key": "vigilance",
+   "labelOriginal": "Vigilance",
+   "label": "Vigilance",
+   "kind": "non_geographic"
+  }
+ ],
+ "categories": [
+  {
+   "key": "total",
+   "column": 54,
+   "labelOriginal": "Total Crime against Women (IPC+SLL)",
+   "label": "Total crime against women",
+   "legalRegime": "ALL",
+   "years": [
+    2020,
+    2021,
+    2022
+   ],
+   "validation": "District units sum exactly to the printed district total and to the Delhi UT total (Table 3A.1) for 2020, 2021 and 2022."
+  },
+  {
+   "key": "murder-with-rape",
+   "column": 3,
+   "labelOriginal": "Murder with Rape/Gang Rape",
+   "label": "Murder with Rape/Gang Rape",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (MWR) in Crime in India 2022."
+  },
+  {
+   "key": "dowry-deaths",
+   "column": 4,
+   "labelOriginal": "Dowry Deaths (Sec. 304B IPC)",
+   "label": "Dowry Deaths (Sec. 304B IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (DOWRY_DEATH) in Crime in India 2022."
+  },
+  {
+   "key": "abetment-to-suicide",
+   "column": 5,
+   "labelOriginal": "Abetment to Suicide of Women (Sec. 305/306 IPC)",
+   "label": "Abetment to Suicide of Women (Sec. 305/306 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ABET) in Crime in India 2022."
+  },
+  {
+   "key": "miscarriage",
+   "column": 6,
+   "labelOriginal": "Miscarriage (Sec. 313 & 314 IPC)",
+   "label": "Miscarriage (Sec. 313 & 314 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (MISC) in Crime in India 2022."
+  },
+  {
+   "key": "acid-attack",
+   "column": 7,
+   "labelOriginal": "Acid Attack (Sec. 326A IPC)",
+   "label": "Acid Attack (Sec. 326A IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ACID) in Crime in India 2022."
+  },
+  {
+   "key": "attempt-acid-attack",
+   "column": 8,
+   "labelOriginal": "Attempt to Acid Attack (Sec. 326B IPC)",
+   "label": "Attempt to Acid Attack (Sec. 326B IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ATT_ACID) in Crime in India 2022."
+  },
+  {
+   "key": "cruelty-by-husband",
+   "column": 9,
+   "labelOriginal": "Cruelty by Husband or his relatives (Sec. 498 A IPC)",
+   "label": "Cruelty by Husband or his relatives (Sec. 498 A IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (CRUELTY) in Crime in India 2022."
+  },
+  {
+   "key": "human-trafficking",
+   "column": 20,
+   "labelOriginal": "Human Trafficking (Sec. 370 & 370A IPC)",
+   "label": "Human Trafficking (Sec. 370 & 370A IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (HT) in Crime in India 2022."
+  },
+  {
+   "key": "selling-minor-girls",
+   "column": 21,
+   "labelOriginal": "Selling of Minor Girls (Sec. 372 IPC)",
+   "label": "Selling of Minor Girls (Sec. 372 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (SELL) in Crime in India 2022."
+  },
+  {
+   "key": "buying-minor-girls",
+   "column": 22,
+   "labelOriginal": "Buying of Minor Girls (Sec. 373 IPC)",
+   "label": "Buying of Minor Girls (Sec. 373 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (BUY) in Crime in India 2022."
+  },
+  {
+   "key": "rape",
+   "column": 23,
+   "labelOriginal": "Rape (Sec. 376 IPC) > Rape (Col.24+Col.25)",
+   "label": "Rape (Sec. 376 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (RAPE) in Crime in India 2022."
+  },
+  {
+   "key": "attempt-to-rape",
+   "column": 26,
+   "labelOriginal": "Attempt to Commit Rape (Sec. 376/511 IPC) > Attempt to Commit Rape (Col.27+Col.28)",
+   "label": "Attempt to Commit Rape (Sec. 376/511 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ATT_RAPE) in Crime in India 2022."
+  },
+  {
+   "key": "assault-outrage-modesty",
+   "column": 29,
+   "labelOriginal": "Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC) > Assault on Women with Intent to Outrage her Modesty (Col.30+Col.31)",
+   "label": "Assault on Women with Intent to Outrage her Modesty (Sec. 354 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ASSAULT) in Crime in India 2022."
+  },
+  {
+   "key": "insult-modesty",
+   "column": 32,
+   "labelOriginal": "Insult to the Modesty of Women (Sec. 509 IPC) > Insult to the Modesty of Women (Col.33+Col.34)",
+   "label": "Insult to the Modesty of Women (Sec. 509 IPC)",
+   "legalRegime": "IPC",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (INSULT) in Crime in India 2022."
+  },
+  {
+   "key": "dowry-prohibition-act",
+   "column": 35,
+   "labelOriginal": "Dowry Prohibition Act, 1961",
+   "label": "Dowry Prohibition Act, 1961",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (DPA) in Crime in India 2022."
+  },
+  {
+   "key": "immoral-traffic-act",
+   "column": 36,
+   "labelOriginal": "Immoral Traffic (Prevention) Act 1956 (Women Victims cases only) > Immoral Traffic (Prevention) Act, 1956 (Total) (Col. 37 to Col.41)",
+   "label": "Immoral Traffic (Prevention) Act 1956 (Women Victims cases only)",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (ITP) in Crime in India 2022."
+  },
+  {
+   "key": "domestic-violence-act",
+   "column": 42,
+   "labelOriginal": "Protection of Women from Domestic Violence Act",
+   "label": "Protection of Women from Domestic Violence Act",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (DV) in Crime in India 2022."
+  },
+  {
+   "key": "cyber-crimes",
+   "column": 43,
+   "labelOriginal": "Cyber Crimes/Information Technology Act (Women Centric Crimes only) > Cyber Crimes/Information Technology Act (Women Centric Crimes only) (Col.44+Col.45)",
+   "label": "Cyber Crimes/Information Technology Act (Women Centric Crimes only)",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (CYBER) in Crime in India 2022."
+  },
+  {
+   "key": "pocso",
+   "column": 46,
+   "labelOriginal": "Protection of Children from Sexual Violence Act (Girl Child Victims only) > Protection of Children from Sexual Violence Act (Girl Child Victims only) (Total) (Col.47 to Col.52)",
+   "label": "Protection of Children from Sexual Violence Act (Girl Child Victims only)",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (POCSO) in Crime in India 2022."
+  },
+  {
+   "key": "indecent-representation-act",
+   "column": 53,
+   "labelOriginal": "Indecent Representation of Women (Prohibition) Act, 1986",
+   "label": "Indecent Representation of Women (Prohibition) Act, 1986",
+   "legalRegime": "SLL",
+   "years": [
+    2022
+   ],
+   "validation": "The sum of all Delhi units equals Table 3A.2 (IRW) in Crime in India 2022."
+  }
+ ],
+ "sources": [
+  {
+   "sourceKey": "NCRB-DISTRICT-CAW-2020",
+   "year": 2020,
+   "titlePrinted": "Districtwise Crime against Women - 2020",
+   "delhiSectionLabel": "State: Delhi",
+   "worksheet": "District Data Report",
+   "fileName": "Districtwise-Crime-against-Women_2020.xlsx",
+   "sha256": "234cc32eab38cda6a30a1a2bde0411f3e06771d84c75339c15f87ed50db7165b",
+   "sourceUrl": "https://www.ncrb.gov.in/uploads/2022/July/11/custom/crime-in-india/Districtwise-Crime-against-Women_2020.xlsx",
+   "retrievedOn": "2026-11-10",
+   "reconciliation": {
+    "sumOf23Units": 10093,
+    "printedTotalDistricts": 10093,
+    "delhiUtProductionTotal": 10093
+   }
+  },
+  {
+   "sourceKey": "NCRB-DISTRICT-CAW-2021",
+   "year": 2021,
+   "titlePrinted": "Districtwise Crime against Women - 2020",
+   "delhiSectionLabel": "State: Delhi",
+   "worksheet": "District Data Report",
+   "fileName": "16730066503DistrictwiseCrimeagainstWomen2021.xlsx",
+   "sha256": "6e92ac42251503951dee27730e49692e86d9ec77a16238afd4a2360c0f29c0cd",
+   "sourceUrl": "https://www.ncrb.gov.in/uploads/nationalcrimerecordsbureau/post/16730066503DistrictwiseCrimeagainstWomen2021.xlsx",
+   "retrievedOn": "2026-11-10",
+   "reconciliation": {
+    "sumOf23Units": 14277,
+    "printedTotalDistricts": 14277,
+    "delhiUtProductionTotal": 14277
+   }
+  },
+  {
+   "sourceKey": "NCRB-DISTRICT-CAW-2022",
+   "year": 2022,
+   "titlePrinted": "Districtwise Crime against Women - 2022",
+   "delhiSectionLabel": "State: Delhi",
+   "worksheet": "District Data Report",
+   "fileName": "3-DistrictwiseCrimeagainstWomen20221.xlsx",
+   "sha256": "12fc30d6247ac8a6a1740100effb711bb8a982e63b756cde2dda14d7c3911fd7",
+   "sourceUrl": "https://www.ncrb.mha.gov.in/uploads/files/3-DistrictwiseCrimeagainstWomen20221.xlsx",
+   "retrievedOn": "2026-11-10",
+   "reconciliation": {
+    "sumOf23Units": 14247,
+    "printedTotalDistricts": 14247,
+    "delhiUtProductionTotal": 14247
+   }
+  }
+ ],
+ "values": [
+  {
+   "year": 2020,
+   "unit": "Central",
+   "category": "total",
+   "column": 54,
+   "originalValue": "480"
+  },
+  {
+   "year": 2020,
+   "unit": "Crime Branch",
+   "category": "total",
+   "column": 54,
+   "originalValue": "3"
+  },
+  {
+   "year": 2020,
+   "unit": "East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "640"
+  },
+  {
+   "year": 2020,
+   "unit": "EOW",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2020,
+   "unit": "IGI Airport",
+   "category": "total",
+   "column": 54,
+   "originalValue": "10"
+  },
+  {
+   "year": 2020,
+   "unit": "Metro",
+   "category": "total",
+   "column": 54,
+   "originalValue": "12"
+  },
+  {
+   "year": 2020,
+   "unit": "New Delhi",
+   "category": "total",
+   "column": 54,
+   "originalValue": "88"
+  },
+  {
+   "year": 2020,
+   "unit": "North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "459"
+  },
+  {
+   "year": 2020,
+   "unit": "North-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "988"
+  },
+  {
+   "year": 2020,
+   "unit": "North-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "718"
+  },
+  {
+   "year": 2020,
+   "unit": "Outer",
+   "category": "total",
+   "column": 54,
+   "originalValue": "774"
+  },
+  {
+   "year": 2020,
+   "unit": "RAILWAY",
+   "category": "total",
+   "column": 54,
+   "originalValue": "7"
+  },
+  {
+   "year": 2020,
+   "unit": "South",
+   "category": "total",
+   "column": 54,
+   "originalValue": "639"
+  },
+  {
+   "year": 2020,
+   "unit": "South-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "898"
+  },
+  {
+   "year": 2020,
+   "unit": "South-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "549"
+  },
+  {
+   "year": 2020,
+   "unit": "Spl Cell",
+   "category": "total",
+   "column": 54,
+   "originalValue": "9"
+  },
+  {
+   "year": 2020,
+   "unit": "SPUWAC",
+   "category": "total",
+   "column": 54,
+   "originalValue": "26"
+  },
+  {
+   "year": 2020,
+   "unit": "Vigilance",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2020,
+   "unit": "West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "761"
+  },
+  {
+   "year": 2020,
+   "unit": "Rohini",
+   "category": "total",
+   "column": 54,
+   "originalValue": "736"
+  },
+  {
+   "year": 2020,
+   "unit": "Shahdara",
+   "category": "total",
+   "column": 54,
+   "originalValue": "626"
+  },
+  {
+   "year": 2020,
+   "unit": "Dwarka",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1048"
+  },
+  {
+   "year": 2020,
+   "unit": "Outer North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "622"
+  },
+  {
+   "year": 2021,
+   "unit": "Central",
+   "category": "total",
+   "column": 54,
+   "originalValue": "645"
+  },
+  {
+   "year": 2021,
+   "unit": "Crime Branch",
+   "category": "total",
+   "column": 54,
+   "originalValue": "3"
+  },
+  {
+   "year": 2021,
+   "unit": "East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "801"
+  },
+  {
+   "year": 2021,
+   "unit": "EOW",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2021,
+   "unit": "IGI Airport",
+   "category": "total",
+   "column": 54,
+   "originalValue": "11"
+  },
+  {
+   "year": 2021,
+   "unit": "Metro",
+   "category": "total",
+   "column": 54,
+   "originalValue": "10"
+  },
+  {
+   "year": 2021,
+   "unit": "New Delhi",
+   "category": "total",
+   "column": 54,
+   "originalValue": "89"
+  },
+  {
+   "year": 2021,
+   "unit": "North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "742"
+  },
+  {
+   "year": 2021,
+   "unit": "North-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1195"
+  },
+  {
+   "year": 2021,
+   "unit": "North-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "895"
+  },
+  {
+   "year": 2021,
+   "unit": "Outer",
+   "category": "total",
+   "column": 54,
+   "originalValue": "984"
+  },
+  {
+   "year": 2021,
+   "unit": "RAILWAY",
+   "category": "total",
+   "column": 54,
+   "originalValue": "9"
+  },
+  {
+   "year": 2021,
+   "unit": "South",
+   "category": "total",
+   "column": 54,
+   "originalValue": "982"
+  },
+  {
+   "year": 2021,
+   "unit": "South-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1238"
+  },
+  {
+   "year": 2021,
+   "unit": "South-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "766"
+  },
+  {
+   "year": 2021,
+   "unit": "Spl Cell",
+   "category": "total",
+   "column": 54,
+   "originalValue": "10"
+  },
+  {
+   "year": 2021,
+   "unit": "SPUWAC",
+   "category": "total",
+   "column": 54,
+   "originalValue": "62"
+  },
+  {
+   "year": 2021,
+   "unit": "Vigilance",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2021,
+   "unit": "West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1113"
+  },
+  {
+   "year": 2021,
+   "unit": "Rohini",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1042"
+  },
+  {
+   "year": 2021,
+   "unit": "Shahdara",
+   "category": "total",
+   "column": 54,
+   "originalValue": "857"
+  },
+  {
+   "year": 2021,
+   "unit": "Dwarka",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1785"
+  },
+  {
+   "year": 2021,
+   "unit": "Outer North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1038"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "total",
+   "column": 54,
+   "originalValue": "625"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "840"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "total",
+   "column": 54,
+   "originalValue": "16"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "total",
+   "column": 54,
+   "originalValue": "27"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "total",
+   "column": 54,
+   "originalValue": "103"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "734"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1156"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "786"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1054"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "total",
+   "column": 54,
+   "originalValue": "26"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1253"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1284"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "790"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "total",
+   "column": 54,
+   "originalValue": "11"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "total",
+   "column": 54,
+   "originalValue": "48"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "total",
+   "column": 54,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "total",
+   "column": 54,
+   "originalValue": "957"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1109"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "total",
+   "column": 54,
+   "originalValue": "850"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1411"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "total",
+   "column": 54,
+   "originalValue": "1167"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "murder-with-rape",
+   "column": 3,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "9"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "6"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "17"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "9"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "18"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "10"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "7"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "6"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "15"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "12"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "dowry-deaths",
+   "column": 4,
+   "originalValue": "11"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "abetment-to-suicide",
+   "column": 5,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "miscarriage",
+   "column": 6,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "acid-attack",
+   "column": 7,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "attempt-acid-attack",
+   "column": 8,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "156"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "351"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "20"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "282"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "438"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "243"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "360"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "539"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "354"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "226"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "48"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "392"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "440"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "356"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "418"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "cruelty-by-husband",
+   "column": 9,
+   "originalValue": "277"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "human-trafficking",
+   "column": 20,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "selling-minor-girls",
+   "column": 21,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "buying-minor-girls",
+   "column": 22,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "111"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "82"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "11"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "49"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "76"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "67"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "65"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "94"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "121"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "84"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "76"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "82"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "67"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "145"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "rape",
+   "column": 23,
+   "originalValue": "76"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "attempt-to-rape",
+   "column": 26,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "145"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "97"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "16"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "33"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "92"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "129"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "115"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "115"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "156"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "205"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "116"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "7"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "116"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "135"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "137"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "270"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "assault-outrage-modesty",
+   "column": 29,
+   "originalValue": "124"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "41"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "15"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "9"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "20"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "6"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "11"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "26"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "12"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "56"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "36"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "18"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "26"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "29"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "45"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "insult-modesty",
+   "column": 32,
+   "originalValue": "23"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "7"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "dowry-prohibition-act",
+   "column": 35,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "10"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "6"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "3"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "immoral-traffic-act",
+   "column": 36,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "domestic-violence-act",
+   "column": 42,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "8"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "13"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "12"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "36"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "11"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "5"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "9"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "24"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "cyber-crimes",
+   "column": 43,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "36"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "61"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "2"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "1"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "6"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "70"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "111"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "112"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "112"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "4"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "134"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "137"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "84"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "79"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "123"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "67"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "160"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "pocso",
+   "column": 46,
+   "originalValue": "135"
+  },
+  {
+   "year": 2022,
+   "unit": "Central",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Crime Branch",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "East",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "EOW",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "IGI Airport",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Metro",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "New Delhi",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-East",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "North-West",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "RAILWAY",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-East",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "South-West",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Spl Cell",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "SPUWAC",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Vigilance",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "West",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Rohini",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Shahdara",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Dwarka",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  },
+  {
+   "year": 2022,
+   "unit": "Outer North",
+   "category": "indecent-representation-act",
+   "column": 53,
+   "originalValue": "0"
+  }
+ ]
+}

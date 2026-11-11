@@ -8,7 +8,7 @@ export function NotFoundPage() {
         title="Page not found"
         description="This address does not match a page in SafeHer."
       />
-      <Link to="/">Return to Overview</Link>
+      <Link to="/">Return to the Crime Map</Link>
     </>
   );
 }

@@ -1,0 +1,12 @@
+year,source,source_class,printed_unit_label,value,components,components_sum_ok,production_value,matches_production
+2014,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,15319,Cr.PC 156(3) 107 + police stations 15212,True,,
+2015,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,17222,Cr.PC 156(3) 74 + police stations 17148,True,,
+2016,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,15310,Cr.PC 156(3) 59 + police stations 15251,True,15310,True
+2017,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,13076,Cr.PC 156(3) 68 + police stations 13008,True,13076,True
+2018,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,13640,Cr.PC 156(3) 64 + police stations 13576,True,13640,True
+2019,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2014-2019 (official xlsx)",official,Delhi,13395,Cr.PC 156(3) 51 + police stations 13344,True,,
+2021,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2021 (official xlsx)",official,Delhi,14277,Cr.PC 156(3) 31 + police stations 14246,True,14277,True
+2022,"NCRB additional table, State/UT Cases Registered under Crimes against Women 2022 (official xlsx)",official,Delhi,14247,Cr.PC 156(3) 26 + police stations 14221,True,14247,True
+2019,"Crime in India 2021 Volume I, Table 3A.1, PDF p.259 (English; third-party-hosted copy of the NCRB report)",third_party_hosted_copy,Delhi,13395,,,,
+2020,"Crime in India 2021 Volume I, Table 3A.1, PDF p.259 (English; third-party-hosted copy of the NCRB report)",third_party_hosted_copy,Delhi,10093,,,10093,True
+2021,"Crime in India 2021 Volume I, Table 3A.1, PDF p.259 (English; third-party-hosted copy of the NCRB report)",third_party_hosted_copy,Delhi,14277,,,14277,True

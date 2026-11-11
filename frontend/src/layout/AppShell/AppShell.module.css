@@ -38,6 +38,146 @@
   padding: var(--space-8) var(--space-8) var(--space-7);
 }
 
+/* Full-bleed pages (the map) fill the viewport beside the sidebar. */
+.mainFull {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.contentFull {
+  height: 100%;
+}
+
+/* Crime Map: the navigation is out of the layout unless pinned. */
+.shellAutoHide {
+  --nav-cover: 0px;
+  display: block;
+}
+
+.navRegion {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1300;
+  width: 0;
+}
+
+/* An invisible strip along the left edge. Only rendered for mouse users while the navigation is hidden. */
+.edgeZone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1290;
+  width: 14px;
+}
+
+.edgeHandle,
+.floatingMenuButton,
+.pinButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.edgeHandle {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1310;
+  width: 22px;
+  height: 64px;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 1px 2px rgb(38 33 28 / 0.08), 0 4px 12px rgb(38 33 28 / 0.08);
+  transform: translateY(-50%);
+}
+
+.edgeHandle[data-open='true'] {
+  left: calc(var(--sidebar-width) - 1px);
+}
+
+.edgeHandle:hover,
+.floatingMenuButton:hover,
+.pinButton:hover {
+  color: var(--color-accent);
+}
+
+.edgeHandle:focus-visible,
+.floatingMenuButton:focus-visible,
+.pinButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.pinButton {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-color: transparent;
+  border-radius: var(--radius);
+}
+
+.pinButton[aria-pressed='true'] {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.floatingMenuButton {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 1310;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: var(--color-text);
+  box-shadow: 0 1px 2px rgb(38 33 28 / 0.08), 0 6px 18px rgb(38 33 28 / 0.12);
+}
+
+.floatingMenuButton[data-open='true'] {
+  left: calc(min(var(--sidebar-width), 85vw) + var(--space-3));
+}
+
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1250;
+  background: rgb(38 33 28 / 0.32);
+}
+
+@media (min-width: 801px) {
+  /* Revealed over the map: floating map controls move clear of it. */
+  .shellAutoHide[data-nav='overlay'] {
+    --nav-cover: var(--sidebar-width);
+  }
+
+  /* Pinned: the map gives up the space, so it is never permanently covered. */
+  .shellAutoHide[data-nav='docked'] .main {
+    padding-left: var(--sidebar-width);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shellAutoHide .main {
+    transition: padding-left 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .edgeHandle,
+  .floatingMenuButton {
+    transition:
+      left 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 120ms ease;
+  }
+}
+
 @media (max-width: 1100px) {
   .content {
     padding: var(--space-7) var(--space-6);
@@ -92,4 +232,20 @@
   .content {
     padding: var(--space-6) var(--space-4);
   }
+
+  .mainFull {
+    height: calc(100vh - var(--topbar-height));
+    height: calc(100dvh - var(--topbar-height));
+  }
+
+  /* The Crime Map has no top bar: the map uses the whole screen. */
+  .shellAutoHide .mainFull {
+    height: 100vh;
+    height: 100dvh;
+  }
+}
+
+.pageLoading {
+  padding: var(--space-6) 0;
+  color: var(--color-text-muted);
 }

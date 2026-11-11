@@ -1,0 +1,56 @@
+year,rule,research_result,production_status,evidence
+2016,EDIT-1,PASS,NOT_RECORDED,CII 2018 p.241 and official 2014-2019 xlsx agree.
+2016,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2016,TOT-4,PENDING,PENDING,No Table 3A.2 source held.
+2016,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2016,UNIT-1,PASS,PASS,State/UT series only.
+2017,EDIT-1,PASS,NOT_RECORDED,CII 2018 p.241 and official 2014-2019 xlsx agree.
+2017,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2017,TOT-4,PENDING,PENDING,No Table 3A.2 source held.
+2017,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2017,UNIT-1,PASS,PASS,State/UT series only.
+2018,EDIT-1,PASS,NOT_RECORDED,CII 2018 p.241 and official 2014-2019 xlsx agree.
+2018,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2018,TOT-4,PASS,PENDING,Table 3A.2 total equals Table 3A.1 in the same edition.
+2018,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2018,UNIT-1,PASS,PASS,State/UT series only.
+2019,EDIT-1,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Official xlsx and third-party-hosted copy of CII 2021 p.259 agree.
+2019,EXT-2,PASS_WITH_NOTE,NOT_IN_PRODUCTION,Official xlsx value read; printed report page from NCRB not held.
+2019,TOT-4,PENDING,NOT_IN_PRODUCTION,No Table 3A.2 source held.
+2019,MISS-2,PASS,NOT_IN_PRODUCTION,Printed official value only. Nothing estimated.
+2019,UNIT-1,PASS,NOT_IN_PRODUCTION,State/UT series only.
+2020,EDIT-1,PASS_WITH_NOTE,NOT_RECORDED,CII 2022 p.259 and third-party-hosted copy of CII 2021 agree.
+2020,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2020,TOT-4,PENDING,PENDING,No Table 3A.2 source held.
+2020,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2020,UNIT-1,PASS,PASS,State/UT series only.
+2021,EDIT-1,PASS,NOT_RECORDED,"CII 2022 p.259, CII 2023 p.259 and official 2021 xlsx agree."
+2021,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2021,TOT-4,PASS_WITH_NOTE,PENDING,Table 3A.2 total 14277 in third-party-hosted copy of CII 2021 p.275 equals Table 3A.1.
+2021,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2021,UNIT-1,PASS,PASS,State/UT series only.
+2022,EDIT-1,PASS,NOT_RECORDED,"CII 2022, 2023 and 2024 and official 2022 xlsx agree."
+2022,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2022,TOT-4,PASS,PENDING,Table 3A.2 total equals Table 3A.1 in the same edition.
+2022,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2022,UNIT-1,PASS,PASS,State/UT series only.
+2023,EDIT-1,PASS,NOT_RECORDED,CII 2023 p.259 and CII 2024 p.329 agree.
+2023,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2023,TOT-4,PASS,PENDING,Table 3A.2 total equals Table 3A.1 in the same edition.
+2023,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2023,UNIT-1,PASS,PASS,State/UT series only.
+2024,EDIT-1,NOT_APPLICABLE,NOT_RECORDED,One edition covers 2024 so far.
+2024,EXT-2,PASS,PASS,Table 3A.1 extract and full-report page checked.
+2024,TOT-4,PASS,PENDING,Table 3A.2 total equals Table 3A.1 in the same edition.
+2024,MISS-2,PASS,PASS,Printed official value only. Nothing estimated.
+2024,UNIT-1,PASS,PASS,State/UT series only.
+2016,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 1507. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2017,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 1534. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2018,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 1916. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2019,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 493. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2020,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 311. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2021,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 295. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2022,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 89. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2023,UNIT-2,PASS_WITH_NOTE,NOT_APPLICABLE,UT minus City = 73. Not negative. The gap narrows sharply after 2018; the cause is unknown.
+2024,UNIT-2,PENDING,NOT_APPLICABLE,UT minus City = 0. Zero is unexplained and needs review.
+2016-2024,MISS-1,PASS_WITH_NOTE,PASS,"Every production year has a value, and 2019 has a coverage record. 13395 is a proposal only."
